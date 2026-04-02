@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<html lang="es" data-lang="es">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Mónica Schekaibán Assad · Psicoterapia</title>
+<meta name="description" content="Psicoterapia individual, de pareja, adolescentes y empresas. Más de 25 años de experiencia. Mónica Schekaibán Assad."/>
+<link rel="canonical" href="https://innerpath-soultherapy.com/psicoterapia"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet"/>
+<style>
+:root {
+  --ink:        #1A1610;
+  --earth:      #2E2416;
+  --amber:      #C49A5A;
+  --amber-lt:   #E2C890;
+  --sand:       #F5EFE3;
+  --warm-white: #FDFBF7;
+  --smoke:      #8A7F72;
+  --border:     rgba(196,154,90,0.22);
+  --deep:       #110E09;
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Jost',sans-serif;background:var(--warm-white);color:var(--ink);overflow-x:hidden}
+
+/* noise */
+body::before{content:'';position:fixed;inset:0;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+  pointer-events:none;z-index:9999;opacity:.4;
+}
+
+/* ── NAV ── */
+.nav{
+  position:fixed;top:0;left:0;right:0;z-index:200;height:60px;
+  display:flex;justify-content:space-between;align-items:center;
+  padding:0 3.5rem;
+  background:rgba(253,251,247,0.93);backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--border);
+  transition:background .3s;
+}
+.nav-logo{display:flex;flex-direction:column;line-height:1;text-decoration:none}
+.nav-logo span:first-child{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:600;letter-spacing:0.12em;color:var(--earth);text-transform:uppercase}
+.nav-logo span:last-child{font-size:0.6rem;letter-spacing:0.22em;color:var(--amber);text-transform:uppercase;margin-top:2px}
+.nav-links{display:flex;gap:1.6rem;align-items:center}
+.nav-links a{font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--smoke);text-decoration:none;transition:color .2s;white-space:nowrap}
+.nav-links a:hover{color:var(--earth)}
+.nav-links a.cross-link{color:var(--amber);border-left:1px solid var(--border);padding-left:1.4rem;margin-left:.3rem}
+.nav-links a.cross-link:hover{color:var(--earth)}
+.lang-pill{display:flex;background:var(--sand);border:1px solid var(--border);border-radius:999px;overflow:hidden}
+.lbtn{padding:5px 13px;font-size:0.7rem;font-weight:500;letter-spacing:0.1em;border:none;background:transparent;cursor:pointer;color:var(--smoke);transition:all .2s;font-family:'Jost',sans-serif}
+.lbtn.active{background:var(--earth);color:#fff;border-radius:999px}
+/* Mobile burger */
+.nav-burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px;min-width:44px;min-height:44px;align-items:center;justify-content:center;border-radius:8px}
+.nav-burger span{display:block;width:22px;height:2px;background:var(--earth);border-radius:2px;transition:transform .25s,opacity .25s}
+.nav-burger[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nav-burger[aria-expanded="true"] span:nth-child(2){opacity:0;transform:scaleX(0)}
+.nav-burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+/* Mobile drawer */
+.nav-drawer{position:fixed;top:60px;left:0;right:0;background:rgba(253,251,247,0.98);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:1rem 2rem;z-index:199;flex-direction:column;gap:0;display:none}
+.nav-drawer.open{display:flex}
+.nav-drawer a{font-size:0.88rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--smoke);text-decoration:none;padding:0.85rem 0;border-bottom:1px solid var(--border);transition:color .2s;display:flex;align-items:center}
+.nav-drawer a:last-child{border-bottom:none;color:var(--amber)}
+.nav-drawer a:hover{color:var(--earth)}
+
+/* ── HERO ── */
+.hero{
+  min-height:100vh;padding-top:60px;
+  display:grid;grid-template-columns:1fr 1fr;
+  background:var(--deep);color:var(--sand);
+  position:relative;overflow:hidden;
+}
+.hero::after{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse at 30% 50%, rgba(196,154,90,0.1) 0%, transparent 65%);
+  pointer-events:none;
+}
+.hero-left{
+  display:flex;flex-direction:column;justify-content:center;
+  padding:5rem 3rem 5rem 5rem;position:relative;z-index:1;
+}
+.hero-overline{font-size:0.65rem;letter-spacing:0.28em;text-transform:uppercase;color:var(--amber);margin-bottom:2rem;display:flex;align-items:center;gap:0.8rem}
+.hero-overline::before{content:'';width:28px;height:1px;background:var(--amber)}
+.hero-title{font-family:'Cormorant Garamond',serif;font-size:clamp(3rem,5vw,5.5rem);font-weight:300;line-height:1.0;color:#fff;margin-bottom:0.5rem}
+.hero-title em{font-style:italic;color:var(--amber)}
+.hero-tagline{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-style:italic;font-weight:300;color:rgba(245,239,227,0.5);margin-bottom:2.5rem;letter-spacing:0.02em}
+.hero-body{font-size:0.91rem;line-height:1.85;color:rgba(245,239,227,0.55);max-width:44ch;margin-bottom:3rem}
+.btns{display:flex;gap:1rem;flex-wrap:wrap}
+.btn-p{display:inline-flex;align-items:center;gap:0.5rem;background:var(--amber);color:var(--deep);padding:13px 30px;border-radius:999px;font-size:0.78rem;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;border:none;cursor:pointer;font-family:'Jost',sans-serif;transition:background .25s,transform .2s;font-weight:500}
+.btn-p:hover{background:var(--amber-lt);transform:translateY(-1px)}
+.btn-o{display:inline-flex;align-items:center;gap:0.5rem;background:transparent;color:var(--sand);padding:12px 30px;border-radius:999px;font-size:0.78rem;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;border:1.5px solid rgba(245,239,227,0.25);cursor:pointer;font-family:'Jost',sans-serif;transition:all .25s}
+.btn-o:hover{border-color:var(--amber);color:var(--amber)}
+.hero-stat-row{display:flex;gap:2.5rem;margin-top:3.5rem;padding-top:2rem;border-top:1px solid rgba(196,154,90,0.18)}
+.h-stat-num{font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-weight:300;color:#fff;line-height:1}
+.h-stat-lbl{font-size:0.68rem;color:rgba(245,239,227,0.4);letter-spacing:0.06em;margin-top:3px}
+.hero-right{position:relative;overflow:hidden}
+.hero-right-inner{width:100%;height:100%;background:linear-gradient(160deg,#3D2E14 0%,#1A1610 60%,#0D0B07 100%);display:flex;align-items:center;justify-content:center}
+.hero-glyph{font-size:10rem;opacity:0.12;user-select:none}
+.hero-right-overlay{position:absolute;inset:0;background:radial-gradient(ellipse at 60% 40%, rgba(196,154,90,0.1) 0%, transparent 65%)}
+.hero-badge{position:absolute;bottom:2.5rem;left:2rem;background:rgba(253,251,247,0.08);backdrop-filter:blur(10px);border:1px solid rgba(196,154,90,0.2);border-radius:12px;padding:1.2rem 1.6rem}
+.hero-badge strong{display:block;font-family:'Cormorant Garamond',serif;font-size:1rem;color:#fff}
+.hero-badge span{font-size:0.68rem;color:rgba(245,239,227,0.45);letter-spacing:0.08em}
+
+/* ── SECTIONS ── */
+section{padding:6rem 5rem}
+.s-label{font-size:0.62rem;letter-spacing:0.28em;text-transform:uppercase;color:var(--amber);margin-bottom:1rem;display:flex;align-items:center;gap:0.7rem}
+.s-label::before{content:'';width:20px;height:1px;background:var(--amber)}
+.s-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,3.5vw,3rem);font-weight:300;line-height:1.1;color:var(--earth);margin-bottom:1.2rem}
+.s-title em{font-style:italic;color:var(--amber)}
+
+/* ── PSICOTERAPIA INTRO ── */
+.psi-intro{background:var(--sand);display:grid;grid-template-columns:1.5fr 1fr;gap:5rem;align-items:center}
+.psi-body{font-size:0.92rem;line-height:1.9;color:var(--smoke)}
+.psi-body p{margin-bottom:1rem}
+.benefits-box{background:var(--warm-white);border:1px solid var(--border);border-radius:14px;padding:2rem}
+.benefits-box h4{font-family:'Cormorant Garamond',serif;font-size:1.2rem;color:var(--earth);margin-bottom:1.2rem;font-weight:400}
+.benefit-item{display:flex;align-items:flex-start;gap:0.7rem;margin-bottom:0.8rem;font-size:0.82rem;color:var(--smoke);line-height:1.5}
+.benefit-item::before{content:'✦';color:var(--amber);font-size:0.6rem;margin-top:3px;flex-shrink:0}
+
+/* ── SERVICES GRID ── */
+.services{background:var(--warm-white)}
+.services-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;margin-top:3rem}
+.svc-card{border:1px solid var(--border);border-radius:14px;overflow:hidden;transition:transform .25s,box-shadow .25s}
+.svc-card:hover{transform:translateY(-4px);box-shadow:0 16px 48px rgba(46,36,22,0.1)}
+.svc-header{padding:2rem 2rem 1.2rem;background:var(--sand)}
+.svc-num{font-family:'Cormorant Garamond',serif;font-size:2.8rem;font-weight:300;color:var(--amber-lt);line-height:1;margin-bottom:0.4rem}
+.svc-name{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:400;color:var(--earth);letter-spacing:0.01em}
+.svc-sub{font-size:0.72rem;color:var(--amber);letter-spacing:0.12em;text-transform:uppercase;margin-top:2px}
+.svc-body{padding:1.5rem 2rem 2rem;font-size:0.85rem;line-height:1.8;color:var(--smoke)}
+.svc-body p{margin-bottom:0.9rem}
+.svc-list{list-style:none;padding:0;margin-top:0.5rem}
+.svc-list li{font-size:0.8rem;color:var(--smoke);padding:3px 0;display:flex;align-items:baseline;gap:0.5rem}
+.svc-list li::before{content:'·';color:var(--amber);font-size:1rem;line-height:1;flex-shrink:0}
+.svc-card.wide{grid-column:span 2}
+
+/* ── TERAPIA ONLINE ── */
+.online-section{background:var(--earth);color:var(--sand);display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+.online-section .s-title{color:var(--sand)}
+.online-section .s-label{color:var(--amber-lt)}
+.online-body{font-size:0.9rem;line-height:1.85;color:rgba(245,239,227,0.55)}
+.online-body p{margin-bottom:0.9rem}
+.online-pills{display:flex;flex-wrap:wrap;gap:0.6rem;margin-top:1.5rem}
+.pill{background:rgba(196,154,90,0.1);border:1px solid rgba(196,154,90,0.2);border-radius:999px;padding:6px 14px;font-size:0.75rem;color:var(--amber-lt);letter-spacing:0.06em}
+.benefits-dark{background:rgba(255,255,255,0.04);border:1px solid rgba(196,154,90,0.15);border-radius:14px;padding:2rem}
+.benefits-dark h4{font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:#fff;margin-bottom:1.2rem;font-weight:400}
+.bd-item{display:flex;align-items:flex-start;gap:0.6rem;font-size:0.82rem;color:rgba(245,239,227,0.5);margin-bottom:0.7rem;line-height:1.5}
+.bd-item::before{content:'✦';color:var(--amber);font-size:0.55rem;margin-top:4px;flex-shrink:0}
+
+/* ── ABOUT MÓNICA ── */
+.about-section{background:var(--sand);display:grid;grid-template-columns:1fr 1.6fr;gap:5rem;align-items:start}
+.about-visual{width:100%;aspect-ratio:3/4;background:linear-gradient(160deg,var(--amber) 0%,var(--earth) 100%);border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:7rem}
+.about-body{font-size:0.9rem;line-height:1.9;color:var(--smoke)}
+.about-body p{margin-bottom:1rem}
+.credentials{margin-top:2rem}
+.cred-title{font-family:'Cormorant Garamond',serif;font-size:1.05rem;color:var(--earth);margin-bottom:1rem;font-weight:400}
+.cred-grid{display:grid;grid-template-columns:1fr 1fr;gap:0.6rem}
+.cred-item{background:var(--warm-white);border:1px solid var(--border);border-radius:8px;padding:0.8rem 1rem;font-size:0.78rem;color:var(--smoke);line-height:1.4}
+.cred-item strong{display:block;font-size:0.72rem;color:var(--amber);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:2px;font-weight:500}
+
+/* ── ARTICLES ── */
+.articles-section{background:var(--warm-white)}
+.articles-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:3rem}
+.art-card{border:1px solid var(--border);border-radius:14px;overflow:hidden;transition:transform .25s;display:flex;flex-direction:column}
+.art-card:hover{transform:translateY(-3px)}
+.art-header{padding:2rem 2rem 0}
+.art-tag{font-size:0.6rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--amber);margin-bottom:0.7rem}
+.art-title{font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-weight:400;color:var(--earth);line-height:1.3;margin-bottom:1rem}
+.art-body{padding:0 2rem 2rem;font-size:0.83rem;color:var(--smoke);line-height:1.8;flex:1}
+.art-body p{margin-bottom:0.8rem}
+.art-footer{padding:1rem 2rem 1.5rem;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;background:var(--sand)}
+.art-author{font-size:0.72rem;color:var(--smoke);font-style:italic}
+.read-more{font-size:0.68rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--amber);text-decoration:none;transition:color .2s}
+.read-more:hover{color:var(--earth)}
+.art-card.wide{grid-column:span 2}
+
+/* ── FAQ ── */
+.faq-section{background:var(--deep);color:var(--sand)}
+.faq-section .s-title{color:var(--sand)}
+.faq-section .s-label{color:var(--amber-lt)}
+.faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;margin-top:3rem;background:rgba(196,154,90,0.1);border:1px solid rgba(196,154,90,0.1);border-radius:14px;overflow:hidden}
+.faq-item{background:var(--deep);padding:0}
+.faq-wide{grid-column:span 2}
+.faq-btn{width:100%;text-align:left;background:transparent;border:none;padding:1.5rem 2rem;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:1rem;font-family:'Jost',sans-serif;color:var(--sand)}
+.faq-q{font-size:0.9rem;font-weight:400;line-height:1.4;color:rgba(245,239,227,0.8)}
+.faq-icon{color:var(--amber);font-size:1.1rem;transition:transform .3s;flex-shrink:0}
+.faq-btn.open .faq-icon{transform:rotate(45deg)}
+.faq-answer{max-height:0;overflow:hidden;transition:max-height .4s ease,padding .3s ease;padding:0 2rem}
+.faq-answer.open{max-height:600px;padding:0 2rem 1.5rem}
+.faq-answer p{font-size:0.83rem;color:rgba(245,239,227,0.5);line-height:1.85}
+.faq-answer ul{list-style:none;padding:0;margin-top:0.5rem}
+.faq-answer ul li{font-size:0.82rem;color:rgba(245,239,227,0.45);padding:3px 0;display:flex;gap:0.5rem;align-items:baseline}
+.faq-answer ul li::before{content:'·';color:var(--amber)}
+
+/* ── TIPOS DE TERAPIA ── */
+.tipos-section{background:var(--sand)}
+.tipos-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin-top:3rem}
+.tipo-card{background:var(--warm-white);border:1px solid var(--border);border-radius:12px;padding:1.8rem;transition:transform .2s,box-shadow .2s}
+.tipo-card:hover{transform:translateY(-3px);box-shadow:0 8px 32px rgba(46,36,22,0.08)}
+.tipo-icon{font-size:1.8rem;margin-bottom:1rem}
+.tipo-name{font-family:'Cormorant Garamond',serif;font-size:1.15rem;color:var(--earth);margin-bottom:0.5rem;font-weight:400}
+.tipo-desc{font-size:0.8rem;color:var(--smoke);line-height:1.7}
+
+/* ── CONTACT ── */
+.contact{background:var(--ink);color:var(--sand);display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
+.contact .s-title{color:var(--sand)}
+.contact .s-label{color:var(--amber-lt)}
+.c-body{font-size:0.9rem;color:rgba(245,239,227,0.5);line-height:1.85;margin-bottom:2rem}
+.c-details{display:flex;flex-direction:column;gap:1.4rem}
+.c-item{display:flex;gap:1rem;align-items:center}
+.c-icon{font-size:1.1rem;width:22px;text-align:center}
+.c-lbl{font-size:0.62rem;color:var(--amber-lt);letter-spacing:0.14em;text-transform:uppercase;display:block;margin-bottom:1px}
+.c-val{font-size:0.86rem;color:rgba(245,239,227,0.75)}
+.c-form{background:rgba(255,255,255,0.04);border:1px solid rgba(196,154,90,0.15);border-radius:14px;padding:2.5rem}
+.f-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.f-field{margin-bottom:1.2rem}
+.f-field label{display:block;font-size:0.64rem;letter-spacing:0.14em;text-transform:uppercase;color:rgba(245,239,227,0.35);margin-bottom:0.5rem}
+.f-field input,.f-field textarea,.f-field select{width:100%;background:rgba(255,255,255,0.05);border:1px solid rgba(196,154,90,0.15);border-radius:8px;padding:10px 14px;color:var(--sand);font-size:0.86rem;font-family:'Jost',sans-serif;outline:none;transition:border .2s}
+.f-field input:focus,.f-field textarea:focus{border-color:var(--amber)}
+.f-field textarea{resize:vertical;min-height:100px}
+.f-field select option{background:var(--deep)}
+
+/* ── BACK LINK ── */
+.back-link{display:inline-flex;align-items:center;gap:0.5rem;font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--smoke);text-decoration:none;transition:color .2s}
+.back-link:hover{color:var(--amber)}
+
+/* ── FOOTER ── */
+footer{background:var(--ink);color:rgba(255,255,255,0.3);padding:2.2rem 5rem;display:flex;justify-content:space-between;align-items:center;font-size:0.75rem;border-top:1px solid rgba(255,255,255,0.05)}
+.footer-logo{font-family:'Cormorant Garamond',serif;font-size:0.95rem;font-style:italic;color:rgba(196,154,90,0.55)}
+footer a{color:rgba(255,255,255,0.3);text-decoration:none;transition:color .2s}
+footer a:hover{color:var(--amber-lt)}
+
+/* ── REVEAL ── */
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+.reveal.visible{opacity:1;transform:none}
+
+/* ── RESPONSIVE ── */
+@media(max-width:900px){
+  .hero,.psi-intro,.online-section,.about-section,.contact{grid-template-columns:1fr;gap:2.5rem}
+  .hero-right{aspect-ratio:4/3}
+  .hero-left{padding:3rem 2rem}
+  .services-grid,.articles-grid,.tipos-grid{grid-template-columns:1fr}
+  .faq-grid{grid-template-columns:1fr}
+  .faq-wide{grid-column:span 1}
+  .svc-card.wide{grid-column:span 1}
+  .svc-card.wide > div{grid-template-columns:1fr !important}
+  .svc-card.wide > div > div:first-child{border-right:none !important;border-bottom:1px solid var(--border)}
+  section{padding:4rem 2rem}
+  .nav{padding:0 1.5rem}
+  .nav-links{display:none}
+  .nav-burger{display:flex}
+  footer{flex-direction:column;gap:0.6rem;text-align:center;padding:2rem}
+  .cred-grid{grid-template-columns:1fr}
+  .f-row{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<header class="nav">
+  <a href="innerpath-soultherapy.html" class="nav-logo">
+    <span>Inner Path</span>
+    <span data-es="Soul Therapy · Psicoterapia" data-en="Soul Therapy · Psychotherapy">Soul Therapy · Psicoterapia</span>
+  </a>
+  <nav class="nav-links">
+    <a href="#terapias"  data-es="Terapias"  data-en="Services">Terapias</a>
+    <a href="#monica"    data-es="Sobre mí"  data-en="About">Sobre mí</a>
+    <a href="#articulos" data-es="Artículos" data-en="Articles">Artículos</a>
+    <a href="#faq"       data-es="FAQ"       data-en="FAQ">FAQ</a>
+    <a href="#contacto"  data-es="Contacto"  data-en="Contact">Contacto</a>
+    <a href="index.html" class="cross-link" data-es="← Soul Therapy" data-en="← Soul Therapy">← Soul Therapy</a>
+  </nav>
+  <div style="display:flex;align-items:center;gap:.5rem">
+    <div class="lang-pill">
+      <button class="lbtn active" id="btn-es" onclick="setLang('es')">ES</button>
+      <button class="lbtn"        id="btn-en" onclick="setLang('en')">EN</button>
+    </div>
+    <button class="nav-burger" id="burger" aria-expanded="false" aria-controls="nav-drawer" aria-label="Abrir menú">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<nav class="nav-drawer" id="nav-drawer" aria-label="Menú móvil">
+  <a href="#psicoterapia" onclick="closeDrawer()" data-es="Psicoterapia" data-en="Psychotherapy">Psicoterapia</a>
+  <a href="#terapias"     onclick="closeDrawer()" data-es="Terapias"     data-en="Services">Terapias</a>
+  <a href="#online"       onclick="closeDrawer()" data-es="Online"       data-en="Online">Online</a>
+  <a href="#monica"       onclick="closeDrawer()" data-es="Sobre mí"     data-en="About">Sobre mí</a>
+  <a href="#articulos"    onclick="closeDrawer()" data-es="Artículos"    data-en="Articles">Artículos</a>
+  <a href="#faq"          onclick="closeDrawer()" data-es="FAQ"          data-en="FAQ">FAQ</a>
+  <a href="#contacto"     onclick="closeDrawer()" data-es="Contacto"     data-en="Contact">Contacto</a>
+  <a href="innerpath-soultherapy.html" data-es="← Soul Therapy" data-en="← Soul Therapy">← Soul Therapy</a>
+</nav>
+
+<!-- ── HERO ── -->
+<section class="hero" id="hero" style="padding:0;padding-top:60px">
+  <div class="hero-left reveal">
+    <p class="hero-overline" data-es="Mónica Schekaibán Assad" data-en="Mónica Schekaibán Assad">Mónica Schekaibán Assad</p>
+    <h1 class="hero-title" data-es="Psico<em>terapia</em>" data-en="Psycho<em>therapy</em>">Psico<em>terapia</em></h1>
+    <p class="hero-tagline" data-es="Más de 25 años de experiencia." data-en="Over 25 years of experience.">Más de 25 años de experiencia.</p>
+    <p class="hero-body"
+      data-es="La psicoterapia es un acompañamiento en un espacio seguro que ayuda a explorar tu mundo emocional, tus pensamientos y creencias, sanando el dolor y sufrimiento, transformándolo en experiencias que te fortalecen para fluir y alcanzar las metas deseadas."
+      data-en="Psychotherapy is an accompaniment in a safe space that helps you explore your emotional world, your thoughts and beliefs, healing pain and suffering, transforming it into experiences that strengthen you to flow and achieve your desired goals.">La psicoterapia es un acompañamiento en un espacio seguro que ayuda a explorar tu mundo emocional, tus pensamientos y creencias, sanando el dolor y sufrimiento, transformándolo en experiencias que te fortalecen para fluir y alcanzar las metas deseadas.</p>
+    <div class="btns">
+      <a href="#contacto" class="btn-p" data-es="Agendar sesión" data-en="Book a Session">Agendar sesión</a>
+      <a href="#terapias" class="btn-o" data-es="Ver terapias" data-en="View Services">Ver terapias</a>
+    </div>
+    <div class="hero-stat-row">
+      <div>
+        <div class="h-stat-num">25+</div>
+        <div class="h-stat-lbl" data-es="años de experiencia" data-en="years of experience">años de experiencia</div>
+      </div>
+      <div>
+        <div class="h-stat-num">6</div>
+        <div class="h-stat-lbl" data-es="modalidades de trabajo" data-en="modalities">modalidades de trabajo</div>
+      </div>
+      <div>
+        <div class="h-stat-num">ES·EN</div>
+        <div class="h-stat-lbl" data-es="español e inglés" data-en="spanish and english">español e inglés</div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-right reveal" style="transition-delay:.15s">
+    <div class="hero-right-inner"><div class="hero-glyph">🧠</div></div>
+    <div class="hero-right-overlay"></div>
+    <div class="hero-badge">
+      <strong data-es="Lic. en Adm. de Empresas" data-en="Business Administration Degree">Lic. en Adm. de Empresas</strong>
+      <span data-es="TRE · TCC · Constelaciones · Semiología" data-en="RET · CBT · Constellations · Semiology">TRE · TCC · Constelaciones · Semiología</span>
+    </div>
+  </div>
+</section>
+
+<!-- ── PSICOTERAPIA INTRO ── -->
+<section class="psi-intro" id="psicoterapia">
+  <div class="reveal">
+    <p class="s-label" data-es="¿Qué es la psicoterapia?" data-en="What is psychotherapy?">¿Qué es la psicoterapia?</p>
+    <h2 class="s-title" data-es="La salud mental es el inicio de una <em>vida sana</em>" data-en="Mental health is the beginning of a <em>healthy life</em>">La salud mental es el inicio de una <em>vida sana</em></h2>
+    <div class="psi-body">
+      <p data-es="La terapia individual es de los ejercicios de autoconocimiento y de búsqueda de bienestar más efectivo. Mejorar la relación con uno mismo trae grandes frutos en todas las áreas de nuestra vida: nivel de energía, forma de auto cuidado, calidad de la comunicación y relaciones interpersonales, productividad en el trabajo; entre otros grandes beneficios." data-en="Individual therapy is one of the most effective exercises in self-knowledge and pursuit of well-being. Improving the relationship with oneself brings great benefits to all areas of our life: energy levels, self-care, quality of communication and interpersonal relationships, work productivity.">La terapia individual es de los ejercicios de autoconocimiento y de búsqueda de bienestar más efectivo. Mejorar la relación con uno mismo trae grandes frutos en todas las áreas de nuestra vida: nivel de energía, forma de auto cuidado, calidad de la comunicación y relaciones interpersonales, productividad en el trabajo.</p>
+      <p data-es="La Salud Mental es el inicio de una vida sana, que permite tener congruencia entre lo que se piensa, se siente y se actúa, para lograr el equilibrio y el balance en la vida diaria y potencializar así las capacidades y habilidades de la persona." data-en="Mental Health is the beginning of a healthy life, allowing congruence between what one thinks, feels and acts upon, achieving balance in daily life and maximizing the person's capacities and abilities.">La Salud Mental es el inicio de una vida sana, que permite tener congruencia entre lo que se piensa, se siente y se actúa, para lograr el equilibrio y el balance en la vida diaria y potencializar así las capacidades y habilidades de la persona.</p>
+      <p data-es="Las sesiones iniciales (de 4 a 6 sesiones) tienen el propósito de identificar los conflictos principales y sus posibles causas, evaluando la problemática desde un punto de vista racional y con distancia crítica." data-en="The initial sessions (4 to 6) aim to identify the main conflicts and their possible causes, evaluating the situation from a rational point of view and with critical distance.">Las sesiones iniciales (de 4 a 6 sesiones) tienen el propósito de identificar los conflictos principales y sus posibles causas, evaluando la problemática desde un punto de vista racional y con distancia crítica.</p>
+    </div>
+  </div>
+  <div class="reveal" style="transition-delay:.1s">
+    <div class="benefits-box">
+      <h4 data-es="Beneficios de la terapia" data-en="Benefits of therapy">Beneficios de la terapia</h4>
+      <div class="benefit-item" data-es="Resolver bloqueos mentales y emocionales" data-en="Resolve mental and emotional blocks">Resolver bloqueos mentales y emocionales</div>
+      <div class="benefit-item" data-es="Mejorar relaciones interpersonales con comunicación efectiva" data-en="Improve interpersonal relationships with effective communication">Mejorar relaciones interpersonales con comunicación efectiva</div>
+      <div class="benefit-item" data-es="Aumentar tu poder personal y autoestima" data-en="Increase your personal power and self-esteem">Aumentar tu poder personal y autoestima</div>
+      <div class="benefit-item" data-es="Desarrollar habilidades cognitivas para superar pérdidas" data-en="Develop cognitive skills to overcome losses">Desarrollar habilidades cognitivas para superar pérdidas</div>
+      <div class="benefit-item" data-es="Aprender herramientas para alcanzar tus metas" data-en="Learn tools to achieve your goals">Aprender herramientas para alcanzar tus metas</div>
+      <div class="benefit-item" data-es="Hacerte responsable de ti y dejar de culpar a los demás" data-en="Take responsibility for yourself and stop blaming others">Hacerte responsable de ti y dejar de culpar a los demás</div>
+      <div class="benefit-item" data-es="Mayor bienestar y efectividad en todas las áreas de vida" data-en="Greater well-being and effectiveness in all areas of life">Mayor bienestar y efectividad en todas las áreas de vida</div>
+    </div>
+  </div>
+</section>
+
+<!-- ── SERVICES ── -->
+<section class="services" id="terapias">
+  <div class="reveal">
+    <p class="s-label" data-es="Servicios" data-en="Services">Servicios</p>
+    <h2 class="s-title" data-es="Las <em>terapias</em>" data-en="The <em>therapies</em>">Las <em>terapias</em></h2>
+  </div>
+  <div class="services-grid">
+
+    <!-- Terapia Individual -->
+    <div class="svc-card reveal">
+      <div class="svc-header">
+        <div class="svc-num">01</div>
+        <div class="svc-name" data-es="Terapia Individual" data-en="Individual Therapy">Terapia Individual</div>
+        <div class="svc-sub" data-es="Acompañamiento personalizado" data-en="Personalized accompaniment">Acompañamiento personalizado</div>
+      </div>
+      <div class="svc-body">
+        <p data-es="Un espacio seguro de acompañamiento para explorar tu mundo emocional, tus pensamientos y creencias. A través de herramientas concretas, identificamos los conflictos principales y sus posibles causas para sanar el dolor y transformarlo en fortaleza." data-en="A safe space of accompaniment to explore your emotional world, your thoughts and beliefs. Through concrete tools, we identify the main conflicts and their causes to heal pain and transform it into strength.">Un espacio seguro de acompañamiento para explorar tu mundo emocional, tus pensamientos y creencias. A través de herramientas concretas, identificamos los conflictos principales y sus posibles causas para sanar el dolor y transformarlo en fortaleza.</p>
+      </div>
+    </div>
+
+    <!-- Interpretación de Emociones -->
+    <div class="svc-card reveal" style="transition-delay:.08s">
+      <div class="svc-header">
+        <div class="svc-num">02</div>
+        <div class="svc-name" data-es="Interpretación de Emociones" data-en="Emotion Interpretation">Interpretación de Emociones</div>
+        <div class="svc-sub" data-es="Terapia breve · 3 horas" data-en="Brief therapy · 3 hours">Terapia breve · 3 horas</div>
+      </div>
+      <div class="svc-body">
+        <p data-es="Psicoterapia breve a través de la interpretación de las palabras de la persona. Equivale aproximadamente a 6 meses de terapia convencional, ya que se focaliza de forma específica en un conflicto, una emoción, un lugar, un sueño o un miedo." data-en="Brief psychotherapy through the interpretation of the person's words. It is equivalent to approximately 6 months of conventional therapy, as it focuses specifically on a conflict, an emotion, a place, a dream, or a fear.">Psicoterapia breve a través de la interpretación de las palabras de la persona. Equivale aproximadamente a 6 meses de terapia convencional, ya que se focaliza de forma específica en un conflicto, una emoción, un lugar, un sueño o un miedo.</p>
+        <p data-es="Se hace un mapeo con todo lo que expresa la persona y al finalizar se identifican creencias irracionales, emociones positivas o negativas, y se llega a una conclusión en la misma sesión." data-en="A mapping is made of everything the person expresses and at the end, irrational beliefs and positive or negative emotions are identified, reaching a conclusion in the same session.">Se hace un mapeo con todo lo que expresa la persona y al finalizar se identifican creencias irracionales, emociones positivas o negativas, y se llega a una conclusión en la misma sesión.</p>
+      </div>
+    </div>
+
+    <!-- Terapia de Pareja -->
+    <div class="svc-card reveal" style="transition-delay:.16s">
+      <div class="svc-header">
+        <div class="svc-num">03</div>
+        <div class="svc-name" data-es="Terapia de Pareja" data-en="Couples Therapy">Terapia de Pareja</div>
+        <div class="svc-sub" data-es="Fortalecer el vínculo" data-en="Strengthen the bond">Fortalecer el vínculo</div>
+      </div>
+      <div class="svc-body">
+        <p data-es="La terapia de pareja ayuda a identificar los problemas individuales y cómo los llevamos a nuestra relación. Permite entender cómo funcionamos en la relación, cuáles son los puntos de mayor conflicto y las fortalezas con las que contamos." data-en="Couples therapy helps identify individual problems and how we bring them into our relationship. It allows us to understand how we function in the relationship, the main conflict points, and the strengths we have.">La terapia de pareja ayuda a identificar los problemas individuales y cómo los llevamos a nuestra relación. Permite entender cómo funcionamos en la relación, cuáles son los puntos de mayor conflicto y las fortalezas con las que contamos.</p>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1rem">
+          <div>
+            <p style="font-size:0.72rem;color:var(--amber);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.5rem" data-es="Puede mejorar" data-en="Can improve">Puede mejorar</p>
+            <ul class="svc-list">
+              <li data-es="La comunicación" data-en="Communication">La comunicación</li>
+              <li data-es="La expresión afectiva" data-en="Emotional expression">La expresión afectiva</li>
+              <li data-es="La vida sexual" data-en="Sexual life">La vida sexual</li>
+              <li data-es="La salud y el estrés" data-en="Health and stress">La salud y el estrés</li>
+            </ul>
+          </div>
+          <div>
+            <p style="font-size:0.72rem;color:var(--amber);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.5rem" data-es="Puede evitar" data-en="Can prevent">Puede evitar</p>
+            <ul class="svc-list">
+              <li data-es="El insomnio" data-en="Insomnia">El insomnio</li>
+              <li data-es="Trastornos de alimentación" data-en="Eating disorders">Trastornos de alimentación</li>
+              <li data-es="Crisis de transición" data-en="Transition crises">Crisis de transición</li>
+              <li data-es="Experiencias traumáticas" data-en="Traumatic experiences">Experiencias traumáticas</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Terapia Adolescentes -->
+    <div class="svc-card reveal" style="transition-delay:.24s">
+      <div class="svc-header">
+        <div class="svc-num">04</div>
+        <div class="svc-name" data-es="Terapia Adolescentes" data-en="Adolescent Therapy">Terapia Adolescentes</div>
+        <div class="svc-sub" data-es="Y orientación a padres" data-en="And parental guidance">Y orientación a padres</div>
+      </div>
+      <div class="svc-body">
+        <p data-es="Esta psicoterapia es un medio por el cual el adolescente y sus padres pueden entender y resolver la problemática interna, el conflicto entre ambas partes y la situación familiar." data-en="This psychotherapy is a means by which the adolescent and their parents can understand and resolve the internal problem, the conflict between both parties, and the family situation.">Esta psicoterapia es un medio por el cual el adolescente y sus padres pueden entender y resolver la problemática interna, el conflicto entre ambas partes y la situación familiar.</p>
+        <p data-es="Las sesiones iniciales (4 a 6) incluyen entrevistas con el adolescente y los padres para identificar el punto de vista de ambas partes. También se ofrecen sesiones de orientación a padres con recomendaciones y formas de manejo familiar." data-en="Initial sessions (4 to 6) include interviews with the adolescent and parents to identify the perspective of both parties. Parental guidance sessions are also offered with recommendations and family management strategies.">Las sesiones iniciales (4 a 6) incluyen entrevistas con el adolescente y los padres para identificar el punto de vista de ambas partes. También se ofrecen sesiones de orientación a padres con recomendaciones y formas de manejo familiar.</p>
+      </div>
+    </div>
+
+    <!-- Empresas + Grupal - wide card -->
+    <div class="svc-card wide reveal" style="transition-delay:.32s">
+      <div style="display:grid;grid-template-columns:1fr 1fr;min-height:100%">
+        <div>
+          <div class="svc-header" style="height:100%;border-right:1px solid var(--border)">
+            <div class="svc-num">05</div>
+            <div class="svc-name" data-es="Estrategias para Empresas" data-en="Business Strategies">Estrategias para Empresas</div>
+            <div class="svc-sub" data-es="Capacitación · Intervención grupal · Crisis" data-en="Training · Group intervention · Crisis">Capacitación · Intervención grupal · Crisis</div>
+            <div class="svc-body" style="padding:1.2rem 0 0">
+              <p data-es="Herramientas que facilitan mayor efectividad en todos los niveles, a través de conocimientos vinculados al trabajo psicoterapéutico a nivel individual y grupal. Se trabaja en grupos de máximo 14 personas, una vez por semana, en sesiones de dos horas." data-en="Tools that facilitate greater effectiveness at all levels, through knowledge linked to psychotherapeutic work at individual and group levels. Groups of maximum 14 people, once a week, in two-hour sessions.">Herramientas que facilitan mayor efectividad en todos los niveles, a través de conocimientos vinculados al trabajo psicoterapéutico a nivel individual y grupal. Se trabaja en grupos de máximo 14 personas, una vez por semana, en sesiones de dos horas.</p>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="svc-header">
+            <div class="svc-num">06</div>
+            <div class="svc-name" data-es="Grupos de Desarrollo" data-en="Development Groups">Grupos de Desarrollo</div>
+            <div class="svc-sub" data-es="Familiar o por convocatoria · mín. 10 personas" data-en="Family or open · min. 10 people">Familiar o por convocatoria · mín. 10 personas</div>
+            <div class="svc-body" style="padding:1.2rem 0 0">
+              <p data-es="La intención de la terapia grupal se basa en los siete pilares del amor: apoyo, afecto, compartir conocimiento, reconocimiento, placeres compartidos, inspiración y comprensión. Todo lo anterior mejora la capacidad emocional, la calidad de vida y el sistema inmunológico." data-en="The intention of group therapy is based on the seven pillars of love: support, affection, sharing knowledge, recognition, shared pleasures, inspiration and understanding. All of this improves emotional capacity, quality of life and the immune system.">La intención de la terapia grupal se basa en los siete pilares del amor: apoyo, afecto, compartir conocimiento, reconocimiento, placeres compartidos, inspiración y comprensión. Todo lo anterior mejora la capacidad emocional, la calidad de vida y el sistema inmunológico.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── PSICOTERAPIA ONLINE ── -->
+<section class="online-section" id="online">
+  <div class="reveal">
+    <p class="s-label" data-es="Terapia en línea" data-en="Online Therapy">Terapia en línea</p>
+    <h2 class="s-title" data-es="Psicoterapia <em>online</em>" data-en="<em>Online</em> psychotherapy">Psicoterapia <em>online</em></h2>
+    <div class="online-body">
+      <p data-es="Psicoterapia llevada a cabo a través de videoconferencias. Esta alternativa es tan efectiva como la presencial y permite acceder al proceso terapéutico desde cualquier lugar del mundo." data-en="Psychotherapy conducted through video conferences. This alternative is as effective as in-person and allows access to the therapeutic process from anywhere in the world.">Psicoterapia llevada a cabo a través de videoconferencias. Esta alternativa es tan efectiva como la presencial y permite acceder al proceso terapéutico desde cualquier lugar del mundo.</p>
+    </div>
+    <div class="online-pills">
+      <span class="pill" data-es="Personas en el extranjero" data-en="People abroad">Personas en el extranjero</span>
+      <span class="pill" data-es="Viajeros frecuentes" data-en="Frequent travelers">Viajeros frecuentes</span>
+      <span class="pill" data-es="Condiciones físicas" data-en="Physical conditions">Condiciones físicas</span>
+      <span class="pill" data-es="Mayor comodidad" data-en="Greater comfort">Mayor comodidad</span>
+    </div>
+  </div>
+  <div class="reveal" style="transition-delay:.1s">
+    <div class="benefits-dark">
+      <h4 data-es="Beneficios comprobados" data-en="Proven benefits">Beneficios comprobados</h4>
+      <div class="bd-item" data-es="Aumento del autoconocimiento y la autoestima" data-en="Increased self-knowledge and self-esteem">Aumento del autoconocimiento y la autoestima</div>
+      <div class="bd-item" data-es="Mayor bienestar y efectividad en todas las áreas" data-en="Greater well-being and effectiveness in all areas">Mayor bienestar y efectividad en todas las áreas</div>
+      <div class="bd-item" data-es="Reprogramación de pensamientos negativos a positivos" data-en="Reprogramming of negative thoughts to positive">Reprogramación de pensamientos negativos a positivos</div>
+      <div class="bd-item" data-es="Mejores relaciones interpersonales" data-en="Better interpersonal relationships">Mejores relaciones interpersonales</div>
+      <div class="bd-item" data-es="Mayores habilidades de comunicación efectiva" data-en="Greater effective communication skills">Mayores habilidades de comunicación efectiva</div>
+      <div class="bd-item" data-es="Mayor productividad y nivel de energía" data-en="Greater productivity and energy levels">Mayor productividad y nivel de energía</div>
+    </div>
+  </div>
+</section>
+
+<!-- ── TIPOS DE TERAPIA ── -->
+<section class="tipos-section" id="tipos">
+  <div class="reveal">
+    <p class="s-label" data-es="Enfoques terapéuticos" data-en="Therapeutic approaches">Enfoques terapéuticos</p>
+    <h2 class="s-title" data-es="Tipo de <em>terapia</em> que se practica" data-en="Types of <em>therapy</em> practiced">Tipo de <em>terapia</em> que se practica</h2>
+  </div>
+  <div class="tipos-grid">
+    <div class="tipo-card reveal">
+      <div class="tipo-icon">🧩</div>
+      <div class="tipo-name" data-es="Cognitivo-Conductual" data-en="Cognitive-Behavioral">Cognitivo-Conductual</div>
+      <div class="tipo-desc" data-es="Evalúa la conducta identificando patrones de pensamiento que generan malestar para reprogramarlos en pensamientos positivos y racionales." data-en="Evaluates behavior by identifying thought patterns that generate discomfort to reprogram them into positive and rational thoughts.">Evalúa la conducta identificando patrones de pensamiento que generan malestar para reprogramarlos en pensamientos positivos y racionales.</div>
+    </div>
+    <div class="tipo-card reveal" style="transition-delay:.06s">
+      <div class="tipo-icon">⚡</div>
+      <div class="tipo-name" data-es="Terapia Breve" data-en="Brief Therapy">Terapia Breve</div>
+      <div class="tipo-desc" data-es="Busca en poco tiempo encontrar solución a problemáticas específicas. Focalizada, efectiva y con resultados en la misma sesión." data-en="Seeks to find solutions to specific problems in a short time. Focused, effective and with results in the same session.">Busca en poco tiempo encontrar solución a problemáticas específicas. Focalizada, efectiva y con resultados en la misma sesión.</div>
+    </div>
+    <div class="tipo-card reveal" style="transition-delay:.12s">
+      <div class="tipo-icon">🌳</div>
+      <div class="tipo-name" data-es="Constelaciones Familiares" data-en="Family Constellations">Constelaciones Familiares</div>
+      <div class="tipo-desc" data-es="Trabaja a través del alma todo el linaje familiar, agradeciendo y honrando las dinámicas heredadas para liberarlas y sanar el sistema." data-en="Works through the soul's entire family lineage, acknowledging and honoring inherited dynamics to release them and heal the system.">Trabaja a través del alma todo el linaje familiar, agradeciendo y honrando las dinámicas heredadas para liberarlas y sanar el sistema.</div>
+    </div>
+    <div class="tipo-card reveal" style="transition-delay:.18s">
+      <div class="tipo-icon">💬</div>
+      <div class="tipo-name" data-es="Interpretación de Palabras" data-en="Word Interpretation">Interpretación de Palabras</div>
+      <div class="tipo-desc" data-es="Registro y mapeo de palabras que oscilan entre el consciente y subconsciente para encontrar la raíz del problema. Conceptos, sueños, emociones y miedos." data-en="Recording and mapping of words that oscillate between the conscious and subconscious to find the root of the problem. Concepts, dreams, emotions and fears.">Registro y mapeo de palabras que oscilan entre el consciente y subconsciente para encontrar la raíz del problema. Conceptos, sueños, emociones y miedos.</div>
+    </div>
+    <div class="tipo-card reveal" style="transition-delay:.24s">
+      <div class="tipo-icon">🌬️</div>
+      <div class="tipo-name" data-es="Meditación e Imaginería" data-en="Meditation & Imagery">Meditación e Imaginería</div>
+      <div class="tipo-desc" data-es="Técnicas de respiración para bajar la ansiedad y meditación guiada. Imaginería para decretar y vivir en abundancia a través de la visualización." data-en="Breathing techniques to lower anxiety and guided meditation. Imagery to decree and live in abundance through visualization.">Técnicas de respiración para bajar la ansiedad y meditación guiada. Imaginería para decretar y vivir en abundancia a través de la visualización.</div>
+    </div>
+    <div class="tipo-card reveal" style="transition-delay:.30s">
+      <div class="tipo-icon">⚖️</div>
+      <div class="tipo-name" data-es="Racional-Emotiva (TRE)" data-en="Rational-Emotive (RET)">Racional-Emotiva (TRE)</div>
+      <div class="tipo-desc" data-es="Identifica creencias irracionales que generan sufrimiento y desarrolla habilidades a través del debate interno para modificarlas en pensamientos racionales y lógicos." data-en="Identifies irrational beliefs that generate suffering and develops skills through internal debate to modify them into rational and logical thoughts.">Identifica creencias irracionales que generan sufrimiento y desarrolla habilidades a través del debate interno para modificarlas en pensamientos racionales y lógicos.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ── SOBRE MÓNICA ── -->
+<section class="about-section" id="monica">
+  <div class="about-visual reveal">🧬</div>
+  <div class="reveal" style="transition-delay:.1s">
+    <p class="s-label" data-es="Sobre mí" data-en="About me">Sobre mí</p>
+    <h2 class="s-title" data-es="Mónica <em>Schekaibán Assad</em>" data-en="Mónica <em>Schekaibán Assad</em>">Mónica <em>Schekaibán Assad</em></h2>
+    <div class="about-body">
+      <p data-es="Soy Psicoterapeuta. Mi interés principal es que comprendas que viniste a este mundo a ser feliz, que con lo que eres y con lo que tienes, es suficiente para lograrlo; que el agradecimiento y el perdón son claves para trascender y poder ser cada día una mejor persona." data-en="I am a Psychotherapist. My main interest is for you to understand that you came to this world to be happy, that with who you are and what you have, it is enough to achieve it; that gratitude and forgiveness are keys to transcend and become a better person every day.">Soy Psicoterapeuta. Mi interés principal es que comprendas que viniste a este mundo a ser feliz, que con lo que eres y con lo que tienes, es suficiente para lograrlo; que el agradecimiento y el perdón son claves para trascender y poder ser cada día una mejor persona.</p>
+      <p data-es="Que amarte es fundamental para que puedas amar y ser amado y aceptado tal cual eres, y que el dar y recibir es parte de la ley del universo para vivir en armonía y equilibrio." data-en="That loving yourself is fundamental so that you can love and be loved and accepted as you are, and that giving and receiving is part of the law of the universe to live in harmony and balance.">Que amarte es fundamental para que puedas amar y ser amado y aceptado tal cual eres, y que el dar y recibir es parte de la ley del universo para vivir en armonía y equilibrio.</p>
+      <p data-es="Mi recorrido suma más de 25 años de estudios y de experiencia clínica, integrando múltiples enfoques terapéuticos para crear un acompañamiento único que respeta la historia y el ritmo de cada persona." data-en="My journey spans more than 25 years of studies and clinical experience, integrating multiple therapeutic approaches to create a unique accompaniment that respects each person's history and rhythm.">Mi recorrido suma más de 25 años de estudios y de experiencia clínica, integrando múltiples enfoques terapéuticos para crear un acompañamiento único que respeta la historia y el ritmo de cada persona.</p>
+    </div>
+    <div class="credentials">
+      <div class="cred-title" data-es="Formación académica" data-en="Academic background">Formación académica</div>
+      <div class="cred-grid">
+        <div class="cred-item"><strong>TRE</strong><span data-es="Terapia Racional Emotiva" data-en="Rational Emotive Therapy">Terapia Racional Emotiva</span></div>
+        <div class="cred-item"><strong>TCC</strong><span data-es="Terapia Cognitivo Conductual" data-en="Cognitive Behavioral Therapy">Terapia Cognitivo Conductual</span></div>
+        <div class="cred-item"><strong>Semiología</strong><span data-es="Significado de la vida cotidiana" data-en="Meaning of everyday life">Significado de la vida cotidiana</span></div>
+        <div class="cred-item"><strong>Constelaciones</strong><span data-es="Sistemáticas Familiares" data-en="Family Constellations">Sistemáticas Familiares</span></div>
+        <div class="cred-item"><strong>Osteopatía</strong><span data-es="Bioenergética — Sanación emocional" data-en="Bioenergetics — Emotional healing">Bioenergética — Sanación emocional</span></div>
+        <div class="cred-item"><strong>Conciencia</strong><span data-es="de Salud — Enfermedades psicosomáticas" data-en="of Health — Psychosomatic illness">de Salud — Enfermedades psicosomáticas</span></div>
+        <div class="cred-item"><strong>Meditación</strong><span data-es="e Imaginería — Transformación de percepción" data-en="and Imagery — Transformation of perception">e Imaginería — Transformación de percepción</span></div>
+        <div class="cred-item"><strong>Lic.</strong><span data-es="Administración de Empresas" data-en="Business Administration">Administración de Empresas</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── ARTICLES ── -->
+<section class="articles-section" id="articulos">
+  <div class="reveal">
+    <p class="s-label" data-es="Mis artículos" data-en="My articles">Mis artículos</p>
+    <h2 class="s-title" data-es="Reflexiones sobre el <em>ser humano</em>" data-en="Reflections on the <em>human being</em>">Reflexiones sobre el <em>ser humano</em></h2>
+  </div>
+  <div class="articles-grid">
+
+    <div class="art-card reveal">
+      <div class="art-header">
+        <div class="art-tag" data-es="Salud Emocional · Artículo" data-en="Emotional Health · Article">Salud Emocional · Artículo</div>
+        <div class="art-title" data-es="La salud emocional podría ser la clave para un mundo mejor" data-en="Emotional health could be the key to a better world">La salud emocional podría ser la clave para un mundo mejor</div>
+      </div>
+      <div class="art-body">
+        <p data-es="La expresión de nuestras emociones fue tabú durante años. Hoy, gracias a la inteligencia emocional, podemos manifestarlas de manera cotidiana y más asertiva. Aprender a manejar nuestras propias frustraciones y desacuerdos desarrollando nuestra capacidad para escuchar son factores indispensables para nuestra salud emocional." data-en="The expression of our emotions was taboo for years. Today, thanks to emotional intelligence, we can express them in everyday life more assertively. Learning to manage our own frustrations and disagreements by developing our capacity to listen are essential factors for our emotional health.">La expresión de nuestras emociones fue tabú durante años. Hoy, gracias a la inteligencia emocional, podemos manifestarlas de manera cotidiana y más asertiva. Aprender a manejar nuestras propias frustraciones y desacuerdos desarrollando nuestra capacidad para escuchar son factores indispensables para nuestra salud emocional.</p>
+        <p data-es="Escuchar con empatía significa estar totalmente disponible, reconociendo y reflejando las emociones y necesidades humanas de unos y otros. Este cambio en nuestros hábitos comunicativos podría ser la clave para un mundo con menos violencia y más paz interna." data-en="Listening with empathy means being fully available, recognizing and reflecting the emotions and needs of one another. This change in our communicative habits could be the key to a world with less violence and more inner peace.">Escuchar con empatía significa estar totalmente disponible, reconociendo y reflejando las emociones y necesidades humanas de unos y otros. Este cambio en nuestros hábitos comunicativos podría ser la clave para un mundo con menos violencia y más paz interna.</p>
+      </div>
+      <div class="art-footer">
+        <span class="art-author">Mónica Schekaibán Assad</span>
+        <a href="#" class="read-more" data-es="Leer artículo →" data-en="Read article →">Leer artículo →</a>
+      </div>
+    </div>
+
+    <div class="art-card reveal" style="transition-delay:.08s">
+      <div class="art-header">
+        <div class="art-tag" data-es="Desarrollo Humano · Artículo" data-en="Human Development · Article">Desarrollo Humano · Artículo</div>
+        <div class="art-title" data-es="La importancia de la experiencia del nacimiento" data-en="The importance of the birth experience">La importancia de la experiencia del nacimiento</div>
+      </div>
+      <div class="art-body">
+        <p data-es="El nacimiento implica el desprendimiento del bebé del cuerpo materno, y en ese momento empieza la vida independiente del nuevo ser humano — la primera percepción del mundo que nos recibe. El impacto de nuestra forma de nacer repercutirá en toda nuestra vida." data-en="Birth implies the baby's separation from the mother's body, and at that moment the independent life of the new human being begins — the first perception of the world that receives us. The impact of how we are born will resonate throughout our entire life.">El nacimiento implica el desprendimiento del bebé del cuerpo materno, y en ese momento empieza la vida independiente del nuevo ser humano — la primera percepción del mundo que nos recibe. El impacto de nuestra forma de nacer repercutirá en toda nuestra vida.</p>
+        <p data-es="La experiencia que vive la mamá durante el embarazo es fundamental. Dar vida es un regalo divino, un momento espiritual lleno de significado y magia. Es momento de honrar, agradecer y trascender." data-en="The experience the mother has during pregnancy is fundamental. Giving life is a divine gift, a spiritual moment full of meaning and magic. It is a moment to honor, give thanks and transcend.">La experiencia que vive la mamá durante el embarazo es fundamental. Dar vida es un regalo divino, un momento espiritual lleno de significado y magia. Es momento de honrar, agradecer y trascender.</p>
+      </div>
+      <div class="art-footer">
+        <span class="art-author">Mónica Schekaibán Assad</span>
+        <a href="#" class="read-more" data-es="Leer artículo →" data-en="Read article →">Leer artículo →</a>
+      </div>
+    </div>
+
+    <div class="art-card reveal" style="transition-delay:.16s">
+      <div class="art-header">
+        <div class="art-tag" data-es="Psicología · Artículo" data-en="Psychology · Article">Psicología · Artículo</div>
+        <div class="art-title" data-es="El proceso de socialización en el desarrollo de la personalidad" data-en="The socialization process in personality development">El proceso de socialización en el desarrollo de la personalidad</div>
+      </div>
+      <div class="art-body">
+        <p data-es="El desarrollo y la formación de la personalidad se presenta durante toda la vida del ser humano desde que nace hasta que muere. Las circunstancias socioculturales e históricas que vive en determinadas etapas de su vida determinan las características de cada persona." data-en="The development and formation of personality occurs throughout the life of the human being from birth to death. The sociocultural and historical circumstances lived in certain stages of life determine each person's characteristics.">El desarrollo y la formación de la personalidad se presenta durante toda la vida del ser humano desde que nace hasta que muere. Las circunstancias socioculturales e históricas que vive en determinadas etapas de su vida determinan las características de cada persona.</p>
+        <p data-es="Ninguna persona es la misma a lo largo de su vida. Durante su desarrollo se pueden presentar algunas crisis que rompan con el equilibrio y estabilidad, y la personalidad se definirá dependiendo de las experiencias vividas." data-en="No person is the same throughout their life. During development some crises may arise that break the balance and stability, and personality will be defined depending on the experiences lived.">Ninguna persona es la misma a lo largo de su vida. Durante su desarrollo se pueden presentar algunas crisis que rompan con el equilibrio y estabilidad, y la personalidad se definirá dependiendo de las experiencias vividas.</p>
+      </div>
+      <div class="art-footer">
+        <span class="art-author">Mónica Schekaibán Assad</span>
+        <a href="#" class="read-more" data-es="Leer artículo →" data-en="Read article →">Leer artículo →</a>
+      </div>
+    </div>
+
+    <div class="art-card reveal" style="transition-delay:.24s">
+      <div class="art-header">
+        <div class="art-tag" data-es="Vocación · Artículo" data-en="Vocation · Article">Vocación · Artículo</div>
+        <div class="art-title" data-es="¿Puedo hacer de mi trabajo una vocación?" data-en="Can I make my work a vocation?">¿Puedo hacer de mi trabajo una vocación?</div>
+      </div>
+      <div class="art-body">
+        <p data-es="La vocación es el gusto o inclinación que se tiene hacia una profesión o carrera — un estado de felicidad que da hacer lo que a uno le gusta y le otorga satisfacción plena y alegría. Es la inspiración que el individuo escucha desde temprana edad o en cualquier momento de su camino de vida." data-en="Vocation is the taste or inclination one has towards a profession or career — a state of happiness that comes from doing what one likes and gives full satisfaction and joy. It is the inspiration that the individual hears from an early age or at any moment of their life path.">La vocación es el gusto o inclinación que se tiene hacia una profesión o carrera — un estado de felicidad que da hacer lo que a uno le gusta y le otorga satisfacción plena y alegría. Es la inspiración que el individuo escucha desde temprana edad o en cualquier momento de su camino de vida.</p>
+        <p data-es="Cuando uno vive el trabajo como una vocación, disfruta más, le encuentra un sentido y siente cómo aporta positivamente alegría a su vida y a quienes le rodean." data-en="When one lives work as a vocation, one enjoys it more, finds meaning in it, and feels how it positively contributes joy to one's life and those around them.">Cuando uno vive el trabajo como una vocación, disfruta más, le encuentra un sentido y siente cómo aporta positivamente alegría a su vida y a quienes le rodean.</p>
+      </div>
+      <div class="art-footer">
+        <span class="art-author">Mónica Schekaibán Assad</span>
+        <a href="#" class="read-more" data-es="Leer artículo →" data-en="Read article →">Leer artículo →</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── FAQ ── -->
+<section class="faq-section" id="faq">
+  <div class="reveal">
+    <p class="s-label" data-es="Preguntas frecuentes" data-en="Frequently asked questions">Preguntas frecuentes</p>
+    <h2 class="s-title" data-es="Lo que me <em>preguntan más</em>" data-en="What I'm <em>asked most</em>">Lo que me <em>preguntan más</em></h2>
+  </div>
+  <div class="faq-grid reveal" style="transition-delay:.1s">
+
+    <div class="faq-item">
+      <button class="faq-btn" onclick="toggleFaq(this)">
+        <span class="faq-q" data-es="¿Cómo sé si necesito terapia?" data-en="How do I know if I need therapy?">¿Cómo sé si necesito terapia?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p data-es="Los dolores emocionales que no han cedido por cierto tiempo — angustia, temor, ansiedad, estrés, enojo, rencor, dificultades de pareja, auto rechazo, preocupaciones — son señales de que necesitas ayuda profesional. Las enfermedades son reflejadas en el cuerpo y son consecuencia de una mala forma de pensar sobre nosotros mismos." data-en="Emotional pains that have not subsided for some time — anguish, fear, anxiety, stress, anger, resentment, relationship difficulties, self-rejection, worries — are signs that you need professional help. Diseases are reflected in the body and are the consequence of a poor way of thinking about ourselves.">Los dolores emocionales que no han cedido por cierto tiempo — angustia, temor, ansiedad, estrés, enojo, rencor, dificultades de pareja, auto rechazo, preocupaciones — son señales de que necesitas ayuda profesional. Las enfermedades son reflejadas en el cuerpo y son consecuencia de una mala forma de pensar sobre nosotros mismos.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-btn" onclick="toggleFaq(this)">
+        <span class="faq-q" data-es="¿Cuánto dura un tratamiento?" data-en="How long does a treatment last?">¿Cuánto dura un tratamiento?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p data-es="La idea es que la persona aprenda en pocas sesiones habilidades para enfrentar conflictos y debatir emociones negativas. Hay muchas herramientas y diferentes disciplinas que se pueden utilizar al mismo tiempo para lograr paz mental, salud física y emocional." data-en="The idea is for the person to learn skills in a few sessions to face conflicts and debate negative emotions. There are many tools and different disciplines that can be used simultaneously to achieve mental, physical and emotional peace.">La idea es que la persona aprenda en pocas sesiones habilidades para enfrentar conflictos y debatir emociones negativas. Hay muchas herramientas y diferentes disciplinas que se pueden utilizar al mismo tiempo para lograr paz mental, salud física y emocional.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-btn" onclick="toggleFaq(this)">
+        <span class="faq-q" data-es="¿Diferencia entre terapeuta, psicoterapeuta y psicólogo?" data-en="Difference between therapist, psychotherapist and psychologist?">¿Diferencia entre terapeuta, psicoterapeuta y psicólogo?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <ul>
+          <li data-es="El Terapeuta se tituló de una licenciatura en Ciencias Sociales y también estudió una maestría o posgrado en el área clínica, incluyendo horas de supervisión." data-en="The Therapist graduated from a Social Sciences degree and also studied a master's or postgraduate degree in the clinical area, including supervision hours.">El Terapeuta se tituló de una licenciatura en Ciencias Sociales y también estudió una maestría o posgrado en el área clínica, incluyendo horas de supervisión.</li>
+          <li data-es="El Psicólogo se tituló de la licenciatura en Psicología. No todos los psicólogos están calificados para dar terapia." data-en="The Psychologist graduated from a Psychology degree. Not all psychologists are qualified to give therapy.">El Psicólogo se tituló de la licenciatura en Psicología. No todos los psicólogos están calificados para dar terapia.</li>
+          <li data-es="El Psicoterapeuta es el psicólogo que además estudió una maestría o posgrado específicamente en el área clínica, incluyendo supervisión y terapia personal." data-en="The Psychotherapist is the psychologist who also studied a master's or postgraduate degree specifically in the clinical area, including supervision and personal therapy.">El Psicoterapeuta es el psicólogo que además estudió una maestría o posgrado específicamente en el área clínica, incluyendo supervisión y terapia personal.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-btn" onclick="toggleFaq(this)">
+        <span class="faq-q" data-es="¿Qué se requiere para que un tratamiento sea exitoso?" data-en="What is required for a successful treatment?">¿Qué se requiere para que un tratamiento sea exitoso?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p data-es="Compromiso, valentía, auto cuestionamiento, paciencia, honestidad y confianza. Ante todo, aceptar que se tienen conflictos para que funcione el tratamiento. La persona debe ir reconociendo sus puntos débiles y errores y cambiarlos desde la raíz (pensamiento-creencias)." data-en="Commitment, courage, self-questioning, patience, honesty and trust. Above all, accepting that one has conflicts for the treatment to work. The person must recognize their weaknesses and mistakes and change them from the root (thought-beliefs).">Compromiso, valentía, auto cuestionamiento, paciencia, honestidad y confianza. Ante todo, aceptar que se tienen conflictos para que funcione el tratamiento. La persona debe ir reconociendo sus puntos débiles y errores y cambiarlos desde la raíz (pensamiento-creencias).</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-btn" onclick="toggleFaq(this)">
+        <span class="faq-q" data-es="¿Puedo volverme dependiente del terapeuta?" data-en="Can I become dependent on the therapist?">¿Puedo volverme dependiente del terapeuta?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p data-es="La terapia está estructurada para que esto no suceda, ya que el terapeuta no dice qué hacer, no da consejos, ni toma decisiones por el paciente. El terapeuta solo orienta y enseña cómo la persona puede alcanzar sus objetivos." data-en="Therapy is structured so that this does not happen, as the therapist does not tell you what to do, does not give advice, nor make decisions for the patient. The therapist only guides and teaches how the person can achieve their goals.">La terapia está estructurada para que esto no suceda, ya que el terapeuta no dice qué hacer, no da consejos, ni toma decisiones por el paciente. El terapeuta solo orienta y enseña cómo la persona puede alcanzar sus objetivos.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-btn" onclick="toggleFaq(this)">
+        <span class="faq-q" data-es="¿Cómo identifico a un buen terapeuta?" data-en="How do I identify a good therapist?">¿Cómo identifico a un buen terapeuta?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <ul>
+          <li data-es="Escucha sin juicio — los juicios de valor quedan fuera de cualquier proceso terapéutico" data-en="Listens without judgment — value judgments are outside any therapeutic process">Escucha sin juicio — los juicios de valor quedan fuera de cualquier proceso terapéutico</li>
+          <li data-es="Utiliza el tiempo de la sesión para comprenderte" data-en="Uses the session time to understand you">Utiliza el tiempo de la sesión para comprenderte</li>
+          <li data-es="Te cobra una cifra razonable: está comprobado que los tratamientos gratuitos no funcionan" data-en="Charges a reasonable fee: it is proven that free treatments do not work">Te cobra una cifra razonable: está comprobado que los tratamientos gratuitos no funcionan</li>
+          <li data-es="Respeta la relación terapeuta-paciente: confidencialidad, respeto, ética y valores" data-en="Respects the therapist-patient relationship: confidentiality, respect, ethics and values">Respeta la relación terapeuta-paciente: confidencialidad, respeto, ética y valores</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="faq-item faq-wide">
+      <button class="faq-btn" onclick="toggleFaq(this)">
+        <span class="faq-q" data-es="¿Qué tipo de padecimientos se tratan?" data-en="What types of conditions are treated?">¿Qué tipo de padecimientos se tratan?</span>
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <ul style="display:grid;grid-template-columns:1fr 1fr;gap:0.2rem 2rem">
+          <li data-es="Dificultades en relaciones interpersonales: pareja, hijos, amistades, familia" data-en="Difficulties in interpersonal relationships: partner, children, friendships, family">Dificultades en relaciones interpersonales: pareja, hijos, amistades, familia</li>
+          <li data-es="Conflictos con nosotros mismos: devaluación, inseguridad, rechazo" data-en="Conflicts with ourselves: devaluation, insecurity, rejection">Conflictos con nosotros mismos: devaluación, inseguridad, rechazo</li>
+          <li data-es="Incapacidad para soltar recuerdos del pasado: duelos, falta de perdón" data-en="Inability to release memories of the past: grief, lack of forgiveness">Incapacidad para soltar recuerdos del pasado: duelos, falta de perdón</li>
+          <li data-es="Eventos traumáticos: accidentes, fallecimientos, pérdidas" data-en="Traumatic events: accidents, deaths, losses">Eventos traumáticos: accidentes, fallecimientos, pérdidas</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── CONTACT ── -->
+<section class="contact" id="contacto">
+  <div class="reveal">
+    <p class="s-label" data-es="Comenzar" data-en="Get started">Comenzar</p>
+    <h2 class="s-title" data-es="¿Lista para <em>empezar</em>?" data-en="Ready to <em>begin</em>?">¿Lista para <em>empezar</em>?</h2>
+    <p class="c-body"
+      data-es="Si algo resonó en ti al leer esto, es una señal. No hace falta tener todo claro para dar el primer paso. Puedes escribirme directamente por WhatsApp o llenar el formulario y me pongo en contacto contigo."
+      data-en="If something resonated with you while reading this, that is a sign. You don't need to have everything figured out to take the first step. You can write to me directly on WhatsApp or fill in the form and I'll get in touch.">Si algo resonó en ti al leer esto, es una señal. No hace falta tener todo claro para dar el primer paso. Puedes escribirme directamente por WhatsApp o llenar el formulario y me pongo en contacto contigo.</p>
+    <div class="c-details">
+      <div class="c-item">
+        <span class="c-icon">💬</span>
+        <div>
+          <span class="c-lbl">WhatsApp</span>
+          <span class="c-val">+52 55 5106 3488</span>
+        </div>
+      </div>
+      <div class="c-item">
+        <span class="c-icon">🌐</span>
+        <div>
+          <span class="c-lbl">Web</span>
+          <span class="c-val">innerpath-soultherapy.com</span>
+        </div>
+      </div>
+      <div class="c-item">
+        <span class="c-icon">🗣️</span>
+        <div>
+          <span class="c-lbl" data-es="Idiomas" data-en="Languages">Idiomas</span>
+          <span class="c-val">Español · English</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="c-form reveal" style="transition-delay:.1s">
+    <div class="f-row">
+      <div class="f-field">
+        <label data-es="Nombre" data-en="First name">Nombre</label>
+        <input type="text" placeholder="Tu nombre"/>
+      </div>
+      <div class="f-field">
+        <label data-es="Apellido" data-en="Last name">Apellido</label>
+        <input type="text" placeholder="Tu apellido"/>
+      </div>
+    </div>
+    <div class="f-field">
+      <label>Email</label>
+      <input type="email" placeholder="tu@email.com"/>
+    </div>
+    <div class="f-field">
+      <label>WhatsApp</label>
+      <input type="tel" placeholder="+52 55 0000 0000"/>
+    </div>
+    <div class="f-field">
+      <label data-es="Me interesa" data-en="I'm interested in">Me interesa</label>
+      <select>
+        <option data-es="Terapia Individual" data-en="Individual Therapy">Terapia Individual</option>
+        <option data-es="Interpretación de Emociones (3 hrs)" data-en="Emotion Interpretation (3 hrs)">Interpretación de Emociones (3 hrs)</option>
+        <option data-es="Terapia de Pareja" data-en="Couples Therapy">Terapia de Pareja</option>
+        <option data-es="Terapia Adolescentes" data-en="Adolescent Therapy">Terapia Adolescentes</option>
+        <option data-es="Estrategias para Empresas" data-en="Business Strategies">Estrategias para Empresas</option>
+        <option data-es="Grupos de Desarrollo de Conciencia" data-en="Consciousness Development Groups">Grupos de Desarrollo de Conciencia</option>
+        <option data-es="Psicoterapia Online" data-en="Online Psychotherapy">Psicoterapia Online</option>
+        <option data-es="No sé todavía / Más información" data-en="Not sure yet / More info">No sé todavía / Más información</option>
+      </select>
+    </div>
+    <div class="f-field">
+      <label data-es="Mensaje" data-en="Message">Mensaje</label>
+      <textarea placeholder="Cuéntame un poco qué te trae aquí..."></textarea>
+    </div>
+    <button class="btn-p" style="width:100%;justify-content:center;" data-es="Enviar mensaje" data-en="Send Message">Enviar mensaje</button>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="footer-logo">Inner Path · Soul Therapy</div>
+  <div style="display:flex;gap:1.5rem">
+    <a href="innerpath-soultherapy.html" data-es="Soul Therapy →" data-en="Soul Therapy →">Soul Therapy →</a>
+    <a href="#">Instagram</a>
+    <a href="https://wa.me/525551063488">WhatsApp</a>
+  </div>
+  <span>© 2025 Mónica Schekaibán Assad</span>
+</footer>
+
+<script>
+/* ── LANGUAGE TOGGLE ── */
+function setLang(lang) {
+  document.documentElement.setAttribute('data-lang', lang);
+  document.documentElement.lang = lang;
+  document.getElementById('btn-es').classList.toggle('active', lang === 'es');
+  document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+  document.querySelectorAll('[data-es]').forEach(el => {
+    const val = el.getAttribute('data-' + lang);
+    if (!val) return;
+    if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+      el.placeholder = val;
+    } else if (el.tagName === 'OPTION') {
+      el.textContent = val;
+    } else {
+      el.innerHTML = val;
+    }
+  });
+  try { localStorage.setItem('ip-lang', lang); } catch(e) {}
+}
+window.setLang = setLang;
+try { const s = localStorage.getItem('ip-lang'); if (s && s !== 'es') setLang(s); } catch(e) {}
+
+/* ── MOBILE NAV ── */
+const burger = document.getElementById('burger');
+const drawer = document.getElementById('nav-drawer');
+function closeDrawer() {
+  drawer.classList.remove('open');
+  burger.setAttribute('aria-expanded', 'false');
+}
+function openDrawer() {
+  drawer.classList.add('open');
+  burger.setAttribute('aria-expanded', 'true');
+}
+window.closeDrawer = closeDrawer;
+if (burger && drawer) {
+  burger.addEventListener('click', () => drawer.classList.contains('open') ? closeDrawer() : openDrawer());
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && drawer.classList.contains('open')) closeDrawer(); });
+  document.addEventListener('click', e => { if (drawer.classList.contains('open') && !drawer.contains(e.target) && !burger.contains(e.target)) closeDrawer(); });
+}
+
+/* ── FAQ ACCORDION ── */
+function toggleFaq(btn) {
+  const answer = btn.nextElementSibling;
+  const isOpen = answer.classList.contains('open');
+  document.querySelectorAll('.faq-answer').forEach(a => a.classList.remove('open'));
+  document.querySelectorAll('.faq-btn').forEach(b => b.classList.remove('open'));
+  if (!isOpen) {
+    answer.classList.add('open');
+    btn.classList.add('open');
+  }
+}
+window.toggleFaq = toggleFaq;
+
+/* ── SCROLL REVEAL ── */
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+  });
+}, { threshold: 0.08 });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+</body>
+</html>
