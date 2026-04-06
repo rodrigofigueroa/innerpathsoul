@@ -3,10 +3,12 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Psicoterapia · Mónica Schekaibán Assad — Inner Path Soul Therapy</title>
-<meta name="description" content="Psicoterapia individual, de pareja, adolescentes y empresas con Mónica Schekaibán Assad. Más de 25 años de experiencia. TRE, TCC, Constelaciones Familiares, Semiología. Ciudad de México y en línea."/>
+<title>Psicoterapia en CDMX | Mónica Schekaibán Assad — Inner Path Soul Therapy</title>
+<meta name="description" content="Psicoterapia individual, de pareja y adolescentes en CDMX. +25 años. TRE, TCC, Constelaciones Familiares. Mónica Schekaibán Assad — Inner Path Soul Therapy."/>
+<meta name="keywords" content="psicoterapia CDMX, terapia de pareja, terapia individual, terapia adolescentes, TRE, TCC, constelaciones familiares, semiología, Mónica Schekaibán Assad, Inner Path Soul Therapy"/>
 <meta name="author" content="Mónica Schekaibán Assad"/>
 <meta name="robots" content="index, follow"/>
+<link rel="sitemap" type="application/xml" href="/sitemap.xml"/>
 <link rel="canonical" href="https://innerpath-soultherapy.com/psicoterapia"/>
 <link rel="alternate" hreflang="es" href="https://innerpath-soultherapy.com/psicoterapia"/>
 <link rel="alternate" hreflang="en" href="https://innerpath-soultherapy.com/en/psychotherapy"/>
@@ -15,7 +17,7 @@
 <meta property="og:type" content="website"/>
 <meta property="og:url" content="https://innerpath-soultherapy.com/psicoterapia"/>
 <meta property="og:title" content="Psicoterapia · Mónica Schekaibán Assad"/>
-<meta property="og:description" content="Terapia individual, de pareja, adolescentes y empresas. Más de 25 años de experiencia en CDMX y en línea."/>
+<meta property="og:description" content="Psicoterapia individual, de pareja y adolescentes. TRE, TCC, Constelaciones Familiares. Más de 25 años. Mónica Schekaibán Assad, CDMX y en línea."/>
 <meta property="og:image" content="https://innerpath-soultherapy.com/og-image.jpg"/>
 <meta property="og:image:width" content="1200"/>
 <meta property="og:image:height" content="630"/>
@@ -26,17 +28,19 @@
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:title" content="Psicoterapia · Mónica Schekaibán Assad"/>
-<meta name="twitter:description" content="Terapia individual, de pareja, adolescentes y empresas. Más de 25 años de experiencia."/>
+<meta name="twitter:description" content="Psicoterapia individual, de pareja y adolescentes en CDMX. TRE, TCC, Constelaciones. Mónica Schekaibán Assad."/>
 <meta name="twitter:image" content="https://innerpath-soultherapy.com/og-image.jpg"/>
 <meta name="twitter:image:alt" content="Mónica Schekaibán Assad — Psicoterapia"/>
 <meta name="theme-color" content="#110E09"/>
 <!-- Structured Data -->
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
-{"@type":"Person","@id":"https://innerpath-soultherapy.com/#person","name":"Mónica Schekaibán Assad","jobTitle":"Psicoterapeuta","url":"https://innerpath-soultherapy.com","telephone":"+525551063488","address":{"@type":"PostalAddress","addressLocality":"Ciudad de México","addressCountry":"MX"},"knowsAbout":["Terapia Cognitivo Conductual","Terapia Racional Emotiva","Constelaciones Familiares","Semiología","Soul Therapy","Breathwork holotrópico"]},
+{"@type":["Person","MedicalBusiness"],"@id":"https://innerpath-soultherapy.com/#person","name":"Mónica Schekaibán Assad","jobTitle":"Psicoterapeuta","url":"https://innerpath-soultherapy.com","telephone":"+525551063488","address":{"@type":"PostalAddress","addressLocality":"Ciudad de México","addressCountry":"MX"},"knowsAbout":["Terapia Cognitivo Conductual","Terapia Racional Emotiva","Constelaciones Familiares","Semiología","Soul Therapy","Breathwork holotrópico"]},
+{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Inner Path Soul Therapy","item":"https://innerpath-soultherapy.com/"},{"@type":"ListItem","position":2,"name":"Psicoterapia","item":"https://innerpath-soultherapy.com/psicoterapia"}]},
 {"@type":"WebPage","@id":"https://innerpath-soultherapy.com/psicoterapia","url":"https://innerpath-soultherapy.com/psicoterapia","name":"Psicoterapia · Mónica Schekaibán Assad","description":"Psicoterapia individual, de pareja, adolescentes y empresas con Mónica Schekaibán Assad.","isPartOf":{"@type":"WebSite","url":"https://innerpath-soultherapy.com","name":"Inner Path Soul Therapy"}}
 ]}
 </script>
+<link rel="preload" as="font" type="font/woff2" href="https://fonts.gstatic.com/s/cormorantgaramond/v22/BXRvvFCCwr2JsAt6OG2Sg9TqPM.woff2" crossorigin/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet"/>
@@ -287,13 +291,28 @@ footer a:hover{color:var(--amber-lt)}
   .cred-grid{grid-template-columns:1fr}
   .f-row{grid-template-columns:1fr}
 }
+
+/* prefers-reduced-motion */
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}
+  html{scroll-behavior:auto}
+  .reveal{opacity:1;transform:none}
+}
+
+/* print */
+@media print{
+  .nav,.nav-drawer,.lang-pill{display:none!important}
+  body{background:#fff!important;color:#000!important}
+  section{padding:2rem 1rem!important}
+  a[href]::after{content:" ("attr(href)")";font-size:.75em;color:#555}
+}
 </style>
 </head>
 <body>
 
 <!-- ── NAV ── -->
 <header class="nav">
-  <a href="innerpath-soultherapy.html" class="nav-logo">
+  <a href="index.html" class="nav-logo">
     <span>Inner Path</span>
     <span data-es="Soul Therapy · Psicoterapia" data-en="Soul Therapy · Psychotherapy">Soul Therapy · Psicoterapia</span>
   </a>
@@ -303,7 +322,7 @@ footer a:hover{color:var(--amber-lt)}
     <a href="#articulos" data-es="Artículos" data-en="Articles">Artículos</a>
     <a href="#faq"       data-es="FAQ"       data-en="FAQ">FAQ</a>
     <a href="#contacto"  data-es="Contacto"  data-en="Contact">Contacto</a>
-    <a href="innerpath-soultherapy.html" class="cross-link" data-es="← Soul Therapy" data-en="← Soul Therapy">← Soul Therapy</a>
+    <a href="index.html" class="cross-link" data-es="← Soul Therapy" data-en="← Soul Therapy">← Soul Therapy</a>
   </nav>
   <div style="display:flex;align-items:center;gap:.5rem">
     <div class="lang-pill">
@@ -324,7 +343,7 @@ footer a:hover{color:var(--amber-lt)}
   <a href="#articulos"    onclick="closeDrawer()" data-es="Artículos"    data-en="Articles">Artículos</a>
   <a href="#faq"          onclick="closeDrawer()" data-es="FAQ"          data-en="FAQ">FAQ</a>
   <a href="#contacto"     onclick="closeDrawer()" data-es="Contacto"     data-en="Contact">Contacto</a>
-  <a href="innerpath-soultherapy.html" data-es="← Soul Therapy" data-en="← Soul Therapy">← Soul Therapy</a>
+  <a href="index.html" data-es="← Soul Therapy" data-en="← Soul Therapy">← Soul Therapy</a>
 </nav>
 
 <!-- ── HERO ── -->
@@ -690,7 +709,7 @@ footer a:hover{color:var(--amber-lt)}
       </div>
       <div class="art-footer">
         <span class="art-author">Mónica Schekaibán Assad</span>
-        <a href="#" class="read-more" data-es="Leer artículo →" data-en="Read article →">Leer artículo →</a>
+        <a href="articulos.html#art-01" class="read-more" data-es="Leer artículo →" data-en="Read article →">Leer artículo →</a>
       </div>
     </div>
 
@@ -705,7 +724,7 @@ footer a:hover{color:var(--amber-lt)}
       </div>
       <div class="art-footer">
         <span class="art-author">Mónica Schekaibán Assad</span>
-        <a href="#" class="read-more" data-es="Leer artículo →" data-en="Read article →">Leer artículo →</a>
+        <a href="articulos.html#art-02" class="read-more" data-es="Leer artículo →" data-en="Read article →">Leer artículo →</a>
       </div>
     </div>
 
@@ -720,7 +739,7 @@ footer a:hover{color:var(--amber-lt)}
       </div>
       <div class="art-footer">
         <span class="art-author">Mónica Schekaibán Assad</span>
-        <a href="#" class="read-more" data-es="Leer artículo →" data-en="Read article →">Leer artículo →</a>
+        <a href="articulos.html#art-03" class="read-more" data-es="Leer artículo →" data-en="Read article →">Leer artículo →</a>
       </div>
     </div>
 
@@ -735,7 +754,7 @@ footer a:hover{color:var(--amber-lt)}
       </div>
       <div class="art-footer">
         <span class="art-author">Mónica Schekaibán Assad</span>
-        <a href="#" class="read-more" data-es="Leer artículo →" data-en="Read article →">Leer artículo →</a>
+        <a href="articulos.html#art-05" class="read-more" data-es="Leer artículo →" data-en="Read article →">Leer artículo →</a>
       </div>
     </div>
 
@@ -760,7 +779,7 @@ footer a:hover{color:var(--amber-lt)}
       </div>
       <div class="art-footer">
         <span class="art-author">Mónica Schekaibán Assad</span>
-        <a href="#" class="read-more" data-es="Leer artículo →" data-en="Read article →">Leer artículo →</a>
+        <a href="articulos.html#art-04" class="read-more" data-es="Leer artículo →" data-en="Read article →">Leer artículo →</a>
       </div>
     </div>
 
@@ -776,21 +795,21 @@ footer a:hover{color:var(--amber-lt)}
   <div class="faq-grid reveal" style="transition-delay:.1s">
 
     <div class="faq-item">
-      <button class="faq-btn" onclick="toggleFaq(this)">
+      <button class="faq-btn" id="fp-btn-1" aria-expanded="false" aria-controls="fp-body-1" onclick="toggleFaq(this)">
         <span class="faq-q" data-es="¿Cómo sé si necesito terapia?" data-en="How do I know if I need therapy?">¿Cómo sé si necesito terapia?</span>
         <span class="faq-icon">+</span>
       </button>
-      <div class="faq-answer">
+      <div class="faq-answer" id="fp-body-1" role="region" aria-labelledby="fp-btn-1">
         <p data-es="Los dolores emocionales que no han cedido por cierto tiempo — angustia, temor, ansiedad, estrés, enojo, rencor, dificultades de pareja, auto rechazo, preocupaciones — son señales de que necesitas ayuda profesional. Las enfermedades son reflejadas en el cuerpo y son consecuencia de una mala forma de pensar sobre nosotros mismos y de los demás. Si tu cuerpo te manda señales de malestar, es momento de ir a terapia e identificar qué lo está provocando y resolverlo desde la mente y el corazón." data-en="Emotional pains that have not subsided — anguish, fear, anxiety, stress, anger, resentment, relationship difficulties, self-rejection, worries — are signs that you need professional help. Illnesses are reflected in the body and are a consequence of poor ways of thinking about ourselves and others. If your body is sending you discomfort signals, it is time to seek therapy, identify what is causing it and resolve it from the mind and the heart.">Los dolores emocionales que no han cedido por cierto tiempo — angustia, temor, ansiedad, estrés, enojo, rencor, dificultades de pareja, auto rechazo, preocupaciones — son señales de que necesitas ayuda profesional. Las enfermedades son reflejadas en el cuerpo y son consecuencia de una mala forma de pensar sobre nosotros mismos y de los demás. Si tu cuerpo te manda señales de malestar, es momento de ir a terapia e identificar qué lo está provocando y resolverlo desde la mente y el corazón.</p>
       </div>
     </div>
 
     <div class="faq-item">
-      <button class="faq-btn" onclick="toggleFaq(this)">
+      <button class="faq-btn" id="fp-btn-2" aria-expanded="false" aria-controls="fp-body-2" onclick="toggleFaq(this)">
         <span class="faq-q" data-es="¿Para qué sirve la psicoterapia?" data-en="What is psychotherapy for?">¿Para qué sirve la psicoterapia?</span>
         <span class="faq-icon">+</span>
       </button>
-      <div class="faq-answer">
+      <div class="faq-answer" id="fp-body-2" role="region" aria-labelledby="fp-btn-2">
         <ul>
           <li data-es="Aprender a tomar mejores decisiones, basadas en un razonamiento crítico, lógico y real" data-en="Learn to make better decisions based on critical, logical and real reasoning">Aprender a tomar mejores decisiones, basadas en un razonamiento crítico, lógico y real</li>
           <li data-es="Aprender a estar más con uno mismo, aumentando la introspección y el autoconocimiento" data-en="Learn to be more with oneself, increasing introspection and self-knowledge">Aprender a estar más con uno mismo, aumentando la introspección y el autoconocimiento</li>
@@ -804,81 +823,81 @@ footer a:hover{color:var(--amber-lt)}
     </div>
 
     <div class="faq-item">
-      <button class="faq-btn" onclick="toggleFaq(this)">
+      <button class="faq-btn" id="fp-btn-3" aria-expanded="false" aria-controls="fp-body-3" onclick="toggleFaq(this)">
         <span class="faq-q" data-es="¿Cuánto dura un tratamiento?" data-en="How long does a treatment last?">¿Cuánto dura un tratamiento?</span>
         <span class="faq-icon">+</span>
       </button>
-      <div class="faq-answer">
+      <div class="faq-answer" id="fp-body-3" role="region" aria-labelledby="fp-btn-3">
         <p data-es="La idea es que la persona aprenda en pocas sesiones habilidades para enfrentar conflictos y debatir emociones negativas. Hay muchas herramientas y diferentes disciplinas que se pueden utilizar al mismo tiempo para lograr paz mental, salud física y emocional, y poder disfrutar con plenitud la vida." data-en="The idea is for the person to learn skills in a few sessions to face conflicts and debate negative emotions. There are many tools and different disciplines that can be used simultaneously to achieve mental, physical and emotional peace, and be able to fully enjoy life.">La idea es que la persona aprenda en pocas sesiones habilidades para enfrentar conflictos y debatir emociones negativas. Hay muchas herramientas y diferentes disciplinas que se pueden utilizar al mismo tiempo para lograr paz mental, salud física y emocional, y poder disfrutar con plenitud la vida.</p>
       </div>
     </div>
 
     <div class="faq-item">
-      <button class="faq-btn" onclick="toggleFaq(this)">
+      <button class="faq-btn" id="fp-btn-4" aria-expanded="false" aria-controls="fp-body-4" onclick="toggleFaq(this)">
         <span class="faq-q" data-es="¿Qué hace la persona durante la psicoterapia?" data-en="What does the person do during psychotherapy?">¿Qué hace la persona durante la psicoterapia?</span>
         <span class="faq-icon">+</span>
       </button>
-      <div class="faq-answer">
+      <div class="faq-answer" id="fp-body-4" role="region" aria-labelledby="fp-btn-4">
         <p data-es="Ante todo, acepta que tiene conflictos para que funcione el tratamiento. La persona debe ir reconociendo sus puntos débiles y errores y cambiarlos desde la raíz (pensamiento-creencias), para ir transmutando todo aquello que le hace daño. Es una tarea que se llevará todos los días, para que aprenda a identificar, analizar, cuestionar, pensar y reflexionar sobre todo lo que le genere malestar. También se compromete a ser honesta consigo misma y con el terapeuta, con la certeza de que es un espacio para desahogarse donde puede ser escuchada sin crítica ni juicio alguno." data-en="Above all, she accepts that she has conflicts so that the treatment works. The person must recognize their weaknesses and mistakes and change them from the root (thought-beliefs), transmuting everything that harms them. It is a daily task, to learn to identify, analyze, question, think and reflect on everything that generates discomfort. She also commits to being honest with herself and the therapist, with the certainty that it is a space to open up where she can be heard without any criticism or judgment.">Ante todo, acepta que tiene conflictos para que funcione el tratamiento. La persona debe ir reconociendo sus puntos débiles y errores y cambiarlos desde la raíz (pensamiento-creencias), para ir transmutando todo aquello que le hace daño. Es una tarea que se llevará todos los días, para que aprenda a identificar, analizar, cuestionar, pensar y reflexionar sobre todo lo que le genere malestar. También se compromete a ser honesta consigo misma y con el terapeuta, con la certeza de que es un espacio para desahogarse donde puede ser escuchada sin crítica ni juicio alguno.</p>
       </div>
     </div>
 
     <div class="faq-item">
-      <button class="faq-btn" onclick="toggleFaq(this)">
+      <button class="faq-btn" id="fp-btn-5" aria-expanded="false" aria-controls="fp-body-5" onclick="toggleFaq(this)">
         <span class="faq-q" data-es="¿De qué se habla en la psicoterapia?" data-en="What do you talk about in psychotherapy?">¿De qué se habla en la psicoterapia?</span>
         <span class="faq-icon">+</span>
       </button>
-      <div class="faq-answer">
+      <div class="faq-answer" id="fp-body-5" role="region" aria-labelledby="fp-btn-5">
         <p data-es="Uno tiene la libertad de hablar de lo que necesita: del sufrimiento que ha vivido, del proceso de duelo por el que atraviesa, de la dificultad de perdonar. Una de las tareas más importantes es hablar de lo que primero se venga a la mente, sin importar que parezca vergonzoso, tonto o que no tenga sentido. El paciente habla de sentimientos, pensamientos, fantasías, sueños, ideas, situaciones de la vida cotidiana — y todo tiene importancia para el proceso terapéutico." data-en="One has the freedom to talk about what one needs: the suffering experienced, the grief process, the difficulty of forgiving. One of the most important tasks is to speak about whatever comes to mind first, regardless of whether it seems embarrassing, silly or nonsensical. The patient speaks of feelings, thoughts, fantasies, dreams, ideas, everyday situations — and everything is important for the therapeutic process.">Uno tiene la libertad de hablar de lo que necesita: del sufrimiento que ha vivido, del proceso de duelo por el que atraviesa, de la dificultad de perdonar. Una de las tareas más importantes es hablar de lo que primero se venga a la mente, sin importar que parezca vergonzoso, tonto o que no tenga sentido. El paciente habla de sentimientos, pensamientos, fantasías, sueños, ideas, situaciones de la vida cotidiana — y todo tiene importancia para el proceso terapéutico.</p>
       </div>
     </div>
 
     <div class="faq-item">
-      <button class="faq-btn" onclick="toggleFaq(this)">
+      <button class="faq-btn" id="fp-btn-6" aria-expanded="false" aria-controls="fp-body-6" onclick="toggleFaq(this)">
         <span class="faq-q" data-es="¿Qué se requiere para que un tratamiento sea exitoso?" data-en="What is required for a successful treatment?">¿Qué se requiere para que un tratamiento sea exitoso?</span>
         <span class="faq-icon">+</span>
       </button>
-      <div class="faq-answer">
+      <div class="faq-answer" id="fp-body-6" role="region" aria-labelledby="fp-btn-6">
         <p data-es="Compromiso, valentía, auto cuestionamiento, paciencia, honestidad y confianza. Ante todo, aceptar que se tienen conflictos para que funcione el tratamiento. La persona debe ir reconociendo sus puntos débiles y errores y cambiarlos desde la raíz (pensamiento-creencias)." data-en="Commitment, courage, self-questioning, patience, honesty and trust. Above all, accepting that one has conflicts for the treatment to work. The person must recognize their weaknesses and mistakes and change them from the root (thought-beliefs).">Compromiso, valentía, auto cuestionamiento, paciencia, honestidad y confianza. Ante todo, aceptar que se tienen conflictos para que funcione el tratamiento. La persona debe ir reconociendo sus puntos débiles y errores y cambiarlos desde la raíz (pensamiento-creencias).</p>
       </div>
     </div>
 
     <div class="faq-item">
-      <button class="faq-btn" onclick="toggleFaq(this)">
+      <button class="faq-btn" id="fp-btn-7" aria-expanded="false" aria-controls="fp-body-7" onclick="toggleFaq(this)">
         <span class="faq-q" data-es="¿Es normal tener vergüenza de ir al psicólogo?" data-en="Is it normal to feel embarrassed about going to therapy?">¿Es normal tener vergüenza de ir al psicólogo?</span>
         <span class="faq-icon">+</span>
       </button>
-      <div class="faq-answer">
+      <div class="faq-answer" id="fp-body-7" role="region" aria-labelledby="fp-btn-7">
         <p data-es="Sí, es completamente normal. Abrirnos emocionalmente ante alguien, inicialmente desconocido, puede ser vergonzoso. La vergüenza puede sentirse hacia el terapeuta por mostrarnos tal y como somos, y también por lo que puedan pensar los demás si nos saben en terapia. Es parte del proceso, y desaparece a medida que se construye la confianza en el espacio terapéutico." data-en="Yes, it is completely normal. Opening ourselves emotionally to someone initially unknown can be embarrassing. Shame can be felt towards the therapist for showing ourselves as we are, and also for what others might think if they know we are in therapy. It is part of the process, and disappears as trust is built in the therapeutic space.">Sí, es completamente normal. Abrirnos emocionalmente ante alguien, inicialmente desconocido, puede ser vergonzoso. La vergüenza puede sentirse hacia el terapeuta por mostrarnos tal y como somos, y también por lo que puedan pensar los demás si nos saben en terapia. Es parte del proceso, y desaparece a medida que se construye la confianza en el espacio terapéutico.</p>
       </div>
     </div>
 
     <div class="faq-item">
-      <button class="faq-btn" onclick="toggleFaq(this)">
+      <button class="faq-btn" id="fp-btn-8" aria-expanded="false" aria-controls="fp-body-8" onclick="toggleFaq(this)">
         <span class="faq-q" data-es="¿Puedo volverme dependiente del terapeuta?" data-en="Can I become dependent on the therapist?">¿Puedo volverme dependiente del terapeuta?</span>
         <span class="faq-icon">+</span>
       </button>
-      <div class="faq-answer">
+      <div class="faq-answer" id="fp-body-8" role="region" aria-labelledby="fp-btn-8">
         <p data-es="La terapia está estructurada para que esto no suceda, ya que el terapeuta no dice qué hacer, no da consejos, ni toma decisiones por el paciente. El terapeuta solo orienta y enseña cómo la persona puede alcanzar sus objetivos." data-en="Therapy is structured so that this does not happen, as the therapist does not tell you what to do, does not give advice, nor make decisions for the patient. The therapist only guides and teaches how the person can achieve their goals.">La terapia está estructurada para que esto no suceda, ya que el terapeuta no dice qué hacer, no da consejos, ni toma decisiones por el paciente. El terapeuta solo orienta y enseña cómo la persona puede alcanzar sus objetivos.</p>
       </div>
     </div>
 
     <div class="faq-item">
-      <button class="faq-btn" onclick="toggleFaq(this)">
+      <button class="faq-btn" id="fp-btn-9" aria-expanded="false" aria-controls="fp-body-9" onclick="toggleFaq(this)">
         <span class="faq-q" data-es="¿El terapeuta da consejos?" data-en="Does the therapist give advice?">¿El terapeuta da consejos?</span>
         <span class="faq-icon">+</span>
       </button>
-      <div class="faq-answer">
+      <div class="faq-answer" id="fp-body-9" role="region" aria-labelledby="fp-btn-9">
         <p data-es="En general no, porque el objetivo es que la persona encuentre sus propias respuestas. Sin embargo, si la persona no logra llevar a cabo los procesos básicos por sí misma, el terapeuta podrá orientarla de forma más directa durante el tiempo de crisis." data-en="Generally not, because the goal is for the person to find their own answers. However, if the person cannot carry out the basic processes on their own, the therapist may guide them more directly during a time of crisis.">En general no, porque el objetivo es que la persona encuentre sus propias respuestas. Sin embargo, si la persona no logra llevar a cabo los procesos básicos por sí misma, el terapeuta podrá orientarla de forma más directa durante el tiempo de crisis.</p>
       </div>
     </div>
 
     <div class="faq-item">
-      <button class="faq-btn" onclick="toggleFaq(this)">
+      <button class="faq-btn" id="fp-btn-10" aria-expanded="false" aria-controls="fp-body-10" onclick="toggleFaq(this)">
         <span class="faq-q" data-es="¿Diferencia entre terapeuta, psicoterapeuta y psicólogo?" data-en="Difference between therapist, psychotherapist and psychologist?">¿Diferencia entre terapeuta, psicoterapeuta y psicólogo?</span>
         <span class="faq-icon">+</span>
       </button>
-      <div class="faq-answer">
+      <div class="faq-answer" id="fp-body-10" role="region" aria-labelledby="fp-btn-10">
         <ul>
           <li data-es="El Terapeuta se tituló de una licenciatura en Ciencias Sociales y también estudió una maestría o posgrado en el área clínica, incluyendo horas de supervisión y terapia personal." data-en="The Therapist graduated from a Social Sciences degree and also studied a master's or postgraduate degree in the clinical area, including supervision hours and personal therapy.">El Terapeuta se tituló de una licenciatura en Ciencias Sociales y también estudió una maestría o posgrado en el área clínica, incluyendo horas de supervisión y terapia personal.</li>
           <li data-es="El Psicólogo se tituló de la licenciatura en Psicología. No todos los psicólogos están calificados para dar terapia." data-en="The Psychologist graduated from a Psychology degree. Not all psychologists are qualified to give therapy.">El Psicólogo se tituló de la licenciatura en Psicología. No todos los psicólogos están calificados para dar terapia.</li>
@@ -888,11 +907,11 @@ footer a:hover{color:var(--amber-lt)}
     </div>
 
     <div class="faq-item">
-      <button class="faq-btn" onclick="toggleFaq(this)">
+      <button class="faq-btn" id="fp-btn-11" aria-expanded="false" aria-controls="fp-body-11" onclick="toggleFaq(this)">
         <span class="faq-q" data-es="¿Cómo identifico a un buen terapeuta?" data-en="How do I identify a good therapist?">¿Cómo identifico a un buen terapeuta?</span>
         <span class="faq-icon">+</span>
       </button>
-      <div class="faq-answer">
+      <div class="faq-answer" id="fp-body-11" role="region" aria-labelledby="fp-btn-11">
         <ul>
           <li data-es="Escucha sin juicio — los juicios de valor quedan fuera de cualquier proceso terapéutico" data-en="Listens without judgment — value judgments are outside any therapeutic process">Escucha sin juicio — los juicios de valor quedan fuera de cualquier proceso terapéutico</li>
           <li data-es="Utiliza el tiempo de la sesión para comprenderte" data-en="Uses the session time to understand you">Utiliza el tiempo de la sesión para comprenderte</li>
@@ -903,11 +922,11 @@ footer a:hover{color:var(--amber-lt)}
     </div>
 
     <div class="faq-item">
-      <button class="faq-btn" onclick="toggleFaq(this)">
+      <button class="faq-btn" id="fp-btn-12" aria-expanded="false" aria-controls="fp-body-12" onclick="toggleFaq(this)">
         <span class="faq-q" data-es="¿Cómo identifico a un mal terapeuta?" data-en="How do I identify a bad therapist?">¿Cómo identifico a un mal terapeuta?</span>
         <span class="faq-icon">+</span>
       </button>
-      <div class="faq-answer">
+      <div class="faq-answer" id="fp-body-12" role="region" aria-labelledby="fp-btn-12">
         <ul>
           <li data-es="No tiene un espacio, tiempo y hora definido" data-en="Has no defined space, time or schedule">No tiene un espacio, tiempo y hora definido</li>
           <li data-es="Critica y juzga durante la sesión" data-en="Criticizes and judges during the session">Critica y juzga durante la sesión</li>
@@ -919,21 +938,21 @@ footer a:hover{color:var(--amber-lt)}
     </div>
 
     <div class="faq-item">
-      <button class="faq-btn" onclick="toggleFaq(this)">
+      <button class="faq-btn" id="fp-btn-13" aria-expanded="false" aria-controls="fp-body-13" onclick="toggleFaq(this)">
         <span class="faq-q" data-es="¿Cuál es la terapia más adecuada para mí?" data-en="Which therapy is most appropriate for me?">¿Cuál es la terapia más adecuada para mí?</span>
         <span class="faq-icon">+</span>
       </button>
-      <div class="faq-answer">
+      <div class="faq-answer" id="fp-body-13" role="region" aria-labelledby="fp-btn-13">
         <p data-es="Dependerá del problema que se tenga y de las características de la persona. Las distintas técnicas — cognitivo-conductual, terapia breve, constelaciones familiares, interpretación de palabras, meditación e imaginería — se pueden mezclar o no durante la sesión, dependiendo de lo que vaya surgiendo en el proceso. La orientación terapéutica se define a medida que se avanza." data-en="It will depend on the problem and the characteristics of the person. The different techniques — cognitive-behavioral, brief therapy, family constellations, word interpretation, meditation and imagery — can be mixed or not during the session, depending on what emerges in the process. The therapeutic approach is defined as progress is made.">Dependerá del problema que se tenga y de las características de la persona. Las distintas técnicas — cognitivo-conductual, terapia breve, constelaciones familiares, interpretación de palabras, meditación e imaginería — se pueden mezclar o no durante la sesión, dependiendo de lo que vaya surgiendo en el proceso. La orientación terapéutica se define a medida que se avanza.</p>
       </div>
     </div>
 
     <div class="faq-item faq-wide">
-      <button class="faq-btn" onclick="toggleFaq(this)">
+      <button class="faq-btn" id="fp-btn-14" aria-expanded="false" aria-controls="fp-body-14" onclick="toggleFaq(this)">
         <span class="faq-q" data-es="¿Qué tipo de padecimientos se tratan?" data-en="What types of conditions are treated?">¿Qué tipo de padecimientos se tratan?</span>
         <span class="faq-icon">+</span>
       </button>
-      <div class="faq-answer">
+      <div class="faq-answer" id="fp-body-14" role="region" aria-labelledby="fp-btn-14">
         <ul style="display:grid;grid-template-columns:1fr 1fr;gap:0.2rem 2rem">
           <li data-es="Dificultades en relaciones interpersonales: pareja, hijos, amistades, trabajo, familia" data-en="Difficulties in interpersonal relationships: partner, children, friendships, work, family">Dificultades en relaciones interpersonales: pareja, hijos, amistades, trabajo, familia</li>
           <li data-es="Conflictos con nosotros mismos: devaluación, crítica, inseguridad, rechazo de aspectos de la personalidad" data-en="Conflicts with ourselves: devaluation, self-criticism, insecurity, rejection of personality aspects">Conflictos con nosotros mismos: devaluación, crítica, inseguridad, rechazo de aspectos de la personalidad</li>
@@ -966,7 +985,7 @@ footer a:hover{color:var(--amber-lt)}
         <span class="c-icon">📧</span>
         <div>
           <span class="c-lbl">Email</span>
-          <span class="c-val">hola@innerpath-soultherapy.com</span>
+          <span class="c-val"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="432b2c2f22032a2d2d26313322372b6e302c362f372b263122333a6d202c2e">[email&#160;protected]</a></span>
         </div>
       </div>
       <div class="c-item">
@@ -1029,7 +1048,7 @@ footer a:hover{color:var(--amber-lt)}
 <footer>
   <div class="footer-logo">Inner Path · Soul Therapy</div>
   <div style="display:flex;gap:1.5rem;flex-wrap:wrap;justify-content:center">
-    <a href="innerpath-soultherapy.html" data-es="Soul Therapy →" data-en="Soul Therapy →">Soul Therapy →</a>
+    <a href="index.html" data-es="Soul Therapy →" data-en="Soul Therapy →">Soul Therapy →</a>
     <a href="#contacto" data-es="Contacto" data-en="Contact">Contacto</a>
     <a href="https://wa.me/525551063488">WhatsApp</a>
     <a href="#" title="Instagram — próximamente">Instagram</a>
@@ -1037,7 +1056,7 @@ footer a:hover{color:var(--amber-lt)}
   <span>© 2026 Mónica Schekaibán Assad</span>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 /* ── LANGUAGE TOGGLE ── */
 function setLang(lang) {
   document.documentElement.setAttribute('data-lang', lang);
@@ -1080,24 +1099,23 @@ if (burger && drawer) {
 
 /* ── FAQ ACCORDION ── */
 function toggleFaq(btn) {
-  const answer = btn.nextElementSibling;
-  const isOpen = answer.classList.contains('open');
-  document.querySelectorAll('.faq-answer').forEach(a => a.classList.remove('open'));
-  document.querySelectorAll('.faq-btn').forEach(b => b.classList.remove('open'));
+  const bodyId = btn.getAttribute('aria-controls');
+  const answer = bodyId ? document.getElementById(bodyId) : btn.nextElementSibling;
+  const isOpen = btn.getAttribute('aria-expanded') === 'true';
+  document.querySelectorAll('.faq-btn').forEach(b => {
+    b.classList.remove('open');
+    b.setAttribute('aria-expanded', 'false');
+    const bid = b.getAttribute('aria-controls');
+    const bd = bid ? document.getElementById(bid) : b.nextElementSibling;
+    if (bd) bd.classList.remove('open');
+  });
   if (!isOpen) {
-    answer.classList.add('open');
     btn.classList.add('open');
+    btn.setAttribute('aria-expanded', 'true');
+    if (answer) answer.classList.add('open');
   }
 }
 window.toggleFaq = toggleFaq;
 
 /* ── SCROLL REVEAL ── */
-const io = new IntersectionObserver(entries => {
-  entries.forEach(e => {
-    if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
-  });
-}, { threshold: 0.08 });
-document.querySelectorAll('.reveal').forEach(el => io.observe(el));
-</script>
-</body>
-</html>
+const io = new IntersectionObserver(entries => 
