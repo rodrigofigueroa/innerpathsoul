@@ -1056,7 +1056,7 @@ footer a:hover{color:var(--amber-lt)}
   <span>© 2026 Mónica Schekaibán Assad</span>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
 /* ── LANGUAGE TOGGLE ── */
 function setLang(lang) {
   document.documentElement.setAttribute('data-lang', lang);
@@ -1118,4 +1118,26 @@ function toggleFaq(btn) {
 window.toggleFaq = toggleFaq;
 
 /* ── SCROLL REVEAL ── */
-const io = new IntersectionObserver(entries => 
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+  });
+}, { threshold: 0.08 });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+/* Safety: force-reveal above-fold elements */
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.reveal:not(.visible)').forEach(el => {
+    const r = el.getBoundingClientRect();
+    if (r.top < window.innerHeight && r.bottom > 0) el.classList.add('visible');
+  });
+});
+
+/* REVEAL FALLBACK — force visible after 400ms if IntersectionObserver hasn't triggered */
+setTimeout(function() {
+  document.querySelectorAll('.reveal:not(.visible)').forEach(function(el) {
+    el.classList.add('visible');
+  });
+}, 400);
+</script>
+</body>
+</html>

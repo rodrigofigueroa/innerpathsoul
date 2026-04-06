@@ -543,7 +543,7 @@ footer{background:var(--void);border-top:1px solid rgba(155,135,194,.1);color:rg
     </div>
     <div class="monica-contact">
       <div class="c-row"><span class="ci" aria-hidden="true">💬</span><span><strong>WhatsApp</strong> — <a href="https://wa.me/525551063488" aria-label="Contactar a Mónica por WhatsApp al +52 55 5106 3488">+52 55 5106 3488</a></span></div>
-      <div class="c-row"><span class="ci" aria-hidden="true">📧</span><span><strong>Email</strong> — <a href="/cdn-cgi/l/email-protection#147c7b7875547d7a7a71666475607c39677b6178607c716675646d3a777b79"><span class="__cf_email__" data-cfemail="f1999e9d90b1989f9f948381908599dc829e849d85999483908188df929e9c">[email&#160;protected]</span></a></span></div>
+      <div class="c-row"><span class="ci" aria-hidden="true">📧</span><span><strong>Email</strong> — <a href="mailto:hola@innerpath-soultherapy.com">hola@innerpath-soultherapy.com</a></span></div>
       <div class="c-row"><span class="ci" aria-hidden="true">🌐</span><span><strong>Web</strong> — <a href="https://innerpath-soultherapy.com" aria-label="Sitio web de Inner Path Soul Therapy">innerpath-soultherapy.com</a></span></div>
       <div class="c-row"><span class="ci" aria-hidden="true">📍</span><span><strong data-es="Ubicación" data-en="Location">Ubicación</strong><span data-es=" — Ciudad de México · Presencial y en línea" data-en=" — Mexico City · In-person and online"> — Ciudad de México · Presencial y en línea</span></span></div>
     </div>
@@ -713,7 +713,7 @@ footer{background:var(--void);border-top:1px solid rgba(155,135,194,.1);color:rg
     <p class="c-body" data-es="Si algo resonó en ti al leer esto, es una señal. No hace falta tener todo claro para dar el primer paso. Puedes escribirme directamente por WhatsApp o llenar el formulario." data-en="If something resonated with you while reading this, that is a sign. You don't need to have everything figured out to take the first step. Write to me on WhatsApp or fill in the form.">Si algo resonó en ti al leer esto, es una señal. No hace falta tener todo claro para dar el primer paso. Puedes escribirme directamente por WhatsApp o llenar el formulario.</p>
     <div class="c-details">
       <div class="c-item"><span class="c-icon" aria-hidden="true">💬</span><div><span class="c-lbl">WhatsApp</span><span class="c-val"><a href="https://wa.me/525551063488" aria-label="Abrir WhatsApp con Mónica Schekaibán Assad">+52 55 5106 3488</a></span></div></div>
-      <div class="c-item"><span class="c-icon" aria-hidden="true">📧</span><div><span class="c-lbl">Email</span><span class="c-val"><a href="/cdn-cgi/l/email-protection#e1898e8d80a1888f8f849391809589cc928e948d95898493809198cf828e8c"><span class="__cf_email__" data-cfemail="bdd5d2d1dcfdd4d3d3d8cfcddcc9d590ced2c8d1c9d5d8cfdccdc493ded2d0">[email&#160;protected]</span></a></span></div></div>
+      <div class="c-item"><span class="c-icon" aria-hidden="true">📧</span><div><span class="c-lbl">Email</span><span class="c-val"><a href="mailto:hola@innerpath-soultherapy.com">hola@innerpath-soultherapy.com</a></span></div></div>
       <div class="c-item"><span class="c-icon" aria-hidden="true">🌐</span><div><span class="c-lbl" data-es="Sitio web" data-en="Website">Sitio web</span><span class="c-val"><a href="https://innerpath-soultherapy.com">innerpath-soultherapy.com</a></span></div></div>
       <div class="c-item"><span class="c-icon" aria-hidden="true">📍</span><div><span class="c-lbl" data-es="Ubicación" data-en="Location">Ubicación</span><span class="c-val" data-es="Ciudad de México · Presencial y en línea" data-en="Mexico City · In-person and online">Ciudad de México · Presencial y en línea</span></div></div>
       <div class="c-item"><span class="c-icon" aria-hidden="true">🗣️</span><div><span class="c-lbl" data-es="Idiomas" data-en="Languages">Idiomas</span><span class="c-val">Español · English</span></div></div>
@@ -780,7 +780,7 @@ footer{background:var(--void);border-top:1px solid rgba(155,135,194,.1);color:rg
 </footer>
 
 <!-- PERFORMANCE: deferred inline script — no external dependencies, IIFE strict mode -->
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
 (function(){'use strict';
 
 /* LANGUAGE — persists to localStorage, updates html[lang] for AT */
@@ -837,6 +837,13 @@ if('IntersectionObserver' in window){
   var io=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}})},{threshold:.08,rootMargin:'0px 0px -40px 0px'});
   document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});
 }else{document.querySelectorAll('.reveal').forEach(function(el){el.classList.add('visible')})}
+/* Safety: force-reveal above-fold elements immediately on load */
+document.addEventListener('DOMContentLoaded',function(){
+  document.querySelectorAll('.reveal:not(.visible)').forEach(function(el){
+    var r=el.getBoundingClientRect();
+    if(r.top<window.innerHeight&&r.bottom>0){el.classList.add('visible')}
+  });
+});
 
 /* FORM VALIDATION — aria-describedby error pattern */
 var form=document.getElementById('contact-form');
@@ -867,4 +874,26 @@ if('IntersectionObserver' in window&&nLinks.length){
 }
 /* FAQ ACCORDION */
 function openFaq(btn){
-  var b
+  var bodyId=btn.getAttribute('aria-controls');
+  var body=bodyId?document.getElementById(bodyId):btn.nextElementSibling;
+  var isOpen=btn.getAttribute('aria-expanded')==='true';
+  document.querySelectorAll('.faq-head').forEach(function(b){
+    b.setAttribute('aria-expanded','false');
+    var bid=b.getAttribute('aria-controls');
+    var bd=bid?document.getElementById(bid):b.nextElementSibling;
+    if(bd)bd.classList.remove('open');
+  });
+  if(!isOpen){btn.setAttribute('aria-expanded','true');if(body)body.classList.add('open')}
+}
+window.openFaq=openFaq;
+})();
+
+/* REVEAL FALLBACK — force visible after 400ms if IntersectionObserver hasn't triggered */
+setTimeout(function() {
+  document.querySelectorAll('.reveal:not(.visible)').forEach(function(el) {
+    el.classList.add('visible');
+  });
+}, 400);
+</script>
+</body>
+</html>

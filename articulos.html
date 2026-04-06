@@ -558,6 +558,9 @@ const io = new IntersectionObserver(entries => {
   entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
 }, { threshold: 0.05 });
 document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.reveal:not(.visible)').forEach(el => { const r = el.getBoundingClientRect(); if (r.top < window.innerHeight && r.bottom > 0) el.classList.add('visible'); });
+});
 
 /* ── SIDEBAR ACTIVE LINK ── */
 const articles = document.querySelectorAll('.article');
@@ -575,6 +578,13 @@ if ('IntersectionObserver' in window && navLinks.length) {
   }, { rootMargin: '-20% 0px -70% 0px' });
   articles.forEach(a => sio.observe(a));
 }
+
+/* REVEAL FALLBACK — force visible after 400ms if IntersectionObserver hasn't triggered */
+setTimeout(function() {
+  document.querySelectorAll('.reveal:not(.visible)').forEach(function(el) {
+    el.classList.add('visible');
+  });
+}, 400);
 </script>
 </body>
 </html>
