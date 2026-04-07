@@ -24,23 +24,23 @@
 <meta name="twitter:description" content="Reflexiones sobre salud emocional, el nacimiento, personalidad y vocación. Mónica Schekaibán Assad, psicoterapia CDMX."/>
 <meta name="twitter:image" content="https://innerpath-soultherapy.com/og-image.jpg"/>
 <meta name="twitter:image:alt" content="Artículos de Mónica Schekaibán Assad — Inner Path Soul Therapy"/>
-<meta name="theme-color" content="#110E09"/>
+<meta name="theme-color" content="#1C2B1E"/>
 <link rel="preload" as="font" type="font/woff2" href="https://fonts.gstatic.com/s/cormorantgaramond/v22/BXRvvFCCwr2JsAt6OG2Sg9TqPM.woff2" crossorigin/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet"/>
 <style>
 :root {
-  --ink:        #1A1610;
-  --earth:      #2E2416;
-  --amber:      #C49A5A;
-  --amber-lt:   #E2C890;
+  --ink:        #243A26;
+  --earth:      #2F4D32;
+  --amber:      #C4A55A;
+  --amber-lt:   #D8BE82;
   --sand:       #F5EFE3;
-  --warm-white: #FDFBF7;
+  --warm-white: #FAF7EF;
   --smoke:      #7A6F62;
-  --border:     rgba(196,154,90,0.2);
-  --deep:       #110E09;
-  --parchment:  #F2EBE0;
+  --border:     rgba(133,162,112,0.2);
+  --deep:       #1C2B1E;
+  --parchment:  #ECE6D4;
 }
 
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -50,6 +50,10 @@ body{font-family:'Jost',sans-serif;background:var(--warm-white);color:var(--ink)
 /* noise */
 body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");pointer-events:none;z-index:9999;opacity:.4}
 
+
+/* LOGO IMAGE */
+.nav-logo img{width:40px;height:40px;border-radius:5px;object-fit:cover;flex-shrink:0}
+@media(max-width:900px){.nav-logo img{width:34px;height:34px}}
 /* ── NAV ── */
 .nav{position:fixed;top:0;left:0;right:0;z-index:200;height:60px;display:flex;justify-content:space-between;align-items:center;padding:0 3.5rem;background:rgba(253,251,247,0.93);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
 .nav-logo{display:flex;flex-direction:column;line-height:1;text-decoration:none}
@@ -80,16 +84,16 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
   position:relative;overflow:hidden;
   text-align:center;
 }
-.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 50% 30%,rgba(196,154,90,0.09) 0%,transparent 65%);pointer-events:none}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 50% 30%,rgba(133,162,112,0.09) 0%,transparent 65%);pointer-events:none}
 .hero-label{font-size:0.65rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--amber);margin-bottom:1.5rem;display:flex;align-items:center;justify-content:center;gap:0.8rem}
-.hero-label::before,.hero-label::after{content:'';width:30px;height:1px;background:rgba(196,154,90,0.4)}
+.hero-label::before,.hero-label::after{content:'';width:30px;height:1px;background:rgba(133,162,112,0.4)}
 .hero-title{font-family:'Cormorant Garamond',serif;font-size:clamp(3rem,7vw,6.5rem);font-weight:300;line-height:1;color:#fff;margin-bottom:1.2rem;letter-spacing:-0.01em}
 .hero-title em{font-style:italic;color:var(--amber)}
-.hero-sub{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-style:italic;color:rgba(226,200,144,0.55);margin-bottom:3rem;letter-spacing:0.04em}
+.hero-sub{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-style:italic;color:rgba(216,190,130,0.55);margin-bottom:3rem;letter-spacing:0.04em}
 .article-index{display:flex;flex-wrap:wrap;gap:0.6rem;justify-content:center;margin-top:2rem}
-.idx-pill{display:inline-flex;align-items:center;gap:0.5rem;background:rgba(255,255,255,0.05);border:1px solid rgba(196,154,90,0.18);border-radius:999px;padding:7px 16px;text-decoration:none;font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(226,200,144,0.6);transition:all .2s}
-.idx-pill:hover{background:rgba(196,154,90,0.1);color:var(--amber-lt);border-color:rgba(196,154,90,0.4)}
-.idx-num{font-family:'Cormorant Garamond',serif;font-size:1rem;color:rgba(196,154,90,0.35);margin-right:2px}
+.idx-pill{display:inline-flex;align-items:center;gap:0.5rem;background:rgba(255,255,255,0.05);border:1px solid rgba(133,162,112,0.18);border-radius:999px;padding:7px 16px;text-decoration:none;font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(216,190,130,0.6);transition:all .2s}
+.idx-pill:hover{background:rgba(133,162,112,0.1);color:var(--amber-lt);border-color:rgba(133,162,112,0.4)}
+.idx-num{font-family:'Cormorant Garamond',serif;font-size:1rem;color:rgba(133,162,112,0.35);margin-right:2px}
 
 /* ── ARTICLE LAYOUT ── */
 .articles-wrap{max-width:780px;margin:0 auto;padding:0 2rem}
@@ -104,7 +108,7 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 .art-number{
   font-family:'Cormorant Garamond',serif;
   font-size:5rem;font-weight:300;
-  color:rgba(196,154,90,0.12);
+  color:rgba(133,162,112,0.12);
   line-height:1;
   margin-bottom:-1rem;
   display:block;
@@ -147,7 +151,7 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
   margin:2.5rem 0;
   padding:1.6rem 2rem;
   border-left:2px solid var(--amber);
-  background:rgba(196,154,90,0.04);
+  background:rgba(133,162,112,0.04);
   border-radius:0 10px 10px 0;
 }
 .art-body blockquote p{
@@ -161,7 +165,7 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
   letter-spacing:0.1em;font-style:normal;
 }
 .art-body .highlight{
-  background:rgba(196,154,90,0.08);
+  background:rgba(133,162,112,0.08);
   border-left:3px solid var(--amber);
   padding:1rem 1.4rem;border-radius:0 8px 8px 0;
   margin:1.5rem 0;font-size:0.95rem;color:var(--earth);line-height:1.75;
@@ -194,8 +198,8 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 .sidebar-num{font-family:'Cormorant Garamond',serif;font-size:0.85rem;color:var(--amber-lt);margin-right:4px}
 
 /* ── FOOTER ── */
-footer{background:var(--deep);color:rgba(255,255,255,0.3);padding:2.5rem 5rem;display:flex;justify-content:space-between;align-items:center;font-size:0.75rem;border-top:1px solid rgba(196,154,90,0.08)}
-.footer-logo{font-family:'Cormorant Garamond',serif;font-size:0.95rem;font-style:italic;color:rgba(196,154,90,0.5)}
+footer{background:var(--deep);color:rgba(255,255,255,0.3);padding:2.5rem 5rem;display:flex;justify-content:space-between;align-items:center;font-size:0.75rem;border-top:1px solid rgba(133,162,112,0.08)}
+.footer-logo{font-family:'Cormorant Garamond',serif;font-size:0.95rem;font-style:italic;color:rgba(133,162,112,0.5)}
 footer a{color:rgba(255,255,255,0.3);text-decoration:none;transition:color .2s}
 footer a:hover{color:var(--amber-lt)}
 .foot-links{display:flex;gap:1.8rem}
@@ -251,9 +255,12 @@ footer a:hover{color:var(--amber-lt)}
 
 <!-- ── NAV ── -->
 <header class="nav">
-  <a href="index.html" class="nav-logo">
-    <span>Inner Path</span>
-    <span>Soul Therapy · innerpath-soultherapy.com</span>
+  <a href="index.html" class="nav-logo" style="flex-direction:row;align-items:center;gap:.6rem">
+    <img src="data:image/jpeg;base64,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" alt="Inner Path — Body, Heart and Soul" width="44" height="44" style="border-radius:6px;object-fit:cover"/>
+    <div style="display:flex;flex-direction:column;line-height:1;gap:3px">
+      <span>Inner Path</span>
+      <span>Soul Therapy</span>
+    </div>
   </a>
   <nav class="nav-links">
     <a href="index.html" data-es="Soul Therapy" data-en="Soul Therapy">Soul Therapy</a>
@@ -511,7 +518,7 @@ footer a:hover{color:var(--amber-lt)}
 
 <!-- ── FOOTER ── -->
 <footer>
-  <div class="footer-logo">Inner Path · Soul Therapy</div>
+  <div class="footer-logo" style="display:flex;align-items:center;gap:.5rem"><img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAQDAwMDAgQDAwMEBAQFBgoGBgUFBgwICQcKDgwPDg4MDQ0PERYTDxAVEQ0NExoTFRcYGRkZDxIbHRsYHRYYGRj/2wBDAQQEBAYFBgsGBgsYEA0QGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBj/wAARCACgAKADASIAAhEBAxEB/8QAGwABAQEBAQEBAQAAAAAAAAAAAAEGBAUCAwj/xAAvEAABAwMEAgAGAQQDAQAAAAABAAIDBAURBhIhQRMxBxQiUWFxgRUWI5FSoaOx/8QAGQEBAQEBAQEAAAAAAAAAAAAAAAECAwQF/8QAHREBAAMBAQEAAwAAAAAAAAAAAAEREiECMSJRYf/aAAwDAQACEQMRAD8A/uBE7RfPegRE6QOUREBEUQVERATKJ2gIor2gIiICIiAidogdoiICIiAiIgJ+ERAREQEREBET8ICIiAiIgInaICdp2iAiIgcIiICdJ0iAiIgIiICIiAiIgIiIIqiICIiB0iJ2gIidoIua5XGktNpqLlXy+Kmp2F8j8ZOPwOznAwulcN5tNLfLDVWmt3eCoZscWHDm85BH5BAKk3XEm648bS+vbJqutmo6FlTBURN8njqGgF7M4JBBI4yMj3yu7U2qLZpW1MrbmZXCR/jiihbl8jsZOM4AwPZK8bR/w7otJ3Sa4i4S1tQ9hiYXRiMMaTzwCck4HK9HV+kaPV9pipKiokppYJDJDMxodtJGCCOwR/8AFiN579c43jv11ab1LbdUWc3C2mQNa/xyRytw+N2M4PXogghefqfXtk0rXQ0VcypnqJW+Tx07QSxmcAkkgc4OB74XTpLSlHpKyvoaaeSofLJ5ZZpAGl7sYGAPQAXlaw+HdFqy6w3I3CaiqGMEUhbGJA9oJI4JGCMnlJ3nn0neOfWqt1fSXS1U9xoZfLTVDBJG/GMg/cdHrC6lxWi10tlsdLaqMP8ABTx7Gl5yT2SfySSf5Xatx/XSLroiIqoiIgInaBARO0QFwVN7tFFcY6CruVPDVS48cD3Ye/PrA7/hd6yV/wCfippDnkCsP/mFn1NQz6mo41qLN1d/u0OuP7eprTTS+SjNVDO6oLQcODTv+n6QOfW4nj84+7TfLpJqmq09e6Glgqo6dtXDNRyOfHLGXbTw4Agg9JqDcXTQp0svTX+/11+u9nprPQxz0D4wJpalxiLXtLgThu4k8fSBxzk+s9Fh1BUVzrrSXmlgoay1yBlR4ZC+IsLN7XtJGcbc8H7JHqCPcS0CnSyU+rK1unXaip4bW6ibH8wKSSp21L4fe7/iHlvIZj8E5XReNT1VDUWJ1vtsddTXaRscbvNsky5heMNxjGMck8c8JqE3D3K64UNspHVVwq4qWAHBllOGj9npcrNR2B/j23ekxIQI3Ofta8n1hxwD/teJfZr5N8MNSC/UNFSytpphH8pMZWSM2ZB5AIOeP4X43C62Z3wlZQVNRBWST21kEdFG8SySyGMBrWsGTndjrjCk+kn31tO8KrMWuW+2+z2OwGlE1w+QD6iqqdxhiLcDaS3lzyTjGRwCV02m9XC5QXWmNHSx3O3VBpXt8rjA920Oa4OxuAIPIxkelY9NR6e497Y43SPOGtGSceguW2XW33i3/O2ypbUU+90YkaCAXNOCOQD7Xg6Br71ctM0dbXtpHRzOlkMrZH+QuMruNpbgD2PfoBeTo+o1B/a1VHZKChkLLjVkyV0zmNefMfpYGgn9k4H75U18Z3dT+2/ReXpy9DUGm6e6fLup3vLmSQl27xvY4tcM9jI9r1VqJvrcTcXAn/aIqoiIgiyN9e4/FPTUggqHRU7KgTSsge5kZkYAwFwGBkj+O1rv0rk4xkqTFp6i2TeXn40wzeGfwttLqfzeF3jEhlDtu7GM7Rn2gc8/Gh0vgqPD/SflxN4XePyeXft3YxnHPtamaeKngdLPM2KJgy573Ya0fkn0kU0c8W+CVsrORuY7I49hTLOWW0+XO+ImqZTDUMZM+n8L5IXsbIGR7XbXEYODwuKgpJLnqHXNKG1EDbg1kUE0kL2NeBCYy5pI5AcVtvPGag0/laZQ0PMeeQ0kgHH2yCP4UnqIqeB01TMyKJvLnyOw0fslTJhiLHc6OkslNa7vpGsbdqaJsD4orYJWzOaMBzJANuDjOSRjtdWpzKLppF8lHI11PXieoZTRulZA3xlpyWtxgEgLXMqIXzSU7JmukjAL42uyWg+sjrK+xkesj9K55RjlWzuuPI74dXeCGGWaaemdDFHFG57nudwAAAV26fZS/wBu0MsFKIH/AC7GPzB4nhwaA4EEA5yvVzgnnB7TknnKtdtc9tkdQ1dQ3VcFFcmXRtifTbh/TopH+efdjZIYxuDQ3BAGAc8lfnouH5O9aipRaqm2slq2TwQyQlrRH4mgfUMtznORkn3nta7zRio8HlaJSzf48/UW5xnH2zwpFUQTSPihnjkfGcPYxwJafyOvR/0pntpn8rZP4f1TqLTNLZKyhr4KuidL8x5adzWMAkc4HeRh2QRjbkr9Ph+91PpeobUw1FO5lfUzObNC9h2OkLmuAIyQR9lrC7awuc7AaM5J9L5ilZPCyaKUSRvaHse05DgeQQUjzVHnzVd+Mt8O2yxaNME8E8ErKuoc6OeJ0Zw6QuacOAyCCCtYmSffKKxFRTXmKikVRFVERTtBURTtBxXmkmr9O1tFT7PLPC6Nu920ZP3OF5Js14Y6YQ1LWMmkllH+Z2+F7nMLXl2P8hAa4YP3A5C0nSikxbM+YnrMTW+8QOqq18gNTsDYZY5Hv8rxOXsDmAfSwghpHoDP7XfWUNbVaXq7Y1n+XiKOSWXPkGWkvJwSOd3H4C9hEoxDwK203SS51c1LUSeGd0W7NTskcGskBG7aduHPaR98FfE9svktVWkT4ila1sYbVPaciRhz64JYHDjHv8rRYVSjEPKgt0tJUXR1O0YqA0wOfO8nIiDAHZyRy3O4c8/heWbPfnUAjdUlsrRMWbat4DXOLDHnHvaWv95995WoVSifEPHoqCvj1I+uqvG5myZglbKSXB0rXsGwjDdrRt4+2e1yRWi6QSOMBYynMrXvo/mCQ4bnF4Y/G5jTuDtpyMg+s86JEozDwKW3Xunq6Yy1XzLGFjpJDUOBOInsc3bjnksOe8Z9r1LXTy0ljoqWfaJYYGRv2nIyGgHB+y7ESIWPNIqinSqivftEQOcoiIHSKdp2gIqp2gKqJ+0FRFEFRREBERAVURA5RAiAnaqiConaICnaqdoIiJ0gK9KKoIiqIIqpwiAiqiAiKoIiqICJwiAiIgInSICdIiAiIgIiICIiCIiqAiIgIiICInaD/9k=" alt="" width="26" height="26" style="border-radius:4px;filter:brightness(1.3) saturate(0.8)" aria-hidden="true"/> Inner Path · Soul Therapy</div>
   <div class="foot-links">
     <a href="index.html" data-es="Soul Therapy" data-en="Soul Therapy">Soul Therapy</a>
     <a href="monica-psicoterapia.html" data-es="Psicoterapia" data-en="Psychotherapy">Psicoterapia</a>
