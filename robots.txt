@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://innerpath-soultherapy.com/sitemap.xml
+Sitemap: https://innerpath.example.com/sitemap.xml
