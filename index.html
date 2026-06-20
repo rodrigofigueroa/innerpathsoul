@@ -89,44 +89,29 @@
 <main id="main">
 
   <!-- ====================== HERO ====================== -->
-  <section class="hero">
-    <div class="hero__bg-shape" aria-hidden="true"></div>
-    <div class="wrap hero__inner">
-      <div>
-        <p class="eyebrow hero__eyebrow">
-          <span class="dots"><span></span><span></span><span></span></span>
-          <span lang-content="es">Soul Therapy Method</span>
-          <span lang-content="en">Soul Therapy Method</span>
-        </p>
-        <h1>
-          <span lang-content="es">El alma conoce<br>el camino a <em>casa</em></span>
-          <span lang-content="en">The soul knows<br>the way <em>home</em></span>
-        </h1>
-        <p class="hero__lede lede">
-          <span lang-content="es">Inner Path es un espacio de retorno: una invitación a volver a ti, a tu cuerpo, a tu sentir y a tu verdad más profunda.</span>
-          <span lang-content="en">Inner Path is a space of return: an invitation to come back to yourself, to your body, to your feeling, and to your deepest truth.</span>
-        </p>
-        <div class="hero__ctas">
-          <a href="#terapias" class="btn btn-primary">
-            <span lang-content="es">Explorar terapias</span><span lang-content="en">Explore therapies</span>
-          </a>
-          <a href="https://wa.me/525551063488" class="btn btn-ghost" target="_blank" rel="noopener">
-            <span lang-content="es">Agendar por WhatsApp</span><span lang-content="en">Book via WhatsApp</span>
-          </a>
-        </div>
-      </div>
-
-      <figure class="hero__media">
-        <img src="https://picsum.photos/id/1011/900/1125"
-             alt="Mujer en estado de meditación profunda, conectando con su mundo interior"
-             width="900" height="1125" loading="eager">
-        <figcaption class="hero__media-caption">
-          <span lang-content="es">"El cuerpo habla, la emoción se mueve, y algo más profundo comienza a guiar."</span>
-          <span lang-content="en">"The body speaks, emotion moves, and something deeper begins to guide."</span>
-        </figcaption>
-      </figure>
+  <section class="hero-fb">
+    <img class="hero-fb__bg" src="https://picsum.photos/id/177/1920/1280" alt="Hojas y vegetación exuberante, evocando calma y un espacio natural sereno" width="1920" height="1280" loading="eager">
+    <div class="hero-fb__scrim" aria-hidden="true"></div>
+    <div class="hero-fb__content">
+      <p class="eyebrow">
+        <span class="dots"><span></span><span></span><span></span></span>
+        <span lang-content="es">Soul Therapy Method</span>
+        <span lang-content="en">Soul Therapy Method</span>
+      </p>
+      <h1>
+        <span lang-content="es">El alma conoce<br>el camino a <em>casa</em></span>
+        <span lang-content="en">The soul knows<br>the way <em>home</em></span>
+      </h1>
+      <p class="hero-fb__lede">
+        <span lang-content="es">Descubre espacios de calma, terapias profundas y un retorno duradero hacia ti mismo.</span>
+        <span lang-content="en">Discover calm spaces, deep therapies, and a lasting return to yourself.</span>
+      </p>
+      <a href="https://wa.me/525551063488" class="btn btn-on-photo" target="_blank" rel="noopener">
+        <span lang-content="es">Agendar una sesión</span><span lang-content="en">Book An Appointment</span>
+      </a>
     </div>
   </section>
+
 
   <!-- ====================== SOUL IS... ====================== -->
   <section id="soul-is" class="section-alt">
@@ -169,231 +154,122 @@
     </div>
   </section>
 
+  <!-- ====================== SPLIT: MODALIDADES / RETIRO ====================== -->
+  <section class="path-split" style="padding: 0;">
+    <div class="path-split__panel">
+      <img class="path-split__bg" src="https://picsum.photos/id/1025/960/1280" alt="Espacio interior cálido y sereno" loading="lazy">
+      <div class="path-split__scrim" aria-hidden="true"></div>
+      <a href="#terapias" class="path-split__overlay-link" aria-label="Ver modalidades de Soul Therapy"></a>
+      <div class="path-split__body">
+        <h2 class="path-split__title"><span lang-content="es">Modalidades</span><span lang-content="en">Modalities</span></h2>
+        <div class="path-split__list">
+          <a href="pages/soul-channeling.html">Soul Channeling</a>
+          <a href="pages/soul-mapping.html">Soul Mapping</a>
+          <a href="pages/soul-tantra-activation.html">Soul Tantra Activation</a>
+          <a href="pages/soul-breathwork.html">Soul Breathwork</a>
+          <a href="pages/soul-guidance.html">Soul Guidance</a>
+          <a href="pages/soul-oracle-reading.html">Soul Oracle Reading</a>
+        </div>
+      </div>
+    </div>
+    <div class="path-split__panel">
+      <img class="path-split__bg" src="https://picsum.photos/id/1018/960/1280" alt="Espacio natural sereno para un retiro personal" loading="lazy">
+      <div class="path-split__scrim" aria-hidden="true"></div>
+      <a href="pages/retiro.html" class="path-split__overlay-link" aria-label="Ver Soul Personal Retreat"></a>
+      <div class="path-split__body">
+        <h2 class="path-split__title">Soul Personal Retreat</h2>
+        <div class="path-split__list">
+          <a href="pages/retiro.html"><span lang-content="es">Formato semanal</span><span lang-content="en">Weekly format</span></a>
+          <a href="pages/retiro.html"><span lang-content="es">Inmersión de 5 días</span><span lang-content="en">5-day immersion</span></a>
+          <a href="pages/retiro.html"><span lang-content="es">Fin de semana intensivo</span><span lang-content="en">Intensive weekend</span></a>
+          <a href="pages/retiro.html"><span lang-content="es">Individual o en pareja</span><span lang-content="en">Individual or couples</span> <span class="path-split__badge"><span lang-content="es">Desde 4,000 USD</span><span lang-content="en">From 4,000 USD</span></span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ====================== GRID DE TERAPIAS ====================== -->
-  <section id="terapias">
+  <section id="terapias" class="offer-section">
     <div class="wrap">
       <div class="section-intro">
         <span class="dots"><span></span><span></span><span></span></span>
         <p class="eyebrow"><span lang-content="es">Sessions Menu</span><span lang-content="en">Sessions Menu</span></p>
-        <h2><span lang-content="es">Nuestras terapias</span><span lang-content="en">Our Therapies</span></h2>
+        <h2><span lang-content="es">Qué ofrecemos</span><span lang-content="en">What we offer</span></h2>
         <p class="lede">
           <span lang-content="es">Cada proceso es único, respetando el ritmo, la historia y la verdad de cada persona.</span>
           <span lang-content="en">Each process is unique, respecting the rhythm, the history, and the truth of each person.</span>
         </p>
       </div>
 
-      <div class="therapy-grid">
+      <div class="offer-grid">
 
-        <!-- Soul Channeling -->
-        <article class="therapy-card">
-          <div class="therapy-card__media">
-            <img src="https://picsum.photos/id/1027/700/525" alt="Manos sobre el corazón en un proceso de apertura y conexión profunda" width="700" height="525" loading="lazy">
-            <span class="therapy-card__duration"><span lang-content="es">Mín. 2 h</span><span lang-content="en">2 hr min.</span></span>
+        <a href="pages/soul-channeling.html" class="offer-item">
+          <div class="offer-item__media">
+            <img src="https://picsum.photos/id/1027/500/500" alt="Soul Channeling" width="500" height="500" loading="lazy">
           </div>
-          <div class="therapy-card__body">
-            <span class="therapy-card__kicker"><span lang-content="es">Apertura a través de la presencia</span><span lang-content="en">Opening through presence</span></span>
-            <h3 class="therapy-card__title">Soul Channeling</h3>
-            <p class="therapy-card__desc">
-              <span lang-content="es">Un espacio de apertura profunda guiado por la terapeuta a través de contacto, presencia y conexión con el alma.</span>
-              <span lang-content="en">A space of deep opening guided by the therapist through contact, presence, and connection with the soul.</span>
-            </p>
-            <div class="therapy-card__footer">
-              <span class="therapy-card__price">250 USD/h</span>
-              <a href="pages/soul-channeling.html" class="therapy-card__link">
-                <span lang-content="es">Ver más</span><span lang-content="en">View more</span>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-              </a>
-            </div>
-          </div>
-        </article>
+          <span class="offer-item__name">Soul Channeling</span>
+        </a>
 
-        <!-- Soul Mapping -->
-        <article class="therapy-card">
-          <div class="therapy-card__media">
-            <img src="https://picsum.photos/id/24/700/525" alt="Diario y pluma representando la exploración del lenguaje como portal interior" width="700" height="525" loading="lazy">
-            <span class="therapy-card__duration"><span lang-content="es">Mín. 3 h</span><span lang-content="en">3 hr min.</span></span>
+        <a href="pages/soul-mapping.html" class="offer-item">
+          <div class="offer-item__media">
+            <img src="https://picsum.photos/id/24/500/500" alt="Soul Mapping" width="500" height="500" loading="lazy">
           </div>
-          <div class="therapy-card__body">
-            <span class="therapy-card__kicker"><span lang-content="es">El lenguaje como portal</span><span lang-content="en">Language as a portal</span></span>
-            <h3 class="therapy-card__title">Soul Mapping</h3>
-            <p class="therapy-card__desc">
-              <span lang-content="es">Exploración del mundo interior a través del lenguaje, revelando patrones emocionales, subconscientes y familiares.</span>
-              <span lang-content="en">Language-based exploration revealing emotional, subconscious and family patterns through words.</span>
-            </p>
-            <div class="therapy-card__footer">
-              <span class="therapy-card__price">250 USD/h</span>
-              <a href="pages/soul-mapping.html" class="therapy-card__link">
-                <span lang-content="es">Ver más</span><span lang-content="en">View more</span>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-              </a>
-            </div>
-          </div>
-        </article>
+          <span class="offer-item__name">Soul Mapping</span>
+        </a>
 
-        <!-- Soul Tantra Activation -->
-        <article class="therapy-card">
-          <div class="therapy-card__media">
-            <img src="https://picsum.photos/id/338/700/525" alt="Práctica corporal de activación energética y expansión de conciencia" width="700" height="525" loading="lazy">
-            <span class="therapy-card__duration"><span lang-content="es">Mín. 2 h</span><span lang-content="en">2 hr min.</span></span>
+        <a href="pages/soul-tantra-activation.html" class="offer-item">
+          <div class="offer-item__media">
+            <img src="https://picsum.photos/id/338/500/500" alt="Soul Tantra Activation" width="500" height="500" loading="lazy">
           </div>
-          <div class="therapy-card__body">
-            <span class="therapy-card__kicker"><span lang-content="es">Activación</span><span lang-content="en">Activation</span></span>
-            <h3 class="therapy-card__title">Soul Tantra Activation</h3>
-            <p class="therapy-card__desc">
-              <span lang-content="es">Activación energética enfocada en la kundalini, apertura emocional, respiración y conciencia corporal.</span>
-              <span lang-content="en">Energetic activation focused on kundalini, emotional opening, breath and body awareness.</span>
-            </p>
-            <div class="therapy-card__footer">
-              <span class="therapy-card__price">250 USD/h</span>
-              <a href="pages/soul-tantra-activation.html" class="therapy-card__link">
-                <span lang-content="es">Ver más</span><span lang-content="en">View more</span>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-              </a>
-            </div>
-          </div>
-        </article>
+          <span class="offer-item__name">Soul Tantra Activation</span>
+        </a>
 
-        <!-- Soul Breathwork -->
-        <article class="therapy-card">
-          <div class="therapy-card__media">
-            <img src="https://picsum.photos/id/1062/700/525" alt="Sesión de respiración circular consciente como puente hacia el inconsciente" width="700" height="525" loading="lazy">
-            <span class="therapy-card__duration"><span lang-content="es">Sistema</span><span lang-content="en">System</span></span>
+        <a href="pages/soul-breathwork.html" class="offer-item">
+          <div class="offer-item__media">
+            <img src="https://picsum.photos/id/1062/500/500" alt="Soul Breathwork" width="500" height="500" loading="lazy">
           </div>
-          <div class="therapy-card__body">
-            <span class="therapy-card__kicker"><span lang-content="es">Sistema de respiración circular</span><span lang-content="en">Circular breathwork system</span></span>
-            <h3 class="therapy-card__title">Soul Breathwork</h3>
-            <p class="therapy-card__desc">
-              <span lang-content="es">Respiración circular continua que abre acceso a estados expandidos de percepción. Incluye Earth, Mirror y Water Breathwork.</span>
-              <span lang-content="en">Continuous circular breathing that opens access to expanded states of perception. Includes Earth, Mirror and Water Breathwork.</span>
-            </p>
-            <div class="therapy-card__footer">
-              <span class="therapy-card__price">250 USD/h</span>
-              <a href="pages/soul-breathwork.html" class="therapy-card__link">
-                <span lang-content="es">Ver más</span><span lang-content="en">View more</span>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-              </a>
-            </div>
-          </div>
-        </article>
+          <span class="offer-item__name">Soul Breathwork</span>
+        </a>
 
-        <!-- Earth Breathwork -->
-        <article class="therapy-card">
-          <div class="therapy-card__media">
-            <img src="https://picsum.photos/id/1059/700/525" alt="Persona recostada en colchoneta durante sesión de respiración profunda" width="700" height="525" loading="lazy">
-            <span class="therapy-card__duration"><span lang-content="es">Mín. 2 h</span><span lang-content="en">2 hr min.</span></span>
+        <a href="pages/earth-breathwork.html" class="offer-item">
+          <div class="offer-item__media">
+            <img src="https://picsum.photos/id/1059/500/500" alt="Earth Breathwork" width="500" height="500" loading="lazy">
           </div>
-          <div class="therapy-card__body">
-            <span class="therapy-card__kicker"><span lang-content="es">Respiración con los pies en la tierra</span><span lang-content="en">Grounded breathwork</span></span>
-            <h3 class="therapy-card__title">Earth Breathwork</h3>
-            <p class="therapy-card__desc">
-              <span lang-content="es">Sesión de respiración profunda recostada, liberando lo contenido en un espacio completamente sostenido.</span>
-              <span lang-content="en">Grounded lying-down breathwork session for emotional release and nervous system regulation.</span>
-            </p>
-            <div class="therapy-card__footer">
-              <span class="therapy-card__price">250 USD/h</span>
-              <a href="pages/earth-breathwork.html" class="therapy-card__link">
-                <span lang-content="es">Ver más</span><span lang-content="en">View more</span>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-              </a>
-            </div>
-          </div>
-        </article>
+          <span class="offer-item__name">Earth Breathwork</span>
+        </a>
 
-        <!-- Mirror Breathwork -->
-        <article class="therapy-card">
-          <div class="therapy-card__media">
-            <img src="https://picsum.photos/id/1025/700/525" alt="Espejo iluminado por velas como portal hacia el autoencuentro" width="700" height="525" loading="lazy">
-            <span class="therapy-card__duration"><span lang-content="es">Mín. 2 h</span><span lang-content="en">2 hr min.</span></span>
+        <a href="pages/mirror-breathwork.html" class="offer-item">
+          <div class="offer-item__media">
+            <img src="https://picsum.photos/id/1025/500/500" alt="Mirror Breathwork" width="500" height="500" loading="lazy">
           </div>
-          <div class="therapy-card__body">
-            <span class="therapy-card__kicker"><span lang-content="es">Activación frente al espejo</span><span lang-content="en">Mirror-based activation</span></span>
-            <h3 class="therapy-card__title">Mirror Breathwork</h3>
-            <p class="therapy-card__desc">
-              <span lang-content="es">Un encuentro directo contigo mismo frente al espejo, seguido de respiración circular para integrar lo revelado.</span>
-              <span lang-content="en">Mirror-gazing and holotropic breathwork process for deep emotional integration.</span>
-            </p>
-            <div class="therapy-card__footer">
-              <span class="therapy-card__price">250 USD/h</span>
-              <a href="pages/mirror-breathwork.html" class="therapy-card__link">
-                <span lang-content="es">Ver más</span><span lang-content="en">View more</span>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-              </a>
-            </div>
-          </div>
-        </article>
+          <span class="offer-item__name">Mirror Breathwork</span>
+        </a>
 
-        <!-- Water Breathwork -->
-        <article class="therapy-card">
-          <div class="therapy-card__media">
-            <img src="https://picsum.photos/id/1053/700/525" alt="Inmersión en agua como experiencia de entrega y contención profunda" width="700" height="525" loading="lazy">
-            <span class="therapy-card__duration"><span lang-content="es">Mín. 2 h</span><span lang-content="en">2 hr min.</span></span>
+        <a href="pages/water-breathwork.html" class="offer-item">
+          <div class="offer-item__media">
+            <img src="https://picsum.photos/id/1053/500/500" alt="Water Breathwork" width="500" height="500" loading="lazy">
           </div>
-          <div class="therapy-card__body">
-            <span class="therapy-card__kicker"><span lang-content="es">Inmersión flotante</span><span lang-content="en">Floating immersion</span></span>
-            <h3 class="therapy-card__title">Water Breathwork</h3>
-            <p class="therapy-card__desc">
-              <span lang-content="es">Experiencia de inmersión y entrega profunda en alberca, sostenida en todo momento por la terapeuta.</span>
-              <span lang-content="en">Immersive pool-supported breathwork focused on surrender, introspection and emotional release.</span>
-            </p>
-            <div class="therapy-card__footer">
-              <span class="therapy-card__price">250 USD/h</span>
-              <a href="pages/water-breathwork.html" class="therapy-card__link">
-                <span lang-content="es">Ver más</span><span lang-content="en">View more</span>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-              </a>
-            </div>
-          </div>
-        </article>
+          <span class="offer-item__name">Water Breathwork</span>
+        </a>
 
-        <!-- Soul Guidance -->
-        <article class="therapy-card">
-          <div class="therapy-card__media">
-            <img src="https://picsum.photos/id/177/700/525" alt="Conversación cercana en un espacio cálido de integración y claridad" width="700" height="525" loading="lazy">
-            <span class="therapy-card__duration"><span lang-content="es">Mín. 1 h</span><span lang-content="en">1 hr min.</span></span>
+        <a href="pages/soul-guidance.html" class="offer-item">
+          <div class="offer-item__media">
+            <img src="https://picsum.photos/id/177/500/500" alt="Soul Guidance" width="500" height="500" loading="lazy">
           </div>
-          <div class="therapy-card__body">
-            <span class="therapy-card__kicker"><span lang-content="es">Integración y claridad emocional</span><span lang-content="en">Integration & emotional clarity</span></span>
-            <h3 class="therapy-card__title">Soul Guidance</h3>
-            <p class="therapy-card__desc">
-              <span lang-content="es">Acompañamiento de diálogo consciente que integra lo emocional con la claridad mental.</span>
-              <span lang-content="en">Integration sessions combining emotional clarity, therapeutic dialogue and intuitive guidance.</span>
-            </p>
-            <div class="therapy-card__footer">
-              <span class="therapy-card__price">250 USD/h</span>
-              <a href="pages/soul-guidance.html" class="therapy-card__link">
-                <span lang-content="es">Ver más</span><span lang-content="en">View more</span>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-              </a>
-            </div>
-          </div>
-        </article>
+          <span class="offer-item__name">Soul Guidance</span>
+        </a>
 
-        <!-- Soul Oracle Reading -->
-        <article class="therapy-card">
-          <div class="therapy-card__media">
-            <img src="https://picsum.photos/id/1040/700/525" alt="Cartas oráculo dispuestas para una lectura multidimensional" width="700" height="525" loading="lazy">
-            <span class="therapy-card__duration"><span lang-content="es">Sesión</span><span lang-content="en">Session</span></span>
+        <a href="pages/soul-oracle-reading.html" class="offer-item">
+          <div class="offer-item__media">
+            <img src="https://picsum.photos/id/1040/500/500" alt="Soul Oracle Reading" width="500" height="500" loading="lazy">
           </div>
-          <div class="therapy-card__body">
-            <span class="therapy-card__kicker"><span lang-content="es">Lectura oráculo multidimensional</span><span lang-content="en">Multidimensional oracle reading</span></span>
-            <h3 class="therapy-card__title">Soul Oracle Reading</h3>
-            <p class="therapy-card__desc">
-              <span lang-content="es">Lectura que entreteje distintas barajas y sistemas simbólicos para revelar lo que está listo para ser visto.</span>
-              <span lang-content="en">Multidimensional reading through multiple decks and symbolic systems.</span>
-            </p>
-            <div class="therapy-card__footer">
-              <span class="therapy-card__price">150 USD</span>
-              <a href="pages/soul-oracle-reading.html" class="therapy-card__link">
-                <span lang-content="es">Ver más</span><span lang-content="en">View more</span>
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-              </a>
-            </div>
-          </div>
-        </article>
+          <span class="offer-item__name">Soul Oracle Reading</span>
+        </a>
 
       </div>
     </div>
   </section>
+
 
   <!-- ====================== RETIRO ====================== -->
   <section id="retiro" class="section-alt">
@@ -448,6 +324,56 @@
             <div class="retreat-price-card__amount">8,000 USD</div>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================== HOW IT WORKS (formatos del retiro) ====================== -->
+  <section class="how-it-works">
+    <img class="how-it-works__bg" src="https://picsum.photos/id/1018/1920/1000" alt="Espacio sereno preparado para una experiencia de retiro" loading="lazy">
+    <div class="how-it-works__scrim" aria-hidden="true"></div>
+    <div class="wrap how-it-works__inner">
+      <div class="section-intro">
+        <span class="dots"><span></span><span></span><span></span></span>
+        <p class="eyebrow"><span lang-content="es">Cómo funciona</span><span lang-content="en">How it works</span></p>
+        <h2><span lang-content="es">Tres formas de vivir tu retiro</span><span lang-content="en">Three ways to experience your retreat</span></h2>
+        <p class="lede">
+          <span lang-content="es">Elige el ritmo que mejor se adapte a tu proceso.</span>
+          <span lang-content="en">Choose the rhythm that best fits your process.</span>
+        </p>
+      </div>
+
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-card__num">01</div>
+          <h3 class="step-card__title"><span lang-content="es">Semanal</span><span lang-content="en">Weekly</span></h3>
+          <p class="step-card__desc">
+            <span lang-content="es">Sesiones de 4 a 5 horas distribuidas a lo largo de varias semanas, permitiendo integración entre cada encuentro.</span>
+            <span lang-content="en">4 to 5 hour sessions spread across several weeks, allowing integration between each encounter.</span>
+          </p>
+        </div>
+        <div class="step-card">
+          <div class="step-card__num">02</div>
+          <h3 class="step-card__title"><span lang-content="es">Inmersión de 5 días</span><span lang-content="en">5-Day Immersion</span></h3>
+          <p class="step-card__desc">
+            <span lang-content="es">Las 20 a 25 horas totales distribuidas en 5 días consecutivos, para un proceso intensivo y sostenido.</span>
+            <span lang-content="en">The total 20 to 25 hours spread across 5 consecutive days, for an intensive and sustained process.</span>
+          </p>
+        </div>
+        <div class="step-card">
+          <div class="step-card__num">03</div>
+          <h3 class="step-card__title"><span lang-content="es">Fin de semana intensivo</span><span lang-content="en">Intensive Weekend</span></h3>
+          <p class="step-card__desc">
+            <span lang-content="es">Las 20 a 25 horas concentradas de viernes a domingo.</span>
+            <span lang-content="en">The 20 to 25 hours concentrated from Friday to Sunday.</span>
+          </p>
+        </div>
+      </div>
+
+      <div class="text-center mt-lg">
+        <a href="pages/retiro.html" class="btn btn-on-photo">
+          <span lang-content="es">Ver detalles e inversión</span><span lang-content="en">View details & investment</span>
+        </a>
       </div>
     </div>
   </section>
