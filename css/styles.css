@@ -134,7 +134,7 @@ p { color: var(--color-text); }
 .lede {
   font-family: var(--font-accent);
   font-style: italic;
-  font-size: clamp(1.15rem, 2vw, 1.45rem);
+  font-size: clamp(18.4px, 2vw, 1.625rem);
   color: var(--color-text-soft);
   line-height: 1.6;
 }
@@ -768,10 +768,12 @@ section { padding: var(--space-2xl) 0; }
   align-items: flex-start;
   gap: 0.9rem;
   padding: 1rem 1.2rem;
-  background: var(--color-white);
-  border-radius: var(--radius-md);
-  border: 1px solid var(--color-line);
 }
+
+.benefit-item span {
+  font-size: 1.25rem;
+}
+
 .benefit-item__icon {
   flex-shrink: 0;
   width: 34px; height: 34px;
@@ -1106,3 +1108,7 @@ section { padding: var(--space-2xl) 0; }
 [lang-content] { display: none; }
 [lang-content].is-active { display: revert; }
 span[lang-content].is-active { display: inline; }
+
+.mt-10 {
+  margin-top: 10px;
+}
