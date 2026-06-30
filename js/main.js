@@ -65,6 +65,99 @@
     });
   }
 
+  /* ---------- Submenú "Terapias" (dropdown desktop) ---------- */
+  function initSubmenu() {
+    var submenuItems = document.querySelectorAll('.has-submenu');
+    var CLOSE_DELAY = 400; // ms de gracia antes de cerrar al salir el cursor
+    var closeTimer = null;
+
+    function closeAll(except) {
+      submenuItems.forEach(function (item) {
+        if (item === except) return;
+        item.classList.remove('is-open');
+        var trigger = item.querySelector('.submenu-trigger');
+        if (trigger) trigger.setAttribute('aria-expanded', 'false');
+      });
+    }
+
+    function openItem(item, trigger) {
+      clearTimeout(closeTimer);
+      closeAll(item);
+      item.classList.add('is-open');
+      trigger.setAttribute('aria-expanded', 'true');
+    }
+
+    function scheduleClose(item, trigger) {
+      clearTimeout(closeTimer);
+      closeTimer = setTimeout(function () {
+        item.classList.remove('is-open');
+        trigger.setAttribute('aria-expanded', 'false');
+      }, CLOSE_DELAY);
+    }
+
+    submenuItems.forEach(function (item) {
+      var trigger = item.querySelector('.submenu-trigger');
+      if (!trigger) return;
+
+      // Click: para teclado/touch y como confirmación directa
+      trigger.addEventListener('click', function (e) {
+        e.preventDefault();
+        clearTimeout(closeTimer);
+        var isOpen = item.classList.contains('is-open');
+        if (isOpen) {
+          item.classList.remove('is-open');
+          trigger.setAttribute('aria-expanded', 'false');
+        } else {
+          openItem(item, trigger);
+        }
+      });
+
+      // Hover con delay de cierre: abre al instante, cierra con margen de tiempo
+      item.addEventListener('mouseenter', function () {
+        if (window.matchMedia('(hover: hover)').matches) {
+          openItem(item, trigger);
+        }
+      });
+      item.addEventListener('mouseleave', function () {
+        if (window.matchMedia('(hover: hover)').matches) {
+          scheduleClose(item, trigger);
+        }
+      });
+    });
+
+    document.addEventListener('click', function (e) {
+      submenuItems.forEach(function (item) {
+        if (!item.contains(e.target)) {
+          item.classList.remove('is-open');
+          var trigger = item.querySelector('.submenu-trigger');
+          if (trigger) trigger.setAttribute('aria-expanded', 'false');
+        }
+      });
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') {
+        clearTimeout(closeTimer);
+        closeAll();
+      }
+    });
+  }
+
+  /* ---------- Submenú en menú móvil (acordeón) ---------- */
+  function initMobileSubmenu() {
+    var triggers = document.querySelectorAll('.mobile-submenu-trigger');
+    triggers.forEach(function (trigger) {
+      var targetId = trigger.getAttribute('aria-controls');
+      var panel = targetId ? document.getElementById(targetId) : null;
+      if (!panel) return;
+
+      trigger.addEventListener('click', function () {
+        var isOpen = panel.classList.toggle('is-open');
+        trigger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      });
+    });
+  }
+
   /* ---------- Carrusel de testimoniales ---------- */
   function initTestimonialCarousel() {
     var track = document.querySelector('.testimonial-carousel');
@@ -123,6 +216,19 @@
     if (el) el.textContent = new Date().getFullYear();
   }
 
+  /* ---------- Resaltar página actual en los submenús ---------- */
+  function initCurrentPageHighlight() {
+    var currentFile = window.location.pathname.split('/').pop() || 'index.html';
+    var links = document.querySelectorAll('.submenu a, .mobile-submenu a');
+    links.forEach(function (link) {
+      var linkFile = link.getAttribute('href').split('/').pop();
+      if (linkFile === currentFile) {
+        link.classList.add('is-current');
+        link.setAttribute('aria-current', 'page');
+      }
+    });
+  }
+
   /* ---------- Header con sombra al hacer scroll ---------- */
   function initHeaderScroll() {
     var header = document.querySelector('.site-header');
@@ -135,6 +241,9 @@
   document.addEventListener('DOMContentLoaded', function () {
     initLangSwitch();
     initMobileNav();
+    initSubmenu();
+    initMobileSubmenu();
+    initCurrentPageHighlight();
     initTestimonialCarousel();
     initFooterYear();
     initHeaderScroll();
