@@ -1,499 +1,2395 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Inner Path — Body, Heart and Soul | Soul Therapy con Mónica Schekaibán</title>
-<meta name="description" content="Inner Path: un espacio de retorno hacia ti mismo. Soul Therapy, Soul Channeling, Breathwork, Soul Tantra y más con Mónica Schekaibán Assad. The soul knows the way home.">
-<meta name="keywords" content="soul therapy, terapia del alma, breathwork, soul channeling, retiro espiritual, sanación emocional, Mónica Schekaibán">
-<link rel="canonical" href="https://innerpath.example.com/">
-
-<!-- Open Graph -->
-<meta property="og:type" content="website">
-<meta property="og:title" content="Inner Path — Body, Heart and Soul">
-<meta property="og:description" content="Un espacio de retorno hacia ti mismo. The Soul Knows The Way Home.">
-<meta property="og:image" content="images/logo.jpeg">
-<meta property="og:locale" content="es_MX">
-<meta property="og:locale:alternate" content="en_US">
-
+<title>Inner Path — Hero Options</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="css/styles.css">
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "HealthAndBeautyBusiness",
-  "name": "Inner Path",
-  "slogan": "The Soul Knows The Way Home",
-  "description": "Soul Therapy: acompañamiento emocional, energético y espiritual a través de Soul Channeling, Soul Mapping, Soul Tantra, Breathwork, Soul Guidance y Soul Oracle Reading.",
-  "founder": { "@type": "Person", "name": "Mónica Schekaibán Assad" },
-  "telephone": "+52-55-5106-3488",
-  "priceRange": "150-8000 USD"
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Karla:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-body: 'Karla', sans-serif;
+  --color-white: #FFFEFB;
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
 }
-</script>
+body { background: #0c0c0c; font-family: var(--font-body); }
+
+/* ── SHARED HERO ── */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 620px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.overlay{
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #0c0c0c;
+  opacity: 0.4;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+.hero__media {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+.hero__media img,
+.hero__media video {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
+}
+/* Very light scrim — let the image breathe, just enough for text */
+.hero__scrim {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    linear-gradient(to bottom,
+      rgba(6,10,5,0.22) 0%,
+      rgba(6,10,5,0.08) 35%,
+      rgba(6,10,5,0.08) 55%,
+      rgba(6,10,5,0.42) 100%);
+}
+/* Center content */
+.hero__content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 0 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  pointer-events: none;
+  user-select: none;
+}
+/* Thin vertical rule above title */
+.hero__rule {
+  width: 1px;
+  height: 64px;
+  background: rgba(255,254,251,0.45);
+  margin-bottom: 2.2rem;
+}
+/* Main title */
+.hero__title {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: clamp(4.5rem, 10vw, 9.5rem);
+  line-height: 0.9;
+  letter-spacing: -0.01em;
+  color: var(--color-white);
+  text-shadow: 0 2px 40px rgba(0,0,0,0.18);
+}
+/* Three dots — brand signature */
+.hero__dots {
+  display: flex;
+  gap: 11px;
+  align-items: center;
+  margin: 2rem 0;
+}
+.hero__dots span {
+  width: 5px; height: 5px;
+  border-radius: 50%;
+  background: rgba(255,254,251,0.6);
+}
+/* Subtitle */
+.hero__subtitle {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 300;
+  font-size: clamp(1.15rem, 2.4vw, 1.75rem);
+  color: rgba(255,254,251,0.80);
+  letter-spacing: 0.06em;
+  text-shadow: 0 1px 20px rgba(0,0,0,0.2);
+  font-size: 30px;
+  font-weight: 600;
+}
+/* Scroll indicator at bottom */
+.hero__scroll {
+  position: absolute;
+  bottom: 2.2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.55rem;
+  pointer-events: auto;
+  cursor: pointer;
+}
+.hero__scroll-label {
+  font-family: var(--font-body);
+  font-size: 0.68rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(255,254,251,0.5);
+}
+.hero__scroll-ring {
+  width: 36px; height: 36px;
+  border: 1px solid rgba(255,254,251,0.35);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: bounce 2.2s ease-in-out infinite;
+}
+.hero__scroll-ring svg { opacity: 0.55; }
+@keyframes bounce {
+  0%,100% { transform: translateY(0); }
+  50%      { transform: translateY(6px); }
+}
+
+/* ── VIDEO CONTROLS ── */
+.hero__controls {
+  position: absolute;
+  bottom: 2.2rem;
+  right: 2rem;
+  z-index: 3;
+  display: flex;
+  gap: 0.65rem;
+  align-items: center;
+}
+.ctrl {
+  width: 42px; height: 42px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,254,251,0.3);
+  background: rgba(0,0,0,0.15);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: border-color .2s, background .2s;
+  color: rgba(255,254,251,0.85);
+  flex-shrink: 0;
+}
+.ctrl:hover { border-color: rgba(255,254,251,0.65); background: rgba(0,0,0,0.3); }
+.ctrl svg { pointer-events: none; display: block; }
+.ctrl .icon-pause { display: block; }
+.ctrl .icon-play  { display: none; }
+.ctrl.paused .icon-pause { display: none; }
+.ctrl.paused .icon-play  { display: block; }
+
+/* ── SECTION DIVIDERS ── */
+.label {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255,254,251,0.3);
+  text-align: center;
+  padding: 2.5rem 0 1rem;
+}
+</style>
+<style>
+/* ── Variables del sistema de diseño Inner Path ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --color-bg:             #F7F0E1;
+  --color-bg-alt:          #EFE4CC;
+  --color-text:            #353B2C;
+  --color-text-soft:       #5C6450;
+  --color-sage:            #869B70;
+  --color-sage-dark:       #5C6E49;
+  --color-sage-pale:       #DCE3D0;
+  --color-terracotta:      #9A5A3C;
+  --color-terracotta-dark: #7E4830;
+  --color-gold:            #AD8A4D;
+  --color-white:           #FFFEFB;
+  --color-line:            rgba(53, 59, 44, 0.14);
+  --font-display: 'Cormorant Garamond', 'Lora', Georgia, serif;
+  --font-body:    'Karla', -apple-system, sans-serif;
+  --font-accent:  'Lora', Georgia, serif;
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ─────────────────────────────────────────────
+   SECCIÓN TERAPEUTA
+   Layout: texto izquierda | imagen derecha full-height
+   ───────────────────────────────────────────── */
+.therapist {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 100vh;
+  background: var(--color-bg);
+}
+
+/* ── Columna izquierda: texto ── */
+.therapist__text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 6rem 5rem 6rem 7%;
+  max-width: 660px;
+}
+
+/* Eyebrow label — igual que los del sitio */
+.therapist__eyebrow {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-sage);
+  margin-bottom: 1.4rem;
+}
+
+/* Título grande serif — el statement de impacto */
+.therapist__title {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(2.4rem, 4vw, 3.5rem);
+  line-height: 1.08;
+  color: var(--color-text);
+  margin-bottom: 2.2rem;
+  letter-spacing: -0.01em;
+}
+
+/* Primer párrafo — en cursiva suave, sage dark (como los highlights de la referencia) */
+.therapist__lede {
+  font-family: var(--font-accent);
+  font-style: italic;
+  font-size: 1.05rem;
+  line-height: 1.72;
+  color: var(--color-sage-dark);
+  margin-bottom: 1.6rem;
+}
+
+/* Palabras destacadas dentro del lede — terracotta como accent */
+.therapist__lede mark {
+  background: none;
+  color: var(--color-terracotta);
+  font-style: italic;
+}
+
+/* Párrafo fuerte — el giro narrativo */
+.therapist__body {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.7;
+  color: var(--color-text);
+  margin-bottom: 1.6rem;
+}
+
+/* Párrafo secundario — conclusión / propósito */
+.therapist__close {
+  font-family: var(--font-accent);
+  font-style: italic;
+  font-size: 1rem;
+  line-height: 1.72;
+  color: var(--color-sage-dark);
+  margin-bottom: 2.6rem;
+}
+
+.therapist__close mark {
+  background: none;
+  color: var(--color-terracotta);
+  font-style: italic;
+}
+
+/* Firma — separador fino + nombre + roles */
+.therapist__signature {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding-top: 1.6rem;
+  border-top: 1px solid var(--color-line);
+  margin-bottom: 2.4rem;
+}
+.therapist__name {
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-text-soft);
+}
+.therapist__roles {
+  font-family: var(--font-body);
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-sage);
+}
+
+/* CTA — estilo del botón del sitio */
+.btn-therapist {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.9rem 2rem;
+  background: var(--color-text);
+  color: var(--color-white);
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 999px;
+  transition: background 0.2s var(--ease), transform 0.2s var(--ease);
+  width: fit-content;
+}
+.btn-therapist:hover {
+  background: var(--color-sage-dark);
+  transform: translateY(-2px);
+}
+.btn-therapist svg { flex-shrink: 0; }
+
+/* ── Columna derecha: imagen full-height sin bordes ── */
+.therapist__media {
+  position: relative;
+  overflow: hidden;
+  min-height: 600px;
+}
+.therapist__media img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .therapist {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+  .therapist__media {
+    order: -1; /* imagen arriba en móvil */
+  }
+  .therapist__text {
+    padding: 3.5rem 1.5rem 4rem;
+    max-width: 100%;
+  }
+}
+@media (max-width: 540px) {
+  .therapist__title { font-size: 2rem; }
+}
+</style>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --color-bg:        #F7F0E1;
+  --color-text:      #353B2C;
+  --color-text-soft: #5C6450;
+  --color-sage:      #869B70;
+  --color-sage-dark: #5C6E49;
+  --color-line:      rgba(53, 59, 44, 0.14);
+  --font-display:    'Cormorant Garamond', Georgia, serif;
+  --font-accent:     'Lora', Georgia, serif;
+  --font-body:       'Karla', sans-serif;
+  --ease:            cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ─────────────────────────────────────
+   INTRO SECTION
+   ───────────────────────────────────── */
+.intro {
+  padding: 7rem 1.5rem 7.5rem;
+  text-align: center;
+  background: var(--color-bg);
+}
+
+.intro__inner {
+  max-width: 780px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
+
+/* Title */
+.intro__title {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  line-height: 1.12;
+  letter-spacing: 0.01em;
+  color: var(--color-text);
+  margin-bottom: 0.65rem;
+}
+
+/* Subtitle — lighter, one step smaller */
+.intro__subtitle {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 300;
+  font-size: clamp(1.05rem, 2vw, 1.35rem);
+  color: var(--color-text-soft);
+  letter-spacing: 0.02em;
+  margin-bottom: 3rem;
+}
+
+/* Thin rule — breathing room between heading and body */
+.intro__rule {
+  width: 40px;
+  height: 1px;
+  background: var(--color-sage);
+  margin-bottom: 3rem;
+  opacity: 0.6;
+}
+
+/* Body copy — generous line-height, constrained width for readability */
+.intro__body {
+  font-family: var(--font-accent);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.5rem;
+  line-height: 1.85;
+  color: var(--color-text-soft);
+  max-width: 62ch;
+  text-align: center;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .intro { padding: 5rem 1.5rem 5.5rem; }
+}
+</style>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --color-bg:        #F7F0E1;
+  --color-text:      #353B2C;
+  --color-text-soft: #5C6450;
+  --color-sage:      #869B70;
+  --color-sage-dark: #5C6E49;
+  --color-line:      rgba(53, 59, 44, 0.14);
+  --font-display:    'Cormorant Garamond', Georgia, serif;
+  --font-accent:     'Lora', Georgia, serif;
+  --font-body:       'Karla', sans-serif;
+  --ease:            cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ─────────────────────────────────────
+   INTRO SECTION
+   ───────────────────────────────────── */
+.intro {
+  padding: 7rem 1.5rem 7.5rem;
+  text-align: center;
+  background: var(--color-bg);
+}
+
+.intro__inner {
+  max-width: 780px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
+
+/* Title */
+.intro__title {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  line-height: 1.12;
+  letter-spacing: 0.01em;
+  color: var(--color-text);
+  margin-bottom: 0.65rem;
+}
+
+/* Subtitle — lighter, one step smaller */
+.intro__subtitle {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 300;
+  font-size: clamp(1.05rem, 2vw, 1.35rem);
+  color: var(--color-text-soft);
+  letter-spacing: 0.02em;
+  margin-bottom: 3rem;
+}
+
+/* Thin rule — breathing room between heading and body */
+.intro__rule {
+  width: 40px;
+  height: 1px;
+  background: var(--color-sage);
+  margin-bottom: 3rem;
+  opacity: 0.6;
+}
+
+/* Body copy — generous line-height, constrained width for readability */
+.intro__body {
+  font-family: var(--font-accent);
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(1rem, 1.8vw, 1.18rem);
+  line-height: 1.85;
+  color: var(--color-text-soft);
+  max-width: 62ch;
+  text-align: center;
+}
+
+/* Read more link */
+.intro__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 2.8rem;
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-sage-dark);
+  text-decoration: none;
+  padding-bottom: 3px;
+  border-bottom: 1px solid var(--color-sage);
+  transition: color 0.2s var(--ease), border-color 0.2s var(--ease), gap 0.2s var(--ease);
+}
+.intro__cta:hover {
+  color: var(--color-text);
+  border-color: var(--color-text);
+  gap: 0.8rem;
+}
+.intro__cta svg { flex-shrink: 0; }
+
+/* Mobile */
+@media (max-width: 600px) {
+  .intro { padding: 5rem 1.5rem 5.5rem; }
+}
+</style>
+<style>
+/* ── Reset ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+img { display: block; max-width: 100%; }
+a { text-decoration: none; color: inherit; }
+
+/* ── Design tokens — Inner Path palette ── */
+:root {
+  --color-bg:              #F7F0E1;
+  --color-text:            #353B2C;
+  --color-text-soft:       #5C6450;
+  --color-sage:            #869B70;
+  --color-sage-dark:       #5C6E49;
+  --color-sage-pale:       #DCE3D0;
+  --color-terracotta:      #9A5A3C;
+  --color-terracotta-dark: #7E4830;
+  --color-white:           #FFFEFB;
+  --color-line:            rgba(53, 59, 44, 0.14);
+  --font-display:          'Cormorant Garamond', Georgia, serif;
+  --font-body:             'Karla', sans-serif;
+  --font-accent:           'Lora', Georgia, serif;
+  --ease:                  cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ═══════════════════════════════════════════════════
+   BREATHWORK SECTION
+   Full-viewport hero with dynamic background swap
+   + subcategory cards at the bottom
+   ═══════════════════════════════════════════════════ */
+.bw {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Background layers (default + one per subcategory) ──
+   All stacked absolutely. JS toggles .is-active via fade. */
+.bw__bg-layer {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  opacity: 0;
+  transition: opacity 0.65s var(--ease);
+  pointer-events: none;
+}
+.bw__bg-layer.is-active { opacity: 1; }
+
+.bw__bg-layer img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center center;
+}
+
+/* Scrim — stronger overlay for text readability */
+.bw__scrim {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: #0c0c0c;
+  opacity: 0.6;
+}
+
+/* ── Center content (main title / active card copy) ── */
+.bw__center {
+  position: relative;
+  z-index: 2;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 6rem 1.5rem 3rem;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* Thin vertical rule */
+.bw__rule {
+  width: 1px;
+  height: 52px;
+  background: rgba(255,254,251,0.4);
+  margin-bottom: 1.8rem;
+  transition: opacity 0.4s var(--ease);
+}
+
+/* Dynamic title — swaps between "Soul Breathwork" and subcategory titles */
+.bw__title {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(3.5rem, 8vw, 8rem);
+  line-height: 0.95;
+  letter-spacing: -0.01em;
+  color: var(--color-white);
+  text-shadow: 0 2px 40px rgba(0,0,0,0.22);
+  margin-bottom: 24px;
+}
+
+/* Three dots (brand signature) */
+.bw__dots {
+  display: flex; gap: 10px;
+  align-items: center;
+  margin: 1.8rem 0 1.6rem;
+}
+.bw__dots span {
+  width: 5px; height: 5px;
+  border-radius: 50%;
+  background: rgba(255,254,251,0.55);
+}
+
+/* Dynamic subtitle */
+.bw__subtitle {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 300;
+  font-size: 2.1875rem;
+  color: rgba(255,254,251,0.78);
+  letter-spacing: 0.05em;
+  margin-bottom: 1.6rem;
+}
+
+/* Dynamic intro paragraph */
+.bw__intro {
+  font-family: var(--font-accent);
+  font-style: italic;
+  font-size: 1.5625rem;
+  line-height: 1.8;
+  color: rgba(255,254,251,0.68);
+  max-width: 54ch;
+}
+
+/* Read more link — hidden when default state, shown on hover */
+.bw__readmore {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1.8rem;
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255,254,251,0.82);
+  border-bottom: 1px solid rgba(255,254,251,0.4);
+  padding-bottom: 3px;
+  pointer-events: auto;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 0.35s var(--ease), transform 0.35s var(--ease),
+              color 0.2s, border-color 0.2s;
+}
+.bw__readmore.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.bw__readmore:hover {
+  color: var(--color-white);
+  border-color: rgba(255,254,251,0.8);
+  gap: 0.8rem;
+}
+
+/* Text fade wrapper — new text fades in over old */
+.bw__text-slot {
+  transition: opacity 0.45s var(--ease), transform 0.45s var(--ease);
+}
+.bw__text-slot.is-fading {
+  opacity: 0;
+  transform: translateY(8px);
+}
+
+/* ── Card strip at the bottom ── */
+.bw__cards {
+  position: relative;
+  z-index: 3;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-top: 1px solid rgba(255,254,251,0.15);
+}
+
+.bw__card {
+  padding: 2rem 2rem 2.2rem;
+  border-right: 1px solid rgba(255,254,251,0.15);
+  cursor: pointer;
+  transition: background 0.3s var(--ease);
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+.bw__card:last-child { border-right: none; }
+.bw__card:hover,
+.bw__card.is-active {
+  background: rgba(255,254,251,0.09);
+}
+
+.bw__card-kicker {
+  font-family: var(--font-body);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-sage);
+  margin-bottom: 0.3rem;
+}
+.bw__card-title {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(1.3rem, 2.2vw, 1.75rem);
+  color: var(--color-white);
+  line-height: 1.1;
+}
+.bw__card-desc {
+  font-family: var(--font-accent);
+  font-style: italic;
+  font-size: 0.88rem;
+  line-height: 1.65;
+  color: rgba(255,254,251,0.6);
+  margin-top: 0.5rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.bw__card-arrow {
+  margin-top: 1.1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-body);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(255,254,251,0.45);
+  transition: color 0.2s, gap 0.2s;
+}
+.bw__card:hover .bw__card-arrow,
+.bw__card.is-active .bw__card-arrow {
+  color: rgba(255,254,251,0.82);
+  gap: 0.7rem;
+}
+
+/* ── Responsive ── */
+@media (max-width: 820px) {
+  .bw__cards { grid-template-columns: 1fr; }
+  .bw__card { border-right: none; border-bottom: 1px solid rgba(255,254,251,0.15); }
+  .bw__card:last-child { border-bottom: none; }
+  .bw__scroll { display: none; }
+}
+@media (max-width: 540px) {
+  .bw__center { padding: 4rem 1.2rem 2rem; }
+  .bw__rule { height: 36px; }
+  .bw__readmore {
+    opacity: 1;
+  }
+}
+</style>
+<style>
+
+/* ── Reset ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+img { display: block; max-width: 100%; }
+a   { text-decoration: none; color: inherit; }
+
+/* ── Design tokens ── */
+:root {
+  --bg:          #F7F0E1;
+  --bg-alt:      #EFE4CC;
+  --bg-deep:     #E7D9B8;
+  --text:        #353B2C;
+  --soft:        #5C6450;
+  --sage:        #869B70;
+  --sage-dk:     #5C6E49;
+  --sage-pale:   #DCE3D0;
+  --terra:       #9A5A3C;
+  --terra-dk:    #7E4830;
+  --white:       #FFFEFB;
+  --line:        rgba(53,59,44,0.14);
+  --disp:        'Cormorant Garamond', Georgia, serif;
+  --body:        'Karla', sans-serif;
+  --acc:         'Lora', Georgia, serif;
+  --ease:        cubic-bezier(0.22, 1, 0.36, 1);
+  --mw:          1180px;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--body);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Shared: eyebrow ── */
+.eyebrow {
+  font-family: var(--body);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+/* ── Shared: read-more link with animated dash ── */
+.read-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: var(--body);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  transition: color 0.2s var(--ease), gap 0.2s var(--ease);
+}
+.read-more::before {
+  content: '';
+  display: block;
+  width: 32px; height: 1px;
+  background: currentColor;
+  flex-shrink: 0;
+  transition: width 0.25s var(--ease);
+}
+.read-more:hover { gap: 1.1rem; }
+.read-more:hover::before { width: 48px; }
+
+
+/* ════════════════════════════════════════════════
+   SECTION 1 — SESSIONS CAROUSEL
+   White background, image left / text right
+   ════════════════════════════════════════════════ */
+.sessions {
+  background: var(--white);
+}
+
+/* Header row: title + arrows */
+.sessions__header {
+  max-width: var(--mw);
+  margin: 0 auto;
+  padding: 5.5rem 2.5rem 3rem;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+.sessions__header .eyebrow { color: var(--sage); margin-bottom: 0.75rem; }
+.sessions__header h2 {
+  font-family: var(--disp);
+  font-weight: 400;
+  font-size: clamp(1.9rem, 3.5vw, 2.8rem);
+  color: var(--text);
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+}
+
+/* Nav arrows */
+.sessions__nav { display: flex; gap: 0.6rem; flex-shrink: 0; }
+.s-btn {
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  border: 1px solid var(--line);
+  background: transparent;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--soft);
+  transition: border-color 0.2s, color 0.2s, background 0.2s;
+}
+.s-btn:hover { border-color: var(--text); color: var(--text); background: var(--bg-alt); }
+.s-btn:disabled { opacity: 0.28; pointer-events: none; }
+
+/* Track */
+.sessions__overflow { overflow: hidden; cursor: grab; }
+.sessions__overflow:active { cursor: grabbing; }
+.sessions__track {
+  display: flex;
+  transition: transform 0.52s var(--ease);
+}
+
+/* Slide: 55% image | 45% text */
+.s-slide {
+  flex: 0 0 100%;
+  display: grid;
+  grid-template-columns: 55% 1fr;
+  min-height: 70vh;
+}
+@media (max-width: 820px) {
+  .s-slide { grid-template-columns: 1fr; min-height: auto; }
+}
+
+/* Image col */
+.s-img {
+  position: relative;
+  overflow: hidden;
+  background: var(--bg-deep);
+}
+.s-img img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s var(--ease);
+}
+.s-slide:hover .s-img img { transform: scale(1.03); }
+.s-counter {
+  position: absolute;
+  bottom: 1.4rem; left: 1.8rem;
+  font-family: var(--body);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255,254,251,0.65);
+}
+
+/* Text col */
+.s-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 4rem 4.5rem 4rem 4rem;
+}
+@media (max-width: 820px) {
+  .s-img { min-height: 60vw; }
+  .s-body { padding: 2.5rem 1.5rem 3rem; }
+}
+
+.s-body .eyebrow { color: var(--sage); margin-bottom: 1.3rem; }
+.s-body h3 {
+  font-family: var(--disp);
+  font-weight: 400;
+  font-size: clamp(2rem, 4vw, 3.4rem);
+  line-height: 1.0;
+  color: var(--text);
+  letter-spacing: -0.01em;
+  margin-bottom: 0.4rem;
+}
+.s-subtitle {
+  font-family: var(--disp);
+  font-style: italic;
+  font-weight: 300;
+  font-size: clamp(1rem, 1.8vw, 1.3rem);
+  color: var(--soft);
+  margin-bottom: 1.8rem;
+}
+.s-body p {
+  font-family: var(--acc);
+  font-style: italic;
+  font-size: 1rem;
+  line-height: 1.85;
+  color: var(--soft);
+  max-width: 42ch;
+  margin-bottom: 2.6rem;
+}
+.s-body .read-more { color: var(--text); margin-bottom: auto; }
+.s-body .read-more:hover { color: var(--sage-dk); }
+
+/* Progress dots */
+.s-dots {
+  display: flex;
+  gap: 5px;
+  padding-top: 2.8rem;
+  margin-top: auto;
+}
+.s-dot {
+  height: 2px; width: 20px;
+  background: var(--line);
+  border: none; border-radius: 2px;
+  cursor: pointer;
+  transition: background 0.25s, width 0.25s;
+  padding: 0;
+}
+.s-dot.on { background: var(--sage-dk); width: 34px; }
+
+
+/* ════════════════════════════════════════════════
+   SECTION 2 — SOUL IS...
+   Background: --bg-alt (warm crema oscuro)
+   Accent: terracotta
+   ════════════════════════════════════════════════ */
+.soul-is {
+  background: var(--bg-alt);
+  padding: 8rem 1.5rem 8.5rem;
+  text-align: center;
+}
+.soul-is__in {
+  max-width: 700px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.soul-is .eyebrow { color: var(--terra); margin-bottom: 1.3rem; }
+.soul-is h2 {
+  font-family: var(--disp);
+  font-weight: 400;
+  font-size: clamp(2.4rem, 5.5vw, 4.2rem);
+  color: var(--text);
+  line-height: 1.06;
+  letter-spacing: -0.01em;
+  margin-bottom: 0.6rem;
+}
+.soul-is .tag {
+  font-family: var(--disp);
+  font-style: italic;
+  font-weight: 300;
+  font-size: clamp(1rem, 2vw, 1.35rem);
+  color: var(--soft);
+  margin-bottom: 2.8rem;
+}
+.soul-is__rule {
+  width: 34px; height: 1px;
+  background: var(--terra);
+  opacity: 0.4;
+  margin-bottom: 2.8rem;
+}
+.soul-is p {
+  font-family: var(--acc);
+  font-style: italic;
+  font-size: clamp(1rem, 1.8vw, 1.18rem);
+  line-height: 1.9;
+  color: var(--soft);
+  max-width: 56ch;
+  margin-bottom: 3.2rem;
+}
+.soul-is .read-more { color: var(--terra); }
+.soul-is .read-more:hover { color: var(--terra-dk); }
+
+
+/* ════════════════════════════════════════════════
+   SECTION 3 — SOUL THERAPY
+   Background: --sage-dk (deep sage green)
+   Accent: sage-pale / white
+   ════════════════════════════════════════════════ */
+.soul-therapy {
+  background: var(--sage-dk);
+  padding: 8rem 1.5rem 8.5rem;
+  text-align: center;
+}
+.soul-therapy__in {
+  max-width: 700px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.soul-therapy .eyebrow { color: var(--sage-pale); opacity: 0.75; margin-bottom: 1.3rem; }
+.soul-therapy h2 {
+  font-family: var(--disp);
+  font-weight: 400;
+  font-size: clamp(2.4rem, 5.5vw, 4.2rem);
+  color: var(--white);
+  line-height: 1.06;
+  letter-spacing: -0.01em;
+  margin-bottom: 0.6rem;
+}
+.soul-therapy .tag {
+  font-family: var(--disp);
+  font-style: italic;
+  font-weight: 300;
+  font-size: clamp(1rem, 2vw, 1.35rem);
+  color: rgba(220,227,208,0.75);
+  margin-bottom: 2.8rem;
+}
+.soul-therapy__rule {
+  width: 34px; height: 1px;
+  background: rgba(220,227,208,0.38);
+  margin-bottom: 2.8rem;
+}
+.soul-therapy p {
+  font-family: var(--acc);
+  font-style: italic;
+  font-size: clamp(1rem, 1.8vw, 1.18rem);
+  line-height: 1.9;
+  color: rgba(220,227,208,0.78);
+  max-width: 56ch;
+  margin-bottom: 3.2rem;
+}
+.soul-therapy .read-more { color: var(--sage-pale); }
+.soul-therapy .read-more:hover { color: var(--white); }
+
+</style>
+
+<style>
+
+/* ── Reset ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+a { text-decoration: none; color: inherit; }
+
+/* ── Tokens ── */
+:root {
+  --bg:        #F7F0E1;
+  --bg-alt:    #EFE4CC;
+  --bg-deep:   #E7D9B8;
+  --text:      #353B2C;
+  --soft:      #5C6450;
+  --sage:      #869B70;
+  --sage-dk:   #5C6E49;
+  --sage-pale: #DCE3D0;
+  --terra:     #9A5A3C;
+  --terra-dk:  #7E4830;
+  --white:     #FFFEFB;
+  --line:      rgba(53,59,44,0.13);
+  --disp:      'Cormorant Garamond', Georgia, serif;
+  --body:      'Karla', sans-serif;
+  --acc:       'Lora', Georgia, serif;
+  --ease:      cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--body);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ════════════════════════════════════════════
+   RETREAT SECTION
+   bg: --bg-deep (crema profundo, distinto al bg base)
+   ════════════════════════════════════════════ */
+.retreat {
+  background: var(--bg-deep);
+  padding: 7rem 1.5rem 7.5rem;
+}
+
+.retreat__inner {
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+/* ── Eyebrow ── */
+.retreat__eyebrow {
+  font-family: var(--body);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--sage-dk);
+  margin-bottom: 1.4rem;
+}
+
+/* ── Title ── */
+.retreat__title {
+  font-family: var(--disp);
+  font-weight: 500;
+  font-size: clamp(2.4rem, 5.5vw, 4.2rem);
+  color: var(--text);
+  line-height: 1.0;
+  letter-spacing: -0.01em;
+  margin-bottom: 2.4rem;
+}
+
+/* ── Divider ── */
+.retreat__rule {
+  width: 100%;
+  height: 1px;
+  background: var(--line);
+  margin-bottom: 2.8rem;
+}
+
+/* ── Intro paragraphs ── */
+.retreat__intro {
+  font-family: var(--acc);
+  font-style: italic;
+  font-size: clamp(1rem, 1.8vw, 1.15rem);
+  line-height: 1.88;
+  color: var(--soft);
+  max-width: 68ch;
+  margin-bottom: 3.5rem;
+}
+
+/* ── Formats grid ── */
+.retreat__formats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 3.5rem;
+}
+
+.retreat__format {
+  background: var(--bg-deep);
+  padding: 2rem 1.8rem 2.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  transition: background 0.22s var(--ease);
+}
+.retreat__format:hover { background: var(--bg-alt); }
+
+.retreat__format-letter {
+  font-family: var(--disp);
+  font-weight: 600;
+  font-size: 1.6rem;
+  color: var(--sage-dk);
+  line-height: 1;
+  margin-bottom: 0.3rem;
+}
+
+.retreat__format-title {
+  font-family: var(--body);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--text);
+  text-transform: uppercase;
+}
+
+.retreat__format-desc {
+  font-family: var(--acc);
+  font-style: italic;
+  font-size: 0.9rem;
+  line-height: 1.65;
+  color: var(--soft);
+}
+
+@media (max-width: 680px) {
+  .retreat__formats { grid-template-columns: 1fr; }
+}
+
+/* ── Pricing table ── */
+.retreat__pricing {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 3.5rem;
+}
+
+.retreat__price-col {
+  background: var(--bg-deep);
+  padding: 2.2rem 2rem 2.4rem;
+  transition: background 0.22s var(--ease);
+}
+.retreat__price-col:hover { background: var(--bg-alt); }
+
+.retreat__price-hours {
+  font-family: var(--disp);
+  font-weight: 600;
+  font-size: 0.78rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--sage-dk);
+  margin-bottom: 1.4rem;
+  display: flex;
+  align-items: baseline;
+  gap: 0.4rem;
+}
+.retreat__price-hours strong {
+  font-family: var(--disp);
+  font-size: 2.2rem;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  color: var(--text);
+}
+
+.retreat__price-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 0.8rem 0;
+  border-top: 1px solid var(--line);
+  gap: 1rem;
+}
+
+.retreat__price-row:first-of-type { border-top: none; padding-top: 0; }
+
+.retreat__price-label {
+  font-family: var(--acc);
+  font-style: italic;
+  font-size: 0.95rem;
+  color: var(--soft);
+}
+
+.retreat__price-amount {
+  font-family: var(--disp);
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: var(--terra);
+  white-space: nowrap;
+  letter-spacing: 0.01em;
+}
+
+@media (max-width: 500px) {
+  .retreat__pricing { grid-template-columns: 1fr; }
+}
+
+/* ── Read more ── */
+.retreat__readmore {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: var(--body);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--sage-dk);
+  transition: color 0.2s var(--ease), gap 0.2s var(--ease);
+}
+.retreat__readmore::before {
+  content: '';
+  display: block;
+  width: 32px; height: 1px;
+  background: currentColor;
+  flex-shrink: 0;
+  transition: width 0.25s var(--ease);
+}
+.retreat__readmore:hover {
+  color: var(--text);
+  gap: 1.1rem;
+}
+.retreat__readmore:hover::before { width: 48px; }
+
+</style>
+<style>
+
+/* ── Reset ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+
+/* ── Tokens ── */
+:root {
+  --bg:        #F7F0E1;
+  --bg-alt:    #EFE4CC;
+  --text:      #353B2C;
+  --soft:      #5C6450;
+  --sage:      #869B70;
+  --sage-dk:   #5C6E49;
+  --sage-pale: #DCE3D0;
+  --terra:     #9A5A3C;
+  --white:     #FFFEFB;
+  --line:      rgba(53,59,44,0.13);
+  --disp:      'Cormorant Garamond', Georgia, serif;
+  --body:      'Karla', sans-serif;
+  --acc:       'Lora', Georgia, serif;
+  --ease:      cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+body { background: var(--bg); }
+
+/* ════════════════════════════════════════════
+   FOOTER
+   bg: --text (verde carbón oscuro)
+   ════════════════════════════════════════════ */
+.ft {
+  background: var(--text);
+  padding: 5.5rem 1.5rem 0;
+  color: var(--soft);
+}
+
+.ft__inner {
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+/* ── Top: brand + nav columns ── */
+.ft__top {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr 1fr 1fr;
+  gap: 3rem;
+  padding-bottom: 4rem;
+  border-bottom: 1px solid rgba(255,254,251,0.08);
+}
+
+@media (max-width: 900px) {
+  .ft__top { grid-template-columns: 1fr 1fr; gap: 2.5rem 2rem; }
+}
+@media (max-width: 520px) {
+  .ft__top { grid-template-columns: 1fr; }
+}
+
+/* ── Brand block ── */
+.ft__brand-name {
+  font-family: var(--disp);
+  font-weight: 400;
+  font-size: 2rem;
+  color: var(--white);
+  letter-spacing: -0.01em;
+  display: block;
+  margin-bottom: 0.9rem;
+  opacity: 0.92;
+}
+
+.ft__brand-tag {
+  font-family: var(--acc);
+  font-style: italic;
+  font-size: 0.88rem;
+  color: rgba(255,254,251,0.45);
+  display: block;
+  margin-bottom: 1.6rem;
+  letter-spacing: 0.03em;
+}
+
+.ft__brand-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-family: var(--body);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255,254,251,0.55);
+  transition: color 0.2s var(--ease), gap 0.2s var(--ease);
+}
+.ft__brand-cta::before {
+  content: '';
+  width: 26px; height: 1px;
+  background: currentColor;
+  flex-shrink: 0;
+  transition: width 0.22s var(--ease);
+}
+.ft__brand-cta:hover {
+  color: rgba(255,254,251,0.88);
+  gap: 0.9rem;
+}
+.ft__brand-cta:hover::before { width: 38px; }
+
+/* ── Nav column ── */
+.ft__col h4 {
+  font-family: var(--body);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255,254,251,0.35);
+  margin-bottom: 1.3rem;
+}
+
+.ft__col ul { display: flex; flex-direction: column; gap: 0.65rem; }
+
+.ft__col a {
+  font-family: var(--body);
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: rgba(255,254,251,0.55);
+  transition: color 0.18s var(--ease);
+}
+.ft__col a:hover { color: rgba(255,254,251,0.9); }
+
+/* Contact column specifics */
+.ft__contact-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  margin-bottom: 0.3rem;
+}
+.ft__contact-label {
+  font-family: var(--body);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255,254,251,0.25);
+}
+.ft__contact-value {
+  font-family: var(--body);
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: rgba(255,254,251,0.55);
+  transition: color 0.18s var(--ease);
+}
+.ft__contact-value:hover { color: rgba(255,254,251,0.9); }
+
+/* Social icons */
+.ft__social {
+  display: flex;
+  gap: 0.65rem;
+  margin-top: 1.8rem;
+}
+.ft__social a {
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,254,251,0.15);
+  display: flex; align-items: center; justify-content: center;
+  color: rgba(255,254,251,0.45);
+  transition: border-color 0.2s var(--ease), color 0.2s var(--ease), background 0.2s var(--ease);
+}
+.ft__social a:hover {
+  border-color: rgba(255,254,251,0.45);
+  color: rgba(255,254,251,0.88);
+  background: rgba(255,254,251,0.05);
+}
+
+/* ── Bottom bar ── */
+.ft__bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  padding: 1.6rem 0 1.8rem;
+}
+
+.ft__copy {
+  font-family: var(--body);
+  font-size: 0.72rem;
+  color: rgba(255,254,251,0.25);
+  letter-spacing: 0.04em;
+}
+
+.ft__tagline {
+  font-family: var(--acc);
+  font-style: italic;
+  font-size: 0.78rem;
+  color: rgba(255,254,251,0.2);
+  letter-spacing: 0.02em;
+}
+
+</style>
 </head>
 <body>
 
-<a href="#main" class="skip-link">Saltar al contenido principal / Skip to main content</a>
+<section class="hero" aria-label="Inner Path hero con video de fondo">
 
-<!-- ====================== HEADER ====================== -->
-<header class="site-header">
-  <div class="site-header__inner">
-    <a href="index.html" class="brand" aria-label="Inner Path — inicio">
-      <span class="brand__name">Inner&nbsp;Path</span>
-      <span class="brand__tag">Body, Heart and Soul</span>
+  <div class="overlay"></div>
+
+  <div class="hero__media" aria-hidden="true">
+    <video
+      id="hero-video"
+      autoplay muted loop playsinline preload="auto"
+      poster="https://images.pixabay.com/photo/2022/12/04/16/26/pool-7634917_1280.jpg">
+      <!-- Primary: hotel pool with palm trees, atmospheric light -->
+      <source src="https://cdn.pixabay.com/video/2019/08/10/25907-354651355_large.mp4" type="video/mp4">
+      <!-- Fallback: serene infinity pool -->
+      <source src="https://cdn.pixabay.com/video/2021/06/22/78557-566388813_large.mp4" type="video/mp4">
+    </video>
+  </div>
+
+  <div class="hero__scrim" aria-hidden="true"></div>
+
+  <div class="hero__content">
+    <div class="hero__rule" aria-hidden="true"></div>
+    <h1 class="hero__title">Inner Path</h1>
+    <div class="hero__dots" aria-hidden="true">
+      <span></span><span></span><span></span>
+    </div>
+    <p class="hero__subtitle">The Soul Knows The Way Home</p>
+  </div>
+
+  <!-- Play/Pause + Mute controls (bottom right) -->
+  <div class="hero__controls" role="group" aria-label="Controles de video">
+    <button class="ctrl" id="mute-btn" aria-label="Activar sonido" title="Mute / Unmute">
+      <!-- Muted state (default) -->
+      <svg id="icon-muted" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+        <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
+        <line x1="23" y1="9" x2="17" y2="15"/>
+        <line x1="17" y1="9" x2="23" y2="15"/>
+      </svg>
+      <!-- Unmuted state (hidden) -->
+      <svg id="icon-sound" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" style="display:none">
+        <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
+        <path d="M15.54 8.46a5 5 0 0 1 0 7.07"/>
+        <path d="M19.07 4.93a10 10 0 0 1 0 14.14"/>
+      </svg>
+    </button>
+    <button class="ctrl" id="play-btn" aria-label="Pausar video" title="Play / Pause">
+      <svg class="icon-pause" width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+        <rect x="6" y="4" width="4" height="16" rx="1"/><rect x="14" y="4" width="4" height="16" rx="1"/>
+      </svg>
+      <svg class="icon-play" width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+        <polygon points="5 3 19 12 5 21 5 3"/>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Scroll down -->
+  <div class="hero__scroll" role="presentation" onclick="document.querySelector('#hero-static').scrollIntoView({behavior:'smooth'})">
+    <span class="hero__scroll-label">Explore</span>
+    <div class="hero__scroll-ring" aria-hidden="true">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <path d="M12 5v14M5 13l7 7 7-7"/>
+      </svg>
+    </div>
+  </div>
+
+</section>
+
+<section class="intro" aria-labelledby="intro-title">
+  <div class="intro__inner">
+
+    <h2 class="intro__title" id="intro-title">Inner Path</h2>
+    <p class="intro__subtitle">A space of return</p>
+
+    <div class="intro__rule" aria-hidden="true"></div>
+
+    <p class="intro__body">
+      A path that invites you to come back to yourself, to your body,
+      to your feeling, and to your deepest truth. Here you do not come
+      to become someone else, but to remember who you are.
+    </p>
+
+    <a href="#" class="intro__cta">
+      <span lang-content="es">Leer más</span><span lang-content="en">Read more</span>
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
     </a>
 
-    <nav class="main-nav" aria-label="Navegación principal">
-      <div class="has-submenu">
-        <button type="button" class="submenu-trigger" aria-expanded="false" aria-haspopup="true">
-          <span lang-content="es">Terapias</span><span lang-content="en">Therapies</span>
-          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M6 9l6 6 6-6"/></svg>
-        </button>
-        <div class="submenu">
-          <a href="pages/soul-channeling.html">Soul Channeling</a>
-          <a href="pages/soul-mapping.html">Soul Mapping</a>
-          <a href="pages/soul-tantra-activation.html">Soul Tantra Activation</a>
-          <a href="pages/soul-breathwork.html">Soul Breathwork</a>
-          <a href="pages/earth-breathwork.html">Earth Breathwork</a>
-          <a href="pages/mirror-breathwork.html">Mirror Breathwork</a>
-          <a href="pages/water-breathwork.html">Water Breathwork</a>
-          <a href="pages/soul-guidance.html">Soul Guidance</a>
-          <a href="pages/soul-oracle-reading.html">Soul Oracle Reading</a>
-        </div>
-      </div>
-      <a href="#soul-is">
-        <span lang-content="es">Filosofía</span><span lang-content="en">Philosophy</span>
-      </a>
-      <a href="#retiro">
-        <span lang-content="es">Retiro</span><span lang-content="en">Retreat</span>
-      </a>
-      <a href="#testimoniales">
-        <span lang-content="es">Testimonios</span><span lang-content="en">Testimonials</span>
-      </a>
-      <a href="#contacto">
-        <span lang-content="es">Contacto</span><span lang-content="en">Contact</span>
-      </a>
-    </nav>
+  </div>
+</section>
 
-    <div class="header-actions">
-      <div class="lang-switch" role="group" aria-label="Selector de idioma / Language selector">
-        <button type="button" data-lang-btn="es" aria-pressed="true">ES</button>
-        <button type="button" data-lang-btn="en" aria-pressed="false">EN</button>
-      </div>
-      <a href="https://wa.me/525551063488" class="btn btn-primary btn-sm" target="_blank" rel="noopener">
-        <span lang-content="es">Reservar</span><span lang-content="en">Book Now</span>
-      </a>
-      <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-nav">
-        <span></span><span></span><span></span>
+<!-- ══════════════════════════════════════════════
+     SECTION 2 — SOUL IS...
+     bg: --bg-alt | accent: terracotta
+     ══════════════════════════════════════════════ -->
+<section class="soul-is" aria-labelledby="soul-is-title">
+  <div class="soul-is__in">
+    <p class="eyebrow">Philosophy</p>
+    <h2 id="soul-is-title">Soul Is&hellip;</h2>
+    <p class="tag">Deep inner intelligence</p>
+    <div class="soul-is__rule" aria-hidden="true"></div>
+    <p>
+      The most profound and beautiful spiritual intelligence living within every human being.
+      In this work, Soul is understood as the deepest essence of who we are — the part that
+      feels, remembers, guides, and silently knows the way home.
+    </p>
+    <a href="#" class="read-more" lang-content="es">Leer más</a>
+  </div>
+</section>
+
+<section class="therapist" aria-labelledby="therapist-title">
+
+  <!-- Columna izquierda: texto -->
+  <div class="therapist__text">
+
+    <p class="therapist__eyebrow">Tu terapeuta</p>
+
+    <h2 class="therapist__title" id="therapist-title">
+      El alma no necesita ser arreglada. Necesita ser escuchada.
+    </h2>
+
+    <p class="therapist__lede">
+      Pasé años buscando respuestas afuera: en libros, en técnicas,
+      en personas que prometían el camino.
+      <mark>La vida me fue llevando adentro.</mark>
+      Y fue ahí donde encontré lo que siempre había estado esperando.
+    </p>
+
+    <p class="therapist__body">
+      No fue un solo momento. Fue un proceso largo, honesto
+      y a veces incómodo — de mirar lo que evitaba, sentir lo que reprimía
+      y soltar lo que ya no me pertenecía. Eso fue lo que me transformó.
+      Y eso es lo que acompaño ahora en cada sesión.
+    </p>
+
+    <p class="therapist__close">
+      Creé Inner Path para que no tengas que recorrer ese camino sola.
+      <mark>La sesión comienza cuando tú decides que sí.</mark>
+    </p>
+
+    <div class="therapist__signature">
+      <span class="therapist__name">— Mónica Schekaibán Assad</span>
+      <span class="therapist__roles">Soul Therapist · Body, Heart and Soul</span>
+    </div>
+
+    <a href="#contacto" class="btn-therapist">
+      Conoce su historia
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    </a>
+
+  </div>
+
+  <!-- Columna derecha: imagen de referencia (Picsum) -->
+  <!-- REEMPLAZAR con foto real de Mónica -->
+  <div class="therapist__media">
+    <img
+      src="https://picsum.photos/id/64/900/1200"
+      alt="Mónica Schekaibán Assad — Soul Therapist de Inner Path"
+      width="900"
+      height="1200">
+  </div>
+
+</section>
+
+<section class="soul-therapy" aria-labelledby="soul-therapy-title">
+  <div class="soul-therapy__in">
+    <p class="eyebrow">The method</p>
+    <h2 id="soul-therapy-title">Soul Therapy</h2>
+    <p class="tag">Integrated emotional &amp; soul work</p>
+    <div class="soul-therapy__rule" aria-hidden="true"></div>
+    <p>
+      Soul Therapy is the heart of this work. It is a form of accompaniment that integrates
+      different tools to access each person's deep information — emotional, energetic, and
+      soul-based.
+    </p>
+    <a href="#" class="read-more">Read more</a>
+  </div>
+</section>
+
+<section class="bw" aria-labelledby="bw-title">
+
+  <!-- ── Background layers ── -->
+
+  <!-- Layer 0: Default — Soul Breathwork -->
+  <div class="bw__bg-layer is-active" data-bg="default" aria-hidden="true">
+    <img src="https://picsum.photos/id/1062/1920/1080"
+         alt="Sesión de Soul Breathwork con luz suave y calma profunda">
+  </div>
+
+  <!-- Layer 1: Earth Breathwork -->
+  <div class="bw__bg-layer" data-bg="earth" aria-hidden="true">
+    <img src="https://picsum.photos/id/1059/1920/1080"
+         alt="Earth Breathwork — respiración profunda recostada en la tierra">
+  </div>
+
+  <!-- Layer 2: Mirror Breathwork -->
+  <div class="bw__bg-layer" data-bg="mirror" aria-hidden="true">
+    <img src="https://picsum.photos/id/1025/1920/1080"
+         alt="Mirror Breathwork — encuentro frente al espejo">
+  </div>
+
+  <!-- Layer 3: Water Breathwork -->
+  <div class="bw__bg-layer" data-bg="water" aria-hidden="true">
+    <img src="https://picsum.photos/id/1053/1920/1080"
+         alt="Water Breathwork — inmersión flotante en alberca">
+  </div>
+
+  <!-- Scrim overlay -->
+  <div class="bw__scrim" aria-hidden="true"></div>
+
+  <!-- ── Center: dynamic title / subtitle / intro ── -->
+  <div class="bw__center">
+    <div class="bw__rule" aria-hidden="true"></div>
+
+    <div class="bw__text-slot">
+      <h2 class="bw__title" id="bw-title">Soul Breathwork</h2>
+      <p class="bw__subtitle">Circular breathwork system</p>
+      <p class="bw__intro">
+        Breath as a deep portal of transformation. Soul Breathwork is a practice
+        based on circular breathing, a continuous and conscious breathing that allows
+        access to expanded states of perception.
+      </p>
+    </div>
+
+    <a href="#" class="bw__readmore" id="bw-readmore" aria-label="Read more about this therapy">
+      Read more
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+           stroke-width="2.5" stroke-linecap="round">
+        <path d="M5 12h14M13 6l6 6-6 6"/>
+      </svg>
+    </a>
+  </div>
+
+  <!-- ── Subcategory cards strip ── -->
+  <div class="bw__cards" role="list">
+
+    <!-- Earth Breathwork -->
+    <div class="bw__card"
+         role="listitem"
+         data-card="earth"
+         data-title="Earth Breathwork"
+         data-subtitle="Grounded breathwork"
+         data-intro="A deep breathing session in a lying-down position. It takes place on a mat or mattress, allowing the body to be completely supported in a safe space."
+         data-href="pages/earth-breathwork.html">
+      <span class="bw__card-kicker">01</span>
+      <h3 class="bw__card-title">Earth Breathwork</h3>
+      <p class="bw__card-desc">Grounded breathwork — a deep breathing session in a lying-down position.</p>
+    </div>
+
+    <!-- Mirror Breathwork -->
+    <div class="bw__card"
+         role="listitem"
+         data-card="mirror"
+         data-title="Mirror Breathwork"
+         data-subtitle="Mirror-based activation"
+         data-intro="A direct encounter with yourself. This practice begins in front of a mirror, where for a determined period of time you hold your own gaze."
+         data-href="pages/mirror-breathwork.html">
+      <span class="bw__card-kicker">02</span>
+      <h3 class="bw__card-title">Mirror Breathwork</h3>
+      <p class="bw__card-desc">Mirror-based activation — a direct encounter with yourself through sustained gaze.</p>
+    </div>
+
+    <!-- Water Breathwork -->
+    <div class="bw__card"
+         role="listitem"
+         data-card="water"
+         data-title="Water Breathwork"
+         data-subtitle="Floating immersion"
+         data-intro="An experience of immersion and deep surrender. This practice takes place inside a pool, where the person, with an eye mask, is held at all times by the therapist."
+         data-href="pages/water-breathwork.html">
+      <span class="bw__card-kicker">03</span>
+      <h3 class="bw__card-title">Water Breathwork</h3>
+      <p class="bw__card-desc">Floating immersion — an experience of deep surrender inside the pool.</p>
+    </div>
+
+  </div>
+  <!-- /.bw__cards -->
+
+</section>
+
+<section class="sessions" aria-label="Soul Therapy sessions">
+
+  <div class="sessions__header">
+    <div>
+      <p class="eyebrow">Sessions menu</p>
+      <h2>Our therapies</h2>
+    </div>
+    <div class="sessions__nav" role="group" aria-label="Carousel navigation">
+      <button class="s-btn" id="prev-btn" aria-label="Previous session">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>
+      </button>
+      <button class="s-btn" id="next-btn" aria-label="Next session">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
       </button>
     </div>
   </div>
 
-  <nav class="mobile-nav" id="mobile-nav" aria-label="Navegación móvil">
-    <button type="button" class="mobile-submenu-trigger" aria-expanded="false" aria-controls="mobile-submenu-terapias">
-      <span><span lang-content="es">Terapias</span><span lang-content="en">Therapies</span></span>
-      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M6 9l6 6 6-6"/></svg>
-    </button>
-    <div class="mobile-submenu" id="mobile-submenu-terapias">
-      <div class="mobile-submenu__inner">
-        <a href="pages/soul-channeling.html">Soul Channeling</a>
-        <a href="pages/soul-mapping.html">Soul Mapping</a>
-        <a href="pages/soul-tantra-activation.html">Soul Tantra Activation</a>
-        <a href="pages/soul-breathwork.html">Soul Breathwork</a>
-        <a href="pages/earth-breathwork.html">Earth Breathwork</a>
-        <a href="pages/mirror-breathwork.html">Mirror Breathwork</a>
-        <a href="pages/water-breathwork.html">Water Breathwork</a>
-        <a href="pages/soul-guidance.html">Soul Guidance</a>
-        <a href="pages/soul-oracle-reading.html">Soul Oracle Reading</a>
-      </div>
-    </div>
-    <a href="#soul-is"><span lang-content="es">Filosofía</span><span lang-content="en">Philosophy</span></a>
-    <a href="#retiro"><span lang-content="es">Retiro</span><span lang-content="en">Retreat</span></a>
-    <a href="#testimoniales"><span lang-content="es">Testimonios</span><span lang-content="en">Testimonials</span></a>
-    <a href="#contacto"><span lang-content="es">Contacto</span><span lang-content="en">Contact</span></a>
-  </nav>
-</header>
+  <div class="sessions__overflow" id="s-overflow">
+    <div class="sessions__track" id="s-track">
 
-<main id="main">
-
-  <!-- ====================== HERO ====================== -->
-  <section class="hero-fb">
-    <img class="hero-fb__bg" src="https://picsum.photos/id/177/1920/1280" alt="Hojas y vegetación exuberante, evocando calma y un espacio natural sereno" width="1920" height="1280" loading="eager">
-    <div class="hero-fb__scrim" aria-hidden="true"></div>
-    <div class="hero-fb__content">
-      <p class="eyebrow">
-        <span class="dots"><span></span><span></span><span></span></span>
-        <span lang-content="es">Soul Therapy Method</span>
-        <span lang-content="en">Soul Therapy Method</span>
-      </p>
-      <h1>
-        <span lang-content="es">El alma conoce<br>el camino a <em>casa</em></span>
-        <span lang-content="en">The soul knows<br>the way <em>home</em></span>
-      </h1>
-      <p class="hero-fb__lede">
-        <span lang-content="es">Descubre espacios de calma, terapias profundas y un retorno duradero hacia ti mismo.</span>
-        <span lang-content="en">Discover calm spaces, deep therapies, and a lasting return to yourself.</span>
-      </p>
-    </div>
-  </section>
-
-
-  <!-- ====================== SOUL IS... ====================== -->
-  <section id="soul-is" class="section-alt">
-    <div class="wrap">
-      <div class="section-intro">
-        <span class="dots"><span></span><span></span><span></span></span>
-        <p class="eyebrow"><span lang-content="es">Filosofía</span><span lang-content="en">Philosophy</span></p>
-        <h2><span lang-content="es">Soul Is&hellip;</span><span lang-content="en">Soul Is&hellip;</span></h2>
-        <p class="lede">
-          <span lang-content="es">La inteligencia espiritual más profunda y hermosa que vive dentro de cada ser humano.</span>
-          <span lang-content="en">The most profound and beautiful spiritual intelligence living within every human being.</span>
-        </p>
-      </div>
-
-      <div class="benefit-list" style="max-width:760px;margin-inline:auto;">
-        <div class="benefit-item">
-          <span class="benefit-item__icon" aria-hidden="true">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-4.5-9.5-9C.5 7.5 3 3 7 3c2 0 3.5 1.3 5 3 1.5-1.7 3-3 5-3 4 0 6.5 4.5 4.5 9-2.5 4.5-9.5 9-9.5 9z"/></svg>
-          </span>
-          <p><span lang-content="es"><strong>Guía</strong> sin imponer.</span><span lang-content="en"><strong>Guides</strong> without imposing.</span></p>
+      <!-- 1. Soul Channeling -->
+      <article class="s-slide">
+        <div class="s-img">
+          <img src="https://picsum.photos/id/1027/960/780" alt="Soul Channeling — Opening through presence" loading="eager">
+          <span class="s-counter">01 / 05</span>
         </div>
-        <div class="benefit-item">
-          <span class="benefit-item__icon" aria-hidden="true">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
-          </span>
-          <p><span lang-content="es"><strong>Muestra</strong> sin forzar.</span><span lang-content="en"><strong>Shows</strong> without forcing.</span></p>
+        <div class="s-body">
+          <p class="eyebrow">Opening through presence</p>
+          <h3>Soul Channeling</h3>
+          <p class="s-subtitle">A space of deep opening</p>
+          <p>In this practice, the therapist places their hands over the patient's heart, generating a direct point of contact that sustains, contains, and opens the inner space.</p>
+          <a href="pages/soul-channeling.html" class="read-more">Read more</a>
+          <div class="s-dots" id="s-dots"></div>
         </div>
-        <div class="benefit-item">
-          <span class="benefit-item__icon" aria-hidden="true">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8"/></svg>
-          </span>
-          <p><span lang-content="es"><strong>Revela</strong> lo que está listo para ser visto.</span><span lang-content="en"><strong>Reveals</strong> what is ready to be seen.</span></p>
+      </article>
+
+      <!-- 2. Soul Mapping -->
+      <article class="s-slide">
+        <div class="s-img">
+          <img src="https://picsum.photos/id/24/960/780" alt="Soul Mapping — Language as a portal" loading="lazy">
+          <span class="s-counter">02 / 05</span>
         </div>
+        <div class="s-body">
+          <p class="eyebrow">Language as a portal</p>
+          <h3>Soul Mapping</h3>
+          <p class="s-subtitle">A space where the word becomes a doorway</p>
+          <p>Soul Mapping is a therapy that allows the inner world to be explored through language, revealing emotional, subconscious, and family patterns.</p>
+          <a href="pages/soul-mapping.html" class="read-more">Read more</a>
+        </div>
+      </article>
+
+      <!-- 3. Soul Tantra Activation -->
+      <article class="s-slide">
+        <div class="s-img">
+          <img src="https://picsum.photos/id/338/960/780" alt="Soul Tantra Activation — Energetic activation" loading="lazy">
+          <span class="s-counter">03 / 05</span>
+        </div>
+        <div class="s-body">
+          <p class="eyebrow">Energetic activation & consciousness expansion</p>
+          <h3>Soul Tantra Activation</h3>
+          <p class="s-subtitle">A space of energetic activation</p>
+          <p>This work focuses on the vital energy of the body, known as kundalini — an energy that awakens and ascends naturally through breath, presence, and body awareness.</p>
+          <a href="pages/soul-tantra-activation.html" class="read-more">Read more</a>
+        </div>
+      </article>
+
+      <!-- 4. Soul Guidance -->
+      <article class="s-slide">
+        <div class="s-img">
+          <img src="https://picsum.photos/id/177/960/780" alt="Soul Guidance — Integration and emotional clarity" loading="lazy">
+          <span class="s-counter">04 / 05</span>
+        </div>
+        <div class="s-body">
+          <p class="eyebrow">Integration & emotional clarity</p>
+          <h3>Soul Guidance</h3>
+          <p class="s-subtitle">A space of clarity and understanding</p>
+          <p>Soul Guidance is an accompaniment where the lived experience begins to take form through words, allowing what has emerged to be organized, understood, and given meaning.</p>
+          <a href="pages/soul-guidance.html" class="read-more">Read more</a>
+        </div>
+      </article>
+
+      <!-- 5. Soul Oracle Reading -->
+      <article class="s-slide">
+        <div class="s-img">
+          <img src="https://picsum.photos/id/1040/960/780" alt="Soul Oracle Reading — Multidimensional reading" loading="lazy">
+          <span class="s-counter">05 / 05</span>
+        </div>
+        <div class="s-body">
+          <p class="eyebrow">Multidimensional oracle reading</p>
+          <h3>Soul Oracle Reading</h3>
+          <p class="s-subtitle">A space for guidance and deep inner connection</p>
+          <p>Soul Oracle Reading is a multidimensional reading that uses different oracle decks as a tool to access the emotional, energetic, and soul realms.</p>
+          <a href="pages/soul-oracle-reading.html" class="read-more">Read more</a>
+        </div>
+      </article>
+
+    </div><!-- /.sessions__track -->
+  </div><!-- /.sessions__overflow -->
+
+</section>
+
+<section class="retreat" aria-labelledby="retreat-title">
+  <div class="retreat__inner">
+
+    <!-- Eyebrow + Title -->
+    <p class="retreat__eyebrow">Private immersive experience</p>
+    <h2 class="retreat__title" id="retreat-title">Soul Personal Retreat</h2>
+    <div class="retreat__rule" aria-hidden="true"></div>
+
+    <!-- Intro -->
+    <p class="retreat__intro">
+      An immersive private experience designed to support deep emotional, energetic,
+      and inner transformation through the different Soul Therapy modalities.
+      The retreat unfolds at your own rhythm — whether through consecutive immersion,
+      weekly sessions, or an intensive weekend.
+    </p>
+
+    <!-- Formats -->
+    <div class="retreat__formats" role="list">
+
+      <div class="retreat__format" role="listitem">
+        <span class="retreat__format-letter">A</span>
+        <span class="retreat__format-title">Weekly</span>
+        <p class="retreat__format-desc">One session per week (4–5 hours each session)</p>
       </div>
 
-      <p class="text-center" style="max-width:680px;margin:var(--space-lg) auto 0;color:var(--color-text-soft);">
-        <span lang-content="es">Soul Therapy es el corazón de este trabajo: un acompañamiento que integra distintas herramientas para acceder a la información profunda de cada persona — emocional, energética y del alma.</span>
-        <span lang-content="en">Soul Therapy is the heart of this work: an accompaniment that integrates different tools to access each person's deep information — emotional, energetic, and soul-based.</span>
-      </p>
+      <div class="retreat__format" role="listitem">
+        <span class="retreat__format-letter">B</span>
+        <span class="retreat__format-title">Immersion</span>
+        <p class="retreat__format-desc">20 or 25-hour immersion within one week (5 continuous days)</p>
+      </div>
+
+      <div class="retreat__format" role="listitem">
+        <span class="retreat__format-letter">C</span>
+        <span class="retreat__format-title">Weekend</span>
+        <p class="retreat__format-desc">20 or 25-hour intensive weekend immersion (Friday to Sunday)</p>
+      </div>
+
     </div>
-  </section>
-  
-  <!-- ====================== GRID DE TERAPIAS ====================== -->
-  <section id="terapias" class="offer-section">
-    <div class="wrap">
-      <div class="section-intro">
-        <span class="dots"><span></span><span></span><span></span></span>
-        <p class="eyebrow"><span lang-content="es">Sessions Menu</span><span lang-content="en">Sessions Menu</span></p>
-        <h2><span lang-content="es">Qué ofrecemos</span><span lang-content="en">What we offer</span></h2>
-        <p class="lede">
-          <span lang-content="es">Cada proceso es único, respetando el ritmo, la historia y la verdad de cada persona.</span>
-          <span lang-content="en">Each process is unique, respecting the rhythm, the history, and the truth of each person.</span>
-        </p>
-      </div>
 
-      <div class="offer-grid">
+    <!-- Pricing -->
+    <div class="retreat__pricing" role="list">
 
-        <a href="pages/soul-channeling.html" class="offer-item">
-          <div class="offer-item__media">
-            <img src="https://picsum.photos/id/1027/500/500" alt="Soul Channeling" width="500" height="500" loading="lazy">
-          </div>
-          <span class="offer-item__name">Soul Channeling</span>
-        </a>
-
-        <a href="pages/soul-mapping.html" class="offer-item">
-          <div class="offer-item__media">
-            <img src="https://picsum.photos/id/24/500/500" alt="Soul Mapping" width="500" height="500" loading="lazy">
-          </div>
-          <span class="offer-item__name">Soul Mapping</span>
-        </a>
-
-        <a href="pages/soul-tantra-activation.html" class="offer-item">
-          <div class="offer-item__media">
-            <img src="https://picsum.photos/id/338/500/500" alt="Soul Tantra Activation" width="500" height="500" loading="lazy">
-          </div>
-          <span class="offer-item__name">Soul Tantra Activation</span>
-        </a>
-
-        <a href="pages/soul-guidance.html" class="offer-item">
-          <div class="offer-item__media">
-            <img src="https://picsum.photos/id/177/500/500" alt="Soul Guidance" width="500" height="500" loading="lazy">
-          </div>
-          <span class="offer-item__name">Soul Guidance</span>
-        </a>
-
-        <a href="pages/soul-oracle-reading.html" class="offer-item">
-          <div class="offer-item__media">
-            <img src="https://picsum.photos/id/1040/500/500" alt="Soul Oracle Reading" width="500" height="500" loading="lazy">
-          </div>
-          <span class="offer-item__name">Soul Oracle Reading</span>
-        </a>        
-        
-        <a href="pages/soul-breathwork.html" class="offer-item">
-          <div class="offer-item__media">
-            <img src="https://picsum.photos/id/1062/500/500" alt="Soul Breathwork" width="500" height="500" loading="lazy">
-          </div>
-          <span class="offer-item__name">Soul Breathwork</span>
-        </a>
-
-        <a href="pages/earth-breathwork.html" class="offer-item">
-          <div class="offer-item__media">
-            <img src="https://picsum.photos/id/1059/500/500" alt="Earth Breathwork" width="500" height="500" loading="lazy">
-          </div>
-          <span class="offer-item__name">Earth Breathwork</span>
-        </a>
-
-        <a href="pages/mirror-breathwork.html" class="offer-item">
-          <div class="offer-item__media">
-            <img src="https://picsum.photos/id/1025/500/500" alt="Mirror Breathwork" width="500" height="500" loading="lazy">
-          </div>
-          <span class="offer-item__name">Mirror Breathwork</span>
-        </a>
-
-        <a href="pages/water-breathwork.html" class="offer-item">
-          <div class="offer-item__media">
-            <img src="https://picsum.photos/id/1053/500/500" alt="Water Breathwork" width="500" height="500" loading="lazy">
-          </div>
-          <span class="offer-item__name">Water Breathwork</span>
-        </a>        
-
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ====================== RETIRO ====================== -->
-  <section id="retiro" class="section-alt">
-    <div class="wrap">
-      <div class="retreat-banner">
-        <div>
-          <p class="eyebrow">
-            <span class="dots"><span></span><span></span><span></span></span>
-            <span lang-content="es">Experiencia inmersiva privada</span><span lang-content="en">Private immersive experience</span>
-          </p>
-          <h2><span lang-content="es">Soul Personal Retreat</span><span lang-content="en">Soul Personal Retreat</span></h2>
-          <p>
-            <span lang-content="es">Un retiro privado diseñado para sostener una transformación emocional, energética e interior profunda, a través de las distintas modalidades de Soul Therapy.</span>
-            <span lang-content="en">A private experience designed to support deep emotional, energetic, and inner transformation through the different Soul Therapy modalities.</span>
-          </p>
-          <p style="margin-top:1rem;font-size:0.92rem;">
-            <span lang-content="es">Disponible como inmersión consecutiva, sesiones semanales, o un fin de semana intensivo (viernes a domingo).</span>
-            <span lang-content="en">Available as a consecutive immersion, weekly sessions, or an intensive weekend (Friday to Sunday).</span>
-          </p>
-          <a href="pages/retiro.html" class="btn btn-primary mt-lg" style="background:#F7E8CB;color:#3A3220;">
-            <span lang-content="es">Ver detalles del retiro</span><span lang-content="en">View retreat details</span>
-          </a>
+      <div class="retreat__price-col" role="listitem">
+        <div class="retreat__price-hours">
+          <strong>20</strong> Hours
         </div>
-
-        <div class="retreat-pricing">
-          <div class="retreat-price-card">
-            <div>
-              <div class="retreat-price-card__label">20 <span lang-content="es">horas — 1 persona</span><span lang-content="en">hours — 1 person</span></div>
-              <div class="retreat-price-card__sub"><span lang-content="es">Inmersión individual</span><span lang-content="en">Individual immersion</span></div>
-            </div>
-            <div class="retreat-price-card__amount">4,000 USD</div>
-          </div>
-          <div class="retreat-price-card">
-            <div>
-              <div class="retreat-price-card__label">25 <span lang-content="es">horas — 1 persona</span><span lang-content="en">hours — 1 person</span></div>
-              <div class="retreat-price-card__sub"><span lang-content="es">Inmersión individual</span><span lang-content="en">Individual immersion</span></div>
-            </div>
-            <div class="retreat-price-card__amount">4,500 USD</div>
-          </div>
-          <div class="retreat-price-card">
-            <div>
-              <div class="retreat-price-card__label">20 <span lang-content="es">horas — pareja</span><span lang-content="en">hours — couples</span></div>
-              <div class="retreat-price-card__sub"><span lang-content="es">Inmersión en pareja</span><span lang-content="en">Couples immersion</span></div>
-            </div>
-            <div class="retreat-price-card__amount">7,000 USD</div>
-          </div>
-          <div class="retreat-price-card">
-            <div>
-              <div class="retreat-price-card__label">25 <span lang-content="es">horas — pareja</span><span lang-content="en">hours — couples</span></div>
-              <div class="retreat-price-card__sub"><span lang-content="es">Inmersión en pareja</span><span lang-content="en">Couples immersion</span></div>
-            </div>
-            <div class="retreat-price-card__amount">8,000 USD</div>
-          </div>
+        <div class="retreat__price-row">
+          <span class="retreat__price-label">1 Person</span>
+          <span class="retreat__price-amount">4,000 USD</span>
+        </div>
+        <div class="retreat__price-row">
+          <span class="retreat__price-label">Couples</span>
+          <span class="retreat__price-amount">7,000 USD</span>
         </div>
       </div>
+
+      <div class="retreat__price-col" role="listitem">
+        <div class="retreat__price-hours">
+          <strong>25</strong> Hours
+        </div>
+        <div class="retreat__price-row">
+          <span class="retreat__price-label">1 Person</span>
+          <span class="retreat__price-amount">4,500 USD</span>
+        </div>
+        <div class="retreat__price-row">
+          <span class="retreat__price-label">Couples</span>
+          <span class="retreat__price-amount">8,000 USD</span>
+        </div>
+      </div>
+
     </div>
-  </section>
 
-  
+    <!-- Read more -->
+    <a href="pages/retiro.html" class="retreat__readmore" aria-label="Read more about Soul Personal Retreat">
+      Read more
+    </a>
 
-  <!-- ====================== TESTIMONIALES ====================== -->
-  <section id="testimoniales">
-    <div class="wrap">
-      <div class="section-intro">
-        <span class="dots"><span></span><span></span><span></span></span>
-        <p class="eyebrow"><span lang-content="es">Voces del camino</span><span lang-content="en">Voices from the path</span></p>
-        <h2><span lang-content="es">Lo que viven en su proceso</span><span lang-content="en">What they live in their process</span></h2>
-        <p class="lede">
-          <span lang-content="es">Testimonios reales, en sus propias palabras.</span>
-          <span lang-content="en">Real testimonials, in their own words.</span>
-        </p>
-      </div>
+  </div>
+</section>
 
-      <div class="testimonial-carousel" role="region" aria-label="Carrusel de testimoniales en video" tabindex="0">
+<footer class="ft" aria-label="Site footer">
+  <div class="ft__inner">
 
-        <!-- Testimonio 1 -->
-        <article class="testimonial-card">
-          <video preload="none" playsinline poster="videos/poster-1.jpg">
-            <source src="videos/testimonio-1.mp4" type="video/mp4">
-          </video>
-          <button class="testimonial-card__play" aria-label="Reproducir testimonio 1">
-            <span class="testimonial-card__play-icon" aria-hidden="true">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="#5C6E49"><path d="M8 5v14l11-7z"/></svg>
-            </span>
-          </button>
-          <div class="testimonial-card__overlay">
-            <div class="testimonial-card__name" data-name-placeholder>María G.</div>
-            <div class="testimonial-card__role"><span lang-content="es">Soul Breathwork</span><span lang-content="en">Soul Breathwork</span></div>
-          </div>
-        </article>
+    <!-- ── Top grid ── -->
+    <div class="ft__top">
 
-        <!-- Testimonio 2 -->
-        <article class="testimonial-card">
-          <video preload="none" playsinline poster="videos/poster-2.jpg">
-            <source src="videos/testimonio-2.mp4" type="video/mp4">
-          </video>
-          <button class="testimonial-card__play" aria-label="Reproducir testimonio 2">
-            <span class="testimonial-card__play-icon" aria-hidden="true">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="#5C6E49"><path d="M8 5v14l11-7z"/></svg>
-            </span>
-          </button>
-          <div class="testimonial-card__overlay">
-            <div class="testimonial-card__name" data-name-placeholder>Carlos R.</div>
-            <div class="testimonial-card__role"><span lang-content="es">Soul Channeling</span><span lang-content="en">Soul Channeling</span></div>
-          </div>
-        </article>
-
-        <!-- Testimonio 3 -->
-        <article class="testimonial-card">
-          <video preload="none" playsinline poster="videos/poster-3.jpg">
-            <source src="videos/testimonio-3.mp4" type="video/mp4">
-          </video>
-          <button class="testimonial-card__play" aria-label="Reproducir testimonio 3">
-            <span class="testimonial-card__play-icon" aria-hidden="true">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="#5C6E49"><path d="M8 5v14l11-7z"/></svg>
-            </span>
-          </button>
-          <div class="testimonial-card__overlay">
-            <div class="testimonial-card__name" data-name-placeholder>Andrea L.</div>
-            <div class="testimonial-card__role"><span lang-content="es">Soul Mapping</span><span lang-content="en">Soul Mapping</span></div>
-          </div>
-        </article>
-
-        <!-- Testimonio 4 -->
-        <article class="testimonial-card">
-          <video preload="none" playsinline poster="videos/poster-4.jpg">
-            <source src="videos/testimonio-4.mp4" type="video/mp4">
-          </video>
-          <button class="testimonial-card__play" aria-label="Reproducir testimonio 4">
-            <span class="testimonial-card__play-icon" aria-hidden="true">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="#5C6E49"><path d="M8 5v14l11-7z"/></svg>
-            </span>
-          </button>
-          <div class="testimonial-card__overlay">
-            <div class="testimonial-card__name" data-name-placeholder>Sofía M.</div>
-            <div class="testimonial-card__role"><span lang-content="es">Soul Personal Retreat</span><span lang-content="en">Soul Personal Retreat</span></div>
-          </div>
-        </article>
-
-      </div>
-
-      <div class="carousel-controls">
-        <button type="button" data-carousel-prev aria-label="Testimonio anterior">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
-        </button>
-        <button type="button" data-carousel-next aria-label="Siguiente testimonio">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 6l6 6-6 6"/></svg>
-        </button>
-      </div>
-    </div>
-  </section>
-
-  <!-- ====================== CONTACTO ====================== -->
-  <section id="contacto" class="section-alt">
-    <div class="wrap text-center">
-      <span class="dots dots--lg" style="justify-content:center;margin-bottom:1.5rem;"><span></span><span></span><span></span></span>
-      <h2><span lang-content="es">Comienza tu camino</span><span lang-content="en">Begin your path</span></h2>
-      <p class="lede" style="max-width:560px;margin:1.2rem auto 2rem;">
-        <span lang-content="es">Cada mensaje llega exactamente cuando el alma está lista para escucharlo.</span>
-        <span lang-content="en">Every message arrives exactly when your soul is ready to hear it.</span>
-      </p>
-      <div class="hero__ctas" style="justify-content:center;">
-        <a href="https://wa.me/525551063488" class="btn btn-primary" target="_blank" rel="noopener">
-          <span lang-content="es">Escribir por WhatsApp</span><span lang-content="en">Message on WhatsApp</span>
-        </a>
-        <a href="mailto:hola@innerpath.com" class="btn btn-ghost">
-          <span lang-content="es">Enviar correo</span><span lang-content="en">Send an email</span>
-        </a>
-      </div>
-      <p style="margin-top:2rem;color:var(--color-text-soft);font-family:var(--font-accent);font-style:italic;">
-        Mónica Schekaibán Assad — WhatsApp +52 55 5106 3488
-      </p>
-    </div>
-  </section>
-
-</main>
-
-<!-- ====================== FOOTER ====================== -->
-<footer class="site-footer">
-  <div class="wrap">
-    <div class="footer-grid">
+      <!-- Brand -->
       <div>
-        <span class="brand__name" style="font-size:1.5rem;">Inner&nbsp;Path</span>
-        <p style="margin-top:0.8rem;color:var(--color-text-soft);max-width:30ch;font-size:0.92rem;">
-          <span lang-content="es">The Soul Knows The Way Home. Body, Heart and Soul.</span>
-          <span lang-content="en">The Soul Knows The Way Home. Body, Heart and Soul.</span>
-        </p>
+        <span class="ft__brand-name">Inner Path</span>
+        <span class="ft__brand-tag">Body, Heart and Soul</span>
+        <a href="https://wa.me/525551063488" class="ft__brand-cta" target="_blank" rel="noopener">
+          Book a session
+        </a>
       </div>
-      <div>
-        <h4><span lang-content="es">Soul Therapies</span><span lang-content="en">Soul Therapies</span></h4>
+
+      <!-- Soul Therapies -->
+      <div class="ft__col">
+        <h4>Soul Therapies</h4>
         <ul>
           <li><a href="pages/soul-channeling.html">Soul Channeling</a></li>
           <li><a href="pages/soul-mapping.html">Soul Mapping</a></li>
           <li><a href="pages/soul-tantra-activation.html">Soul Tantra Activation</a></li>
-          <li><a href="pages/soul-breathwork.html">Soul Breathwork</a></li>
           <li><a href="pages/soul-guidance.html">Soul Guidance</a></li>
+          <li><a href="pages/soul-oracle-reading.html">Soul Oracle Reading</a></li>
         </ul>
       </div>
-      <div>
-        <h4><span lang-content="es">Soul Breathwork</span><span lang-content="en">Soul Breathwork</span></h4>
+
+      <!-- Soul Breathwork -->
+      <div class="ft__col">
+        <h4>Soul Breathwork</h4>
         <ul>
-        <li><a href="pages/soul-breathwork.html">Soul Breathwork</a></li>
-        <li><a href="pages/earth-breathwork.html">Earth Breathwork</a></li>
-        <li><a href="pages/mirror-breathwork.html">Mirror Breathwork</a></li>
-        <li><a href="pages/water-breathwork.html">Water Breathwork</a></li>
-      </ul>
-      </div>
-      <div>
-        <h4><span lang-content="es">Contacto</span><span lang-content="en">Contact</span></h4>
-        <ul>
-          <li><a href="https://wa.me/525551063488">WhatsApp +52 55 5106 3488</a></li>
-          <li><a href="mailto:hola@innerpath.com">hola@innerpath.com</a></li>
+          <li><a href="pages/soul-breathwork.html">Soul Breathwork</a></li>
+          <li><a href="pages/earth-breathwork.html">Earth Breathwork</a></li>
+          <li><a href="pages/mirror-breathwork.html">Mirror Breathwork</a></li>
+          <li><a href="pages/water-breathwork.html">Water Breathwork</a></li>
         </ul>
-        <div class="footer-social" style="margin-top:1rem;">
+      </div>
+
+      <!-- Contact -->
+      <div class="ft__col">
+        <h4>Contact</h4>
+        <div style="display:flex;flex-direction:column;gap:1rem;">
+          <a href="https://wa.me/525551063488" class="ft__contact-item" target="_blank" rel="noopener">
+            <span class="ft__contact-label">WhatsApp</span>
+            <span class="ft__contact-value">+52 55 5106 3488</span>
+          </a>
+          <a href="mailto:hola@innerpath.com" class="ft__contact-item">
+            <span class="ft__contact-label">Email</span>
+            <span class="ft__contact-value">hola@innerpath.com</span>
+          </a>
+        </div>
+        <div class="ft__social">
           <a href="#" aria-label="Instagram" target="_blank" rel="noopener">
-            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/></svg>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <rect x="2" y="2" width="20" height="20" rx="5"/>
+              <circle cx="12" cy="12" r="4"/>
+              <circle cx="17.5" cy="6.5" r="0.8" fill="currentColor" stroke="none"/>
+            </svg>
           </a>
           <a href="https://wa.me/525551063488" aria-label="WhatsApp" target="_blank" rel="noopener">
-            <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 00-8.6 15L2 22l5.2-1.4A10 10 0 1012 2zm5.7 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-1.7-.1-.4-.1-1-.3-1.6-.6-2.9-1.2-4.7-4.2-4.9-4.4-.1-.2-1.2-1.6-1.2-3 0-1.4.7-2.1 1-2.4.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5.2.6.7 1.9.8 2 .1.2.1.4 0 .6-.1.2-.2.3-.4.5-.2.2-.4.4-.5.6-.2.2-.4.4-.2.7.2.3.9 1.5 2 2.4 1.3 1.2 2.4 1.6 2.8 1.7.3.1.5.1.7-.1.2-.2.8-.9 1-1.2.2-.3.5-.3.8-.2.3.1 1.8.9 2.1 1 .3.2.5.2.6.3.1.2.1.8-.1 1.4z"/></svg>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2a10 10 0 00-8.6 15L2 22l5.2-1.4A10 10 0 1012 2zm5.7 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-1.7-.1-.4-.1-1-.3-1.6-.6-2.9-1.2-4.7-4.2-4.9-4.4-.1-.2-1.2-1.6-1.2-3 0-1.4.7-2.1 1-2.4.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5.2.6.7 1.9.8 2 .1.2.1.4 0 .6-.1.2-.2.3-.4.5-.2.2-.4.4-.5.6-.2.2-.4.4-.2.7.2.3.9 1.5 2 2.4 1.3 1.2 2.4 1.6 2.8 1.7.3.1.5.1.7-.1.2-.2.8-.9 1-1.2.2-.3.5-.3.8-.2.3.1 1.8.9 2.1 1 .3.2.5.2.6.3.1.2.1.8-.1 1.4z"/>
+            </svg>
           </a>
         </div>
       </div>
+
+    </div><!-- /.ft__top -->
+
+    <!-- ── Bottom bar ── -->
+    <div class="ft__bottom">
+      <p class="ft__copy">&copy; 2026 Inner Path. All rights reserved.</p>
+      <p class="ft__tagline">The Soul Knows The Way Home</p>
     </div>
 
-    <div class="footer-bottom">
-      <p>&copy; <span data-year>2026</span> Inner Path. <span lang-content="es">Todos los derechos reservados.</span><span lang-content="en">All rights reserved.</span></p>
-      <p><span lang-content="es">Diseñado con presencia y cuidado.</span><span lang-content="en">Designed with presence and care.</span></p>
-    </div>
   </div>
 </footer>
+<!-- JS -->
 
-<script src="js/main.js"></script>
+<script>
+(function () {
+  'use strict';
+
+  var track   = document.getElementById('s-track');
+  var wrap    = document.getElementById('s-overflow');
+  var prevBtn = document.getElementById('prev-btn');
+  var nextBtn = document.getElementById('next-btn');
+  var slides  = Array.from(document.querySelectorAll('.s-slide'));
+  var N       = slides.length;
+  var cur     = 0;
+
+  /* ── Build progress dots inside first slide ── */
+  var dotsWrap = document.getElementById('s-dots');
+  var dots = [];
+  for (var i = 0; i < N; i++) {
+    var d = document.createElement('button');
+    d.className = 's-dot' + (i === 0 ? ' on' : '');
+    d.setAttribute('aria-label', 'Go to slide ' + (i + 1));
+    (function (idx) {
+      d.addEventListener('click', function () { go(idx); });
+    })(i);
+    dotsWrap.appendChild(d);
+    dots.push(d);
+  }
+
+  function go(idx) {
+    cur = ((idx % N) + N) % N;
+    track.style.transform = 'translateX(-' + cur * 100 + '%)';
+    dots.forEach(function (d, i) { d.classList.toggle('on', i === cur); });
+    prevBtn.disabled = cur === 0;
+    nextBtn.disabled = cur === N - 1;
+  }
+
+  prevBtn.addEventListener('click', function () { go(cur - 1); });
+  nextBtn.addEventListener('click', function () { go(cur + 1); });
+  go(0);
+
+  /* ── Drag / swipe ── */
+  var sx = 0, dragging = false;
+  wrap.addEventListener('pointerdown', function (e) {
+    sx = e.clientX; dragging = true;
+    track.style.transition = 'none';
+  });
+  window.addEventListener('pointerup', function (e) {
+    if (!dragging) return;
+    dragging = false;
+    track.style.transition = '';
+    var dx = e.clientX - sx;
+    go(Math.abs(dx) > 55 ? (dx < 0 ? cur + 1 : cur - 1) : cur);
+  });
+
+  /* ── Keyboard ── */
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'ArrowLeft')  go(cur - 1);
+    if (e.key === 'ArrowRight') go(cur + 1);
+  });
+})();
+</script>
+
+<script>
+(function () {
+  'use strict';
+
+  var DEFAULT = {
+    title:    'Soul Breathwork',
+    subtitle: 'Circular breathwork system',
+    intro:    'Breath as a deep portal of transformation. Soul Breathwork is a practice based on circular breathing, a continuous and conscious breathing that allows access to expanded states of perception.',
+    href:     'pages/soul-breathwork.html',
+    bg:       'default'
+  };
+
+  var titleEl    = document.querySelector('.bw__title');
+  var subtitleEl = document.querySelector('.bw__subtitle');
+  var introEl    = document.querySelector('.bw__intro');
+  var textSlot   = document.querySelector('.bw__text-slot');
+  var readmore   = document.getElementById('bw-readmore');
+  var bgLayers   = document.querySelectorAll('.bw__bg-layer');
+  var cards      = document.querySelectorAll('.bw__card');
+
+  var currentBg  = 'default';
+  var fadeTimer  = null;
+  var leaveTimer = null;
+
+  /* ── Swap background ── */
+  function switchBg(key) {
+    if (key === currentBg) return;
+    currentBg = key;
+    bgLayers.forEach(function (layer) {
+      layer.classList.toggle('is-active', layer.dataset.bg === key);
+    });
+  }
+
+  /* ── Swap center text with fade out → in ── */
+  function switchText(data) {
+    clearTimeout(fadeTimer);
+    textSlot.classList.add('is-fading');
+
+    fadeTimer = setTimeout(function () {
+      titleEl.textContent    = data.title;
+      subtitleEl.textContent = data.subtitle;
+      introEl.textContent    = data.intro;
+      readmore.href          = data.href;
+      textSlot.classList.remove('is-fading');
+
+      /* Show "Read more" only on default Soul Breathwork state */
+      if (data.bg !== 'default') {
+        readmore.classList.remove('is-visible');
+      } else {
+        readmore.classList.add('is-visible');
+      }
+    }, 220); /* half the CSS transition, so text swaps mid-fade */
+  }
+
+  /* ── Card interactions ── */
+  cards.forEach(function (card) {
+    var bg       = card.dataset.card;
+    var cardData = {
+      title:    card.dataset.title,
+      subtitle: card.dataset.subtitle,
+      intro:    card.dataset.intro,
+      href:     card.dataset.href,
+      bg:       bg
+    };
+
+    /* Mouse enter → activate immediately */
+    card.addEventListener('mouseenter', function () {
+      clearTimeout(leaveTimer);
+      cards.forEach(function (c) { c.classList.remove('is-active'); });
+      card.classList.add('is-active');
+      switchBg(bg);
+      switchText(cardData);
+    });
+
+    /* Mouse leave → delay reset so user can move between cards */
+    card.addEventListener('mouseleave', function () {
+      card.classList.remove('is-active');
+      leaveTimer = setTimeout(function () {
+        /* Only reset if no other card is active */
+        var anyActive = Array.from(cards).some(function (c) {
+          return c.classList.contains('is-active');
+        });
+        if (!anyActive) {
+          switchBg('default');
+          switchText(DEFAULT);
+        }
+      }, 320);
+    });
+
+    /* Click → navigate */
+    card.addEventListener('click', function () {
+      window.location.href = card.dataset.href;
+    });
+
+    /* Keyboard support */
+    card.setAttribute('tabindex', '0');
+    card.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        window.location.href = card.dataset.href;
+      }
+    });
+  });
+
+  /* ── Touch: tap to activate (no hover on mobile) ── */
+  if (!window.matchMedia('(hover: hover)').matches) {
+    cards.forEach(function (card) {
+      card.addEventListener('click', function (e) {
+        var alreadyActive = card.classList.contains('is-active');
+        cards.forEach(function (c) { c.classList.remove('is-active'); });
+
+        if (!alreadyActive) {
+          e.preventDefault(); /* first tap = preview, second tap = navigate */
+          card.classList.add('is-active');
+          switchBg(card.dataset.card);
+          switchText({
+            title:    card.dataset.title,
+            subtitle: card.dataset.subtitle,
+            intro:    card.dataset.intro,
+            href:     card.dataset.href,
+            bg:       card.dataset.card
+          });
+        } else {
+          /* Second tap → navigate */
+          window.location.href = card.dataset.href;
+        }
+      });
+    });
+  }
+})();
+</script>
+
+<script>
+(function () {
+  var video   = document.getElementById('hero-video');
+  var muteBtn = document.getElementById('mute-btn');
+  var playBtn = document.getElementById('play-btn');
+  var iconMuted = document.getElementById('icon-muted');
+  var iconSound = document.getElementById('icon-sound');
+  if (!video) return;
+
+  video.muted = true;
+
+  /* Mute / unmute */
+  muteBtn.addEventListener('click', function () {
+    video.muted = !video.muted;
+    iconMuted.style.display = video.muted ? 'block' : 'none';
+    iconSound.style.display = video.muted ? 'none'  : 'block';
+    muteBtn.setAttribute('aria-label', video.muted ? 'Activar sonido' : 'Silenciar');
+  });
+
+  /* Play / pause */
+  playBtn.addEventListener('click', function () {
+    if (video.paused) {
+      video.play();
+      playBtn.classList.remove('paused');
+      playBtn.setAttribute('aria-label', 'Pausar video');
+    } else {
+      video.pause();
+      playBtn.classList.add('paused');
+      playBtn.setAttribute('aria-label', 'Reproducir video');
+    }
+  });
+
+  /* Pause if user scrolls away (IntersectionObserver) */
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (!e.isIntersecting && !video.paused) video.pause();
+        if (e.isIntersecting  &&  video.paused) video.play();
+      });
+    }, { threshold: 0.3 }).observe(video.closest('.hero'));
+  }
+})();
+</script>
 </body>
 </html>
