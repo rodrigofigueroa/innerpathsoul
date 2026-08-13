@@ -12,6 +12,134 @@
      ────────────────────────────────────────────────────────── */
   var TRANSLATIONS = {
 
+
+    /* ── A11Y / GLOBAL ── */
+    'a11y.skip':      { en: 'Skip to content', es: 'Saltar al contenido' },
+    'a11y.exploreMore': { en: 'Explore more', es: 'Explora más' },
+    'hero.tagline':   { en: 'The Soul Knows The Way Home', es: 'El Alma Conoce el Camino a Casa' },
+    'therapist.roles':{ en: 'Soul Therapist · Body, Heart and Soul', es: 'Soul Therapist · Body, Heart and Soul' },
+
+    /* ── RELATED CARD DESCRIPTIONS (shared across pages) ── */
+    'card.channeling.desc': { en: 'Hands placed over the heart — a direct point of contact that sustains and opens the inner space.',
+                              es: 'Manos sobre el corazón — un punto de contacto directo que sostiene y abre el espacio interior.' },
+    'card.mapping.desc':    { en: 'The word becomes a doorway — exploring the inner world through language and its hidden patterns.',
+                              es: 'La palabra se vuelve una puerta — explorando el mundo interior a través del lenguaje y sus patrones ocultos.' },
+    'card.tantra.desc':     { en: 'Vital energy awakens through breath and body — moving, opening, and finding its own path.',
+                              es: 'La energía vital despierta a través de la respiración y el cuerpo — moviéndose, abriendo y encontrando su propio camino.' },
+    'card.breathwork.desc': { en: 'Breath as a portal of transformation — circular breathing that opens access to expanded states.',
+                              es: 'La respiración como portal de transformación — respiración circular que abre acceso a estados expandidos.' },
+    'card.earth.desc':      { en: 'A deep session lying down on a mat, fully supported while breath releases what has been held.',
+                              es: 'Una sesión profunda recostada sobre un tapete, completamente sostenida mientras la respiración libera lo contenido.' },
+    'card.mirror.desc':     { en: 'Begins facing a mirror. Continues lying down, integrating what the mirror revealed.',
+                              es: 'Comienza frente a un espejo. Continúa recostada, integrando lo que el espejo reveló.' },
+    'card.water.desc':      { en: 'Floating inside a pool, held by the therapist while breath guides a profound release.',
+                              es: 'Flotando dentro de una alberca, sostenida por la terapeuta mientras la respiración guía una liberación profunda.' },
+    'card.guidance.desc':   { en: 'Conscious dialogue that gives form to lived experience — organizing what emerged into meaning.',
+                              es: 'Diálogo consciente que da forma a la experiencia vivida — organizando lo que emergió en significado.' },
+    'card.oracle.desc':     { en: 'Oracle decks as a mirror — accessing emotional, energetic, and soul realms with clarity.',
+                              es: 'Barajas de oráculo como espejo — accediendo a los reinos emocional, energético y del alma con claridad.' },
+
+    /* ── INDEX: bwc main + sub cards ── */
+    'bwc.main.desc': { en: 'Breath as a deep portal of transformation. A practice based on circular breathing — continuous and conscious — that opens access to expanded states of perception, releasing what is held in the body and connecting with the intelligence of the soul.',
+                       es: 'La respiración como portal profundo de transformación. Una práctica basada en la respiración circular — continua y consciente — que abre acceso a estados expandidos de percepción, liberando lo que el cuerpo retiene y conectando con la inteligencia del alma.' },
+    'bwc.earth.kicker':  { en: '01 — Grounded breathwork',     es: '01 — Breathwork de arraigo' },
+    'bwc.mirror.kicker': { en: '02 — Mirror-based activation', es: '02 — Activación frente al espejo' },
+    'bwc.water.kicker':  { en: '03 — Floating immersion',      es: '03 — Inmersión flotante' },
+    'bwc.earth.desc':  { en: 'Deep session lying down on a mat. The body is fully supported while breath releases what has been held.',
+                         es: 'Sesión profunda recostada sobre un tapete. El cuerpo está completamente sostenido mientras la respiración libera lo contenido.' },
+    'bwc.mirror.desc': { en: 'Begins facing a mirror, holding your own gaze. Continues lying down, integrating what was revealed.',
+                         es: 'Comienza frente a un espejo, sosteniendo tu propia mirada. Continúa recostada, integrando lo revelado.' },
+    'bwc.water.desc':  { en: 'Inside a pool, floating with an eye mask. The therapist holds you as breath guides a deep release.',
+                         es: 'Dentro de una alberca, flotando con un antifaz. La terapeuta te sostiene mientras la respiración guía una liberación profunda.' },
+
+    /* ── INDEX: sessions-menu compact cards ── */
+    'sm.channeling.kicker': { en: 'Opening through presence', es: 'Apertura a través de la presencia' },
+    'sm.mapping.kicker':    { en: 'Language as a portal',     es: 'El lenguaje como portal' },
+    'sm.tantra.kicker':     { en: 'Energetic activation',     es: 'Activación energética' },
+    'sm.guidance.kicker':   { en: 'Integration & clarity',    es: 'Integración y claridad' },
+    'sm.oracle.kicker':     { en: 'Multidimensional reading', es: 'Lectura multidimensional' },
+    'sm.channeling.desc': { en: 'Hands over the heart — a direct point of contact that sustains and opens the inner space.',
+                            es: 'Manos sobre el corazón — un punto de contacto directo que sostiene y abre el espacio interior.' },
+    'sm.mapping.desc':    { en: 'The word becomes a doorway — exploring the inner world through language and its hidden patterns.',
+                            es: 'La palabra se vuelve una puerta — explorando el mundo interior a través del lenguaje y sus patrones ocultos.' },
+    'sm.tantra.desc':     { en: 'Kundalini awakens through breath and body — energy moves, opens, and finds its own path.',
+                            es: 'La kundalini despierta a través de la respiración y el cuerpo — la energía se mueve, abre y encuentra su camino.' },
+    'sm.guidance.desc':   { en: 'Conscious dialogue that gives form to lived experience — organizing what has emerged into meaning.',
+                            es: 'Diálogo consciente que da forma a la experiencia vivida — organizando lo que emergió en significado.' },
+    'sm.oracle.desc':     { en: 'Oracle decks as a mirror — accessing emotional, energetic and soul realms with clarity.',
+                            es: 'Barajas de oráculo como espejo — accediendo a los reinos emocional, energético y del alma con claridad.' },
+
+    /* ── INDEX: full-screen breathwork block ── */
+    'bwFull.subtitle': { en: 'Circular breathwork system', es: 'Sistema de respiración circular' },
+    'bwFull.intro':    { en: 'Breath as a deep portal of transformation. Soul Breathwork is a practice based on circular breathing, a continuous and conscious breathing that allows access to expanded states of perception.',
+                         es: 'La respiración como portal profundo de transformación. Soul Breathwork es una práctica basada en la respiración circular, una respiración continua y consciente que permite acceder a estados expandidos de percepción.' },
+    'bwFull.earth.desc':  { en: 'Grounded breathwork — a deep breathing session in a lying-down position.',
+                            es: 'Breathwork de arraigo — una sesión de respiración profunda en posición recostada.' },
+    'bwFull.mirror.desc': { en: 'Mirror-based activation — a direct encounter with yourself.',
+                            es: 'Activación frente al espejo — un encuentro directo contigo misma.' },
+    'bwFull.water.desc':  { en: 'Floating immersion — an experience of deep surrender inside the pool.',
+                            es: 'Inmersión flotante — una experiencia de rendición profunda dentro de la alberca.' },
+
+    /* ── INDEX: carousel slides ── */
+    'car.channeling.sub': { en: 'A space of deep opening', es: 'Un espacio de apertura profunda' },
+    'car.mapping.sub':    { en: 'A space where the word becomes a doorway', es: 'Un espacio donde la palabra se vuelve una puerta' },
+    'car.tantra.sub':     { en: 'A space of energetic activation', es: 'Un espacio de activación energética' },
+    'car.guidance.sub':   { en: 'A space of clarity and understanding', es: 'Un espacio de claridad y comprensión' },
+    'car.oracle.sub':     { en: 'A space for guidance and deep inner connection', es: 'Un espacio de orientación y conexión interior profunda' },
+    'car.channeling.body':{ en: "In this practice, the therapist places their hands over the patient's heart, generating a direct point of contact that sustains, contains, and opens the inner space.",
+                            es: 'En esta práctica, la terapeuta coloca sus manos sobre el corazón del paciente, generando un punto de contacto directo que sostiene, contiene y abre el espacio interior.' },
+    'car.mapping.body':   { en: 'Soul Mapping is a therapy that allows the inner world to be explored through language, revealing emotional, subconscious, and family patterns.',
+                            es: 'Soul Mapping es una terapia que permite explorar el mundo interior a través del lenguaje, revelando patrones emocionales, subconscientes y familiares.' },
+    'car.tantra.body':    { en: 'This work focuses on the vital energy of the body, known as kundalini — an energy that awakens and ascends naturally through breath, presence, and body awareness.',
+                            es: 'Este trabajo se enfoca en la energía vital del cuerpo, conocida como kundalini — una energía que despierta y asciende naturalmente a través de la respiración, la presencia y la conciencia corporal.' },
+    'car.guidance.body':  { en: 'Soul Guidance is an accompaniment where the lived experience begins to take form through words, allowing what has emerged to be organized, understood, and given meaning.',
+                            es: 'Soul Guidance es un acompañamiento donde la experiencia vivida comienza a tomar forma a través de las palabras, permitiendo que lo emergido se organice, comprenda y adquiera significado.' },
+    'car.oracle.body':    { en: 'Soul Oracle Reading is a multidimensional reading that uses different oracle decks as a tool to access the emotional, energetic, and soul realms.',
+                            es: 'Soul Oracle Reading es una lectura multidimensional que utiliza diferentes barajas de oráculo como herramienta para acceder a los reinos emocional, energético y del alma.' },
+
+    /* ── BULLET LISTS per page ── */
+    'li.ch.1': { en: 'transcended souls', es: 'almas trascendidas' },
+    'li.ch.2': { en: 'souls within a human experience', es: 'almas dentro de una experiencia humana' },
+    'li.ch.3': { en: 'family constellation dynamics', es: 'dinámicas de constelación familiar' },
+    'li.ch.4': { en: 'memories, past experiences, or past lives', es: 'memorias, experiencias pasadas o vidas pasadas' },
+
+    'li.mp.1': { en: 'patterns are identified', es: 'se identifican patrones' },
+    'li.mp.2': { en: 'blockages are revealed', es: 'se revelan bloqueos' },
+    'li.mp.3': { en: 'emotional and family dynamics become visible', es: 'las dinámicas emocionales y familiares se hacen visibles' },
+
+    'li.tn.1': { en: 'greater sensitivity in the body', es: 'mayor sensibilidad en el cuerpo' },
+    'li.tn.2': { en: 'emotional opening', es: 'apertura emocional' },
+    'li.tn.3': { en: 'release of blockages', es: 'liberación de bloqueos' },
+    'li.tn.4': { en: 'expansion of consciousness', es: 'expansión de la conciencia' },
+    'li.tn.5': { en: 'a deeper connection with yourself', es: 'una conexión más profunda contigo misma' },
+
+    'li.bw.1': { en: 'vital energy is activated', es: 'la energía vital se activa' },
+    'li.bw.2': { en: 'stored emotions are released', es: 'las emociones almacenadas se liberan' },
+    'li.bw.3': { en: 'the body is unblocked', es: 'el cuerpo se desbloquea' },
+    'li.bw.4': { en: 'deep memories are accessed', es: 'se accede a memorias profundas' },
+    'li.bw.5': { en: 'the nervous system enters a process of reorganization', es: 'el sistema nervioso entra en un proceso de reorganización' },
+    'bw.modalities': { en: 'Three breathwork modalities:', es: 'Tres modalidades de breathwork:' },
+
+    'li.ea.1': { en: 'releasing control of the body', es: 'soltar el control del cuerpo' },
+    'li.ea.2': { en: 'entering a deeper state of inner connection', es: 'entrar en un estado más profundo de conexión interior' },
+    'li.ea.3': { en: 'facilitating emotional release', es: 'facilitar la liberación emocional' },
+    'li.ea.4': { en: 'allowing the experience to unfold with greater openness', es: 'permitir que la experiencia se despliegue con mayor apertura' },
+
+    'li.mi.1': { en: 'the emotional experience intensifies', es: 'la experiencia emocional se intensifica' },
+    'li.mi.2': { en: 'deeper layers are released', es: 'se liberan capas más profundas' },
+    'li.mi.3': { en: 'integration happens from a more internal place', es: 'la integración ocurre desde un lugar más interno' },
+
+    'li.wa.1': { en: 'entering very deep states of introspection', es: 'entrar en estados muy profundos de introspección' },
+    'li.wa.2': { en: 'releasing control more completely', es: 'soltar el control de forma más completa' },
+    'li.wa.3': { en: 'accessing more subtle levels of the experience', es: 'acceder a niveles más sutiles de la experiencia' },
+    'li.wa.4': { en: 'releasing emotions fluidly', es: 'liberar emociones fluidamente' },
+
+    'li.gu.1': { en: 'cognitive-behavioral', es: 'cognitivo-conductual' },
+    'li.gu.2': { en: 'rational-emotive', es: 'racional-emotivo' },
+    'li.gu.3': { en: 'semiological', es: 'semiológico' },
+    'li.gu.4': { en: 'family constellations', es: 'constelaciones familiares' },
+    'li.gu.5': { en: 'and other therapeutic practices', es: 'y otras prácticas terapéuticas' },
+
     /* ── NAV ── */
     'nav.therapies':   { en: 'Therapies',   es: 'Terapias' },
     'nav.breathwork':  { en: 'Breathwork',   es: 'Breathwork' },
@@ -218,6 +346,40 @@
   /* ──────────────────────────────────────────────────────────
      Apply language to all [data-i18n] elements
      ────────────────────────────────────────────────────────── */
+
+  /* ──────────────────────────────────────────────────────────
+     setLocalizedText — replaces the element's own text without
+     destroying child elements (icons, <strong>, <mark>).
+     ────────────────────────────────────────────────────────── */
+  function setLocalizedText(el, str) {
+    var nodes = el.childNodes;
+    var replaced = false;
+    var hasElementChild = false;
+
+    for (var i = 0; i < nodes.length; i++) {
+      if (nodes[i].nodeType === 1) { hasElementChild = true; break; }
+    }
+
+    for (var j = 0; j < nodes.length; j++) {
+      var n = nodes[j];
+      if (n.nodeType !== 3) continue;           /* only text nodes */
+      if (!n.nodeValue.trim()) continue;         /* skip whitespace */
+      if (!replaced) {
+        /* keep a trailing space when an icon follows the label */
+        var next = n.nextSibling;
+        n.nodeValue = (next && next.nodeType === 1) ? str + ' ' : str;
+        replaced = true;
+      } else {
+        n.nodeValue = '';                        /* clear extra text nodes */
+      }
+    }
+
+    if (!replaced) {
+      /* element had no text of its own — insert it before any icon */
+      el.insertBefore(document.createTextNode(hasElementChild ? str + ' ' : str), el.firstChild);
+    }
+  }
+
   var currentLang = localStorage.getItem('ip_lang') || 'en';
 
   function applyLang(lang) {
@@ -227,12 +389,15 @@
     /* Set html lang attribute */
     document.documentElement.setAttribute('lang', lang);
 
-    /* Apply all translations */
+    /* Apply all translations.
+       IMPORTANT: we replace ONLY text nodes so child elements
+       (SVG icons, <strong>, <mark>) survive the language switch.
+       Using textContent here would delete them. */
     document.querySelectorAll('[data-i18n]').forEach(function (el) {
       var key = el.getAttribute('data-i18n');
-      if (TRANSLATIONS[key] && TRANSLATIONS[key][lang]) {
-        el.textContent = TRANSLATIONS[key][lang];
-      }
+      var entry = TRANSLATIONS[key];
+      if (!entry || !entry[lang]) return;
+      setLocalizedText(el, entry[lang]);
     });
 
     /* Sync all lang buttons across the page */

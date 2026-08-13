@@ -1588,7 +1588,7 @@ body {
 </head>
 <body>
 
-<a href="#main-content" class="skip-link">Skip to main content</a>
+<a href="#main-content" class="skip-link" data-i18n="a11y.skip">Skip to main content</a>
 
 <!-- ═══════════════════════════════════════════════════════════
      NAV BAR
@@ -1635,8 +1635,8 @@ body {
         </div>
       </div>
 
-      <a class="nav-items__trigger nav-items__link" href="pages/retiro.html">Retreat</a>
-      <a class="nav-items__trigger nav-items__link" href="#about">About</a>
+      <a class="nav-items__trigger nav-items__link" href="pages/retiro.html" data-i18n="nav.retreat">Retreat</a>
+      <a class="nav-items__trigger nav-items__link" href="#about" data-i18n="nav.about">About</a>
 
     </nav>
 
@@ -1694,10 +1694,10 @@ body {
 
         <!-- Simple links -->
         <div class="nav-primary__item">
-          <a class="nav-primary__link" href="pages/retiro.html">Retreat</a>
+          <a class="nav-primary__link" href="pages/retiro.html" data-i18n="nav.retreat">Retreat</a>
         </div>
         <div class="nav-primary__item">
-          <a class="nav-primary__link" href="#about">About</a>
+          <a class="nav-primary__link" href="#about" data-i18n="nav.about">About</a>
         </div>
 
       </nav>
@@ -1740,7 +1740,7 @@ body {
     <div class="hero__rule" aria-hidden="true"></div>
     <h1 class="hero__title">Inner Path</h1>
     <div class="hero__dots" aria-hidden="true"><span></span><span></span><span></span></div>
-    <p class="hero__subtitle">The Soul Knows The Way Home</p>
+    <p class="hero__subtitle" data-i18n="hero.tagline">The Soul Knows The Way Home</p>
   </div>
   <div class="hero__controls" role="group" aria-label="Video controls">
     <button class="ctrl" id="mute-btn" aria-label="Unmute video">
@@ -1785,29 +1785,18 @@ body {
 <section class="therapist" id="about" aria-labelledby="therapist-title">
   <div class="therapist__text">
     <p class="therapist__eyebrow" data-i18n="index.yourTherapist">Your therapist</p>
-    <h2 class="therapist__title" id="therapist-title">
-      El alma no necesita ser arreglada. Necesita ser escuchada.
+    <h2 class="therapist__title" id="therapist-title" data-i18n="index.therapistTitle">
+      The soul does not need to be fixed. It needs to be heard.
     </h2>
-    <p class="therapist__lede">
-      Pasé años buscando respuestas afuera: en libros, en técnicas, en personas que prometían el camino.
-      <mark>La vida me fue llevando adentro.</mark>
-      Y fue ahí donde encontré lo que siempre había estado esperando.
-    </p>
-    <p class="therapist__body">
-      No fue un solo momento. Fue un proceso largo, honesto y a veces incómodo — de mirar lo que evitaba,
-      sentir lo que reprimía y soltar lo que ya no me pertenecía. Eso fue lo que me transformó.
-      Y eso es lo que acompaño ahora en cada sesión.
-    </p>
-    <p class="therapist__close">
-      Creé Inner Path para que no tengas que recorrer ese camino sola.
-      <mark>La sesión comienza cuando tú decides que sí.</mark>
-    </p>
+    <p class="therapist__lede" data-i18n="index.therapistLede">I spent years looking for answers outside: in books, techniques, people who promised the path. Life led me inward. And it was there I found what had always been waiting.</p>
+    <p class="therapist__body" data-i18n="index.therapistBody">It was not one single moment. It was a long, honest, and sometimes uncomfortable process — of looking at what I avoided, feeling what I suppressed, and releasing what no longer belonged to me. That is what transformed me. And that is what I accompany in every session.</p>
+    <p class="therapist__close" data-i18n="index.therapistClose">I created Inner Path so you do not have to walk that path alone. The session begins when you decide yes.</p>
     <div class="therapist__signature">
       <span class="therapist__name">— Mónica Schekaibán Assad</span>
-      <span class="therapist__roles">Soul Therapist · Body, Heart and Soul</span>
+      <span class="therapist__roles" data-i18n="therapist.roles">Soul Therapist · Body, Heart and Soul</span>
     </div>
-    <a href="#about" class="btn-therapist">
-      Conoce su historia
+    <a href="#about" class="btn-therapist" data-i18n="cta.discover">
+      Discover
       <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
     </a>
   </div>
@@ -1823,12 +1812,8 @@ body {
     <h2 id="soul-is-title">Soul Is&hellip;</h2>
     <p class="tag" data-i18n="index.soultag">Deep inner intelligence</p>
     <div class="soul-is__rule" aria-hidden="true"></div>
-    <p>
-      The most profound and beautiful spiritual intelligence living within every human being.
-      In this work, Soul is understood as the deepest essence of who we are — the part that
-      feels, remembers, guides, and silently knows the way home.
-    </p>
-    <a href="#" class="read-more">Read more</a>
+    <p data-i18n="index.soulbody">The most profound and beautiful spiritual intelligence living within every human being. In this work, Soul is understood as the deepest essence of who we are — the part that feels, remembers, guides, and silently knows the way home.</p>
+    <a href="#" class="read-more" data-i18n="cta.readmore">Read more</a>
   </div>
 </section>
 
@@ -1841,11 +1826,8 @@ body {
     <h2 id="soul-therapy-title">Soul Therapy</h2>
     <p class="tag" data-i18n="index.therapytag">Integrated emotional &amp; soul work</p>
     <div class="soul-therapy__rule" aria-hidden="true"></div>
-    <p>
-      Soul Therapy is the heart of this work. It is a form of accompaniment that integrates
-      different tools to access each person's deep information — emotional, energetic, and soul-based.
-    </p>
-    <a href="#" class="read-more">Read more</a>
+    <p data-i18n="index.therapybody">Soul Therapy is the heart of this work. It is a form of accompaniment that integrates different tools to access each person's deep information — emotional, energetic, and soul-based.</p>
+    <a href="#" class="read-more" data-i18n="cta.readmore">Read more</a>
   </div>
 </section>
 
@@ -1854,7 +1836,7 @@ body {
 
     <!-- Section header -->
     <div class="bwc__header">
-      <p class="bwc__eyebrow">Circular breathwork system</p>
+      <p class="bwc__eyebrow" data-i18n="bwFull.subtitle">Circular breathwork system</p>
       <h2 class="bwc__title" id="bwc-title">Soul Breathwork</h2>
     </div>
 
@@ -1866,7 +1848,7 @@ body {
         <div class="bwc__card-main__left">
           <span class="bwc__card-main__icon" aria-hidden="true">🌬️</span>
           <h3 class="bwc__card-main__title">Soul Breathwork</h3>
-          <p class="bwc__card-main__desc">
+          <p class="bwc__card-main__desc" data-i18n="bwc.main.desc">
             Breath as a deep portal of transformation. A practice based on circular
             breathing — continuous and conscious — that opens access to expanded states
             of perception, releasing what is held in the body and connecting with the
@@ -1904,9 +1886,9 @@ body {
         <!-- Sub-card 1: Earth Breathwork -->
         <div class="bwc__card" data-delay="0" aria-hidden="true">
           <span class="bwc__card__icon">🌿</span>
-          <span class="bwc__card__kicker">01 — Grounded breathwork</span>
+          <span class="bwc__card__kicker" data-i18n="bwc.earth.kicker">01 — Grounded breathwork</span>
           <h4 class="bwc__card__title">Earth Breathwork</h4>
-          <p class="bwc__card__desc">Deep session lying down on a mat. The body is fully supported while breath releases what has been held.</p>
+          <p class="bwc__card__desc" data-i18n="bwc.earth.desc">Deep session lying down on a mat. The body is fully supported while breath releases what has been held.</p>
           <a href="pages/earth-breathwork.html" class="bwc__card__link">
             Read more
             <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
@@ -1916,9 +1898,9 @@ body {
         <!-- Sub-card 2: Mirror Breathwork -->
         <div class="bwc__card" data-delay="120" aria-hidden="true">
           <span class="bwc__card__icon">🪞</span>
-          <span class="bwc__card__kicker">02 — Mirror-based activation</span>
+          <span class="bwc__card__kicker" data-i18n="bwc.mirror.kicker">02 — Mirror-based activation</span>
           <h4 class="bwc__card__title">Mirror Breathwork</h4>
-          <p class="bwc__card__desc">Begins facing a mirror, holding your own gaze. Continues lying down, integrating what was revealed.</p>
+          <p class="bwc__card__desc" data-i18n="bwc.mirror.desc">Begins facing a mirror, holding your own gaze. Continues lying down, integrating what was revealed.</p>
           <a href="pages/mirror-breathwork.html" class="bwc__card__link">
             Read more
             <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
@@ -1928,9 +1910,9 @@ body {
         <!-- Sub-card 3: Water Breathwork -->
         <div class="bwc__card" data-delay="240" aria-hidden="true">
           <span class="bwc__card__icon">💧</span>
-          <span class="bwc__card__kicker">03 — Floating immersion</span>
+          <span class="bwc__card__kicker" data-i18n="bwc.water.kicker">03 — Floating immersion</span>
           <h4 class="bwc__card__title">Water Breathwork</h4>
-          <p class="bwc__card__desc">Inside a pool, floating with an eye mask. The therapist holds you as breath guides a deep release.</p>
+          <p class="bwc__card__desc" data-i18n="bwc.water.desc">Inside a pool, floating with an eye mask. The therapist holds you as breath guides a deep release.</p>
           <a href="pages/water-breathwork.html" class="bwc__card__link">
             Read more
             <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
@@ -1959,9 +1941,9 @@ body {
       <!-- Soul Channeling -->
       <a href="pages/soul-channeling.html" class="sm__card">
         <span class="sm__card__icon" aria-hidden="true">🤲</span>
-        <span class="sm__card__kicker">Opening through presence</span>
+        <span class="sm__card__kicker" data-i18n="sm.channeling.kicker">Opening through presence</span>
         <h3 class="sm__card__title">Soul Channeling</h3>
-        <p class="sm__card__desc">Hands over the heart — a direct point of contact that sustains and opens the inner space.</p>
+        <p class="sm__card__desc" data-i18n="sm.channeling.desc">Hands over the heart — a direct point of contact that sustains and opens the inner space.</p>
         <span class="sm__card__link">
           Read more
           <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
@@ -1971,9 +1953,9 @@ body {
       <!-- Soul Mapping -->
       <a href="pages/soul-mapping.html" class="sm__card">
         <span class="sm__card__icon" aria-hidden="true">📖</span>
-        <span class="sm__card__kicker">Language as a portal</span>
+        <span class="sm__card__kicker" data-i18n="sm.mapping.kicker">Language as a portal</span>
         <h3 class="sm__card__title">Soul Mapping</h3>
-        <p class="sm__card__desc">The word becomes a doorway — exploring the inner world through language and its hidden patterns.</p>
+        <p class="sm__card__desc" data-i18n="sm.mapping.desc">The word becomes a doorway — exploring the inner world through language and its hidden patterns.</p>
         <span class="sm__card__link">
           Read more
           <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
@@ -1983,9 +1965,9 @@ body {
       <!-- Soul Tantra Activation -->
       <a href="pages/soul-tantra-activation.html" class="sm__card">
         <span class="sm__card__icon" aria-hidden="true">🔥</span>
-        <span class="sm__card__kicker">Energetic activation</span>
+        <span class="sm__card__kicker" data-i18n="sm.tantra.kicker">Energetic activation</span>
         <h3 class="sm__card__title">Soul Tantra Activation</h3>
-        <p class="sm__card__desc">Kundalini awakens through breath and body — energy moves, opens, and finds its own path.</p>
+        <p class="sm__card__desc" data-i18n="sm.tantra.desc">Kundalini awakens through breath and body — energy moves, opens, and finds its own path.</p>
         <span class="sm__card__link">
           Read more
           <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
@@ -1995,9 +1977,9 @@ body {
       <!-- Soul Guidance -->
       <a href="pages/soul-guidance.html" class="sm__card">
         <span class="sm__card__icon" aria-hidden="true">🧭</span>
-        <span class="sm__card__kicker">Integration & clarity</span>
+        <span class="sm__card__kicker" data-i18n="sm.guidance.kicker">Integration &amp; clarity</span>
         <h3 class="sm__card__title">Soul Guidance</h3>
-        <p class="sm__card__desc">Conscious dialogue that gives form to lived experience — organizing what has emerged into meaning.</p>
+        <p class="sm__card__desc" data-i18n="sm.guidance.desc">Conscious dialogue that gives form to lived experience — organizing what has emerged into meaning.</p>
         <span class="sm__card__link">
           Read more
           <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
@@ -2007,9 +1989,9 @@ body {
       <!-- Soul Oracle Reading -->
       <a href="pages/soul-oracle-reading.html" class="sm__card">
         <span class="sm__card__icon" aria-hidden="true">🔮</span>
-        <span class="sm__card__kicker">Multidimensional reading</span>
+        <span class="sm__card__kicker" data-i18n="sm.oracle.kicker">Multidimensional reading</span>
         <h3 class="sm__card__title">Soul Oracle Reading</h3>
-        <p class="sm__card__desc">Oracle decks as a mirror — accessing emotional, energetic and soul realms with clarity.</p>
+        <p class="sm__card__desc" data-i18n="sm.oracle.desc">Oracle decks as a mirror — accessing emotional, energetic and soul realms with clarity.</p>
         <span class="sm__card__link">
           Read more
           <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
@@ -2043,8 +2025,8 @@ body {
     <div class="bw__text-slot">
       <h2 class="bw__title" id="bw-title">Soul Breathwork</h2>
       <div class="bw__dots" aria-hidden="true"><span></span><span></span><span></span></div>
-      <p class="bw__subtitle">Circular breathwork system</p>
-      <p class="bw__intro">Breath as a deep portal of transformation. Soul Breathwork is a practice based on circular breathing, a continuous and conscious breathing that allows access to expanded states of perception.</p>
+      <p class="bw__subtitle" data-i18n="bwFull.subtitle">Circular breathwork system</p>
+      <p class="bw__intro" data-i18n="bwFull.intro">Breath as a deep portal of transformation. Soul Breathwork is a practice based on circular breathing, a continuous and conscious breathing that allows access to expanded states of perception.</p>
     </div>
     <a href="pages/soul-breathwork.html" class="bw__readmore" id="bw-readmore">
       Read more
@@ -2058,7 +2040,7 @@ body {
          data-href="pages/earth-breathwork.html">
       <span class="bw__card-kicker">01</span>
       <h3 class="bw__card-title">Earth Breathwork</h3>
-      <p class="bw__card-desc">Grounded breathwork — a deep breathing session in a lying-down position.</p>
+      <p class="bw__card-desc" data-i18n="bwFull.earth.desc">Grounded breathwork — a deep breathing session in a lying-down position.</p>
       <span class="bw__card-arrow" aria-hidden="true">Read more →</span>
     </div>
     <div class="bw__card" role="listitem" tabindex="0"
@@ -2067,7 +2049,7 @@ body {
          data-href="pages/mirror-breathwork.html">
       <span class="bw__card-kicker">02</span>
       <h3 class="bw__card-title">Mirror Breathwork</h3>
-      <p class="bw__card-desc">Mirror-based activation — a direct encounter with yourself.</p>
+      <p class="bw__card-desc" data-i18n="bwFull.mirror.desc">Mirror-based activation — a direct encounter with yourself.</p>
       <span class="bw__card-arrow" aria-hidden="true">Read more →</span>
     </div>
     <div class="bw__card" role="listitem" tabindex="0"
@@ -2076,7 +2058,7 @@ body {
          data-href="pages/water-breathwork.html">
       <span class="bw__card-kicker">03</span>
       <h3 class="bw__card-title">Water Breathwork</h3>
-      <p class="bw__card-desc">Floating immersion — an experience of deep surrender inside the pool.</p>
+      <p class="bw__card-desc" data-i18n="bwFull.water.desc">Floating immersion — an experience of deep surrender inside the pool.</p>
       <span class="bw__card-arrow" aria-hidden="true">Read more →</span>
     </div>
   </div>
@@ -2086,8 +2068,8 @@ body {
 <section class="sessions" aria-label="Soul Therapy sessions">
   <div class="sessions__header">
     <div>
-      <p class="eyebrow">Sessions menu</p>
-      <h2>Our therapies</h2>
+      <p class="eyebrow" data-i18n="index.sessionsMenu">Sessions menu</p>
+      <h2 data-i18n="index.ourTherapies">Our therapies</h2>
     </div>
     <div class="sessions__nav" role="group" aria-label="Carousel navigation">
       <button class="s-btn" id="prev-btn" aria-label="Previous session">
@@ -2103,52 +2085,52 @@ body {
       <article class="s-slide">
         <div class="s-img"><img src="https://picsum.photos/id/1027/960/780" alt="Soul Channeling" loading="eager"><span class="s-counter">01 / 05</span></div>
         <div class="s-body">
-          <p class="eyebrow">Opening through presence</p>
+          <p class="eyebrow" data-i18n="sm.channeling.kicker">Opening through presence</p>
           <h3>Soul Channeling</h3>
-          <p class="s-subtitle">A space of deep opening</p>
-          <p>In this practice, the therapist places their hands over the patient's heart, generating a direct point of contact that sustains, contains, and opens the inner space.</p>
-          <a href="pages/soul-channeling.html" class="read-more">Read more</a>
+          <p class="s-subtitle" data-i18n="car.channeling.sub">A space of deep opening</p>
+          <p data-i18n="car.channeling.body">In this practice, the therapist places their hands over the patient's heart, generating a direct point of contact that sustains, contains, and opens the inner space.</p>
+          <a href="pages/soul-channeling.html" class="read-more" data-i18n="cta.readmore">Read more</a>
           <div class="s-dots" id="s-dots"></div>
         </div>
       </article>
       <article class="s-slide">
         <div class="s-img"><img src="https://picsum.photos/id/24/960/780" alt="Soul Mapping" loading="lazy"><span class="s-counter">02 / 05</span></div>
         <div class="s-body">
-          <p class="eyebrow">Language as a portal</p>
+          <p class="eyebrow" data-i18n="sm.mapping.kicker">Language as a portal</p>
           <h3>Soul Mapping</h3>
-          <p class="s-subtitle">A space where the word becomes a doorway</p>
-          <p>Soul Mapping is a therapy that allows the inner world to be explored through language, revealing emotional, subconscious, and family patterns.</p>
-          <a href="pages/soul-mapping.html" class="read-more">Read more</a>
+          <p class="s-subtitle" data-i18n="car.mapping.sub">A space where the word becomes a doorway</p>
+          <p data-i18n="car.mapping.body">Soul Mapping is a therapy that allows the inner world to be explored through language, revealing emotional, subconscious, and family patterns.</p>
+          <a href="pages/soul-mapping.html" class="read-more" data-i18n="cta.readmore">Read more</a>
         </div>
       </article>
       <article class="s-slide">
         <div class="s-img"><img src="https://picsum.photos/id/338/960/780" alt="Soul Tantra Activation" loading="lazy"><span class="s-counter">03 / 05</span></div>
         <div class="s-body">
-          <p class="eyebrow">Energetic activation & consciousness expansion</p>
+          <p class="eyebrow" data-i18n="tantra.tag">Energetic activation &amp; consciousness expansion</p>
           <h3>Soul Tantra Activation</h3>
-          <p class="s-subtitle">A space of energetic activation</p>
-          <p>This work focuses on the vital energy of the body, known as kundalini — an energy that awakens and ascends naturally through breath, presence, and body awareness.</p>
-          <a href="pages/soul-tantra-activation.html" class="read-more">Read more</a>
+          <p class="s-subtitle" data-i18n="car.tantra.sub">A space of energetic activation</p>
+          <p data-i18n="car.tantra.body">This work focuses on the vital energy of the body, known as kundalini — an energy that awakens and ascends naturally through breath, presence, and body awareness.</p>
+          <a href="pages/soul-tantra-activation.html" class="read-more" data-i18n="cta.readmore">Read more</a>
         </div>
       </article>
       <article class="s-slide">
         <div class="s-img"><img src="https://picsum.photos/id/177/960/780" alt="Soul Guidance" loading="lazy"><span class="s-counter">04 / 05</span></div>
         <div class="s-body">
-          <p class="eyebrow">Integration & emotional clarity</p>
+          <p class="eyebrow" data-i18n="guidance.tag">Integration &amp; emotional clarity</p>
           <h3>Soul Guidance</h3>
-          <p class="s-subtitle">A space of clarity and understanding</p>
-          <p>Soul Guidance is an accompaniment where the lived experience begins to take form through words, allowing what has emerged to be organized, understood, and given meaning.</p>
-          <a href="pages/soul-guidance.html" class="read-more">Read more</a>
+          <p class="s-subtitle" data-i18n="car.guidance.sub">A space of clarity and understanding</p>
+          <p data-i18n="car.guidance.body">Soul Guidance is an accompaniment where the lived experience begins to take form through words, allowing what has emerged to be organized, understood, and given meaning.</p>
+          <a href="pages/soul-guidance.html" class="read-more" data-i18n="cta.readmore">Read more</a>
         </div>
       </article>
       <article class="s-slide">
         <div class="s-img"><img src="https://picsum.photos/id/1040/960/780" alt="Soul Oracle Reading" loading="lazy"><span class="s-counter">05 / 05</span></div>
         <div class="s-body">
-          <p class="eyebrow">Multidimensional oracle reading</p>
+          <p class="eyebrow" data-i18n="oracle.tag">Multidimensional oracle reading</p>
           <h3>Soul Oracle Reading</h3>
-          <p class="s-subtitle">A space for guidance and deep inner connection</p>
-          <p>Soul Oracle Reading is a multidimensional reading that uses different oracle decks as a tool to access the emotional, energetic, and soul realms.</p>
-          <a href="pages/soul-oracle-reading.html" class="read-more">Read more</a>
+          <p class="s-subtitle" data-i18n="car.oracle.sub">A space for guidance and deep inner connection</p>
+          <p data-i18n="car.oracle.body">Soul Oracle Reading is a multidimensional reading that uses different oracle decks as a tool to access the emotional, energetic, and soul realms.</p>
+          <a href="pages/soul-oracle-reading.html" class="read-more" data-i18n="cta.readmore">Read more</a>
         </div>
       </article>
     </div>
@@ -2167,7 +2149,7 @@ body {
       The retreat unfolds at your own rhythm — whether through consecutive immersion,
       weekly sessions, or an intensive weekend.
     </p>
-    <a href="pages/retiro.html" class="retreat__readmore" aria-label="Discover the full Soul Personal Retreat experience">Read more</a>
+    <a href="pages/retiro.html" class="retreat__readmore" aria-label="Discover the full Soul Personal Retreat experience" data-i18n="cta.readmore">Read more</a>
   </div>
 </section>
 
@@ -2181,7 +2163,7 @@ body {
       <div>
         <span class="ft__brand-name">Inner Path</span>
         <span class="ft__brand-tag">Body, Heart and Soul</span>
-        <a href="https://wa.me/525551063488" class="ft__brand-cta" target="_blank" rel="noopener">Book a session</a>
+        <a href="https://wa.me/525551063488" class="ft__brand-cta" target="_blank" rel="noopener" data-i18n="cta.book">Book a session</a>
       </div>
       <div class="ft__col">
         <h4 data-i18n="footer.therapies">Soul Therapies</h4>

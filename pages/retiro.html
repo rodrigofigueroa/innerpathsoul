@@ -13,78 +13,11 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Lora:ital,wght@0,400;0,500;1,400&family=Karla:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/page.css">
 <style>
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-img { display: block; max-width: 100%; }
-a   { text-decoration: none; color: inherit; }
-ul  { list-style: none; }
-button { cursor: pointer; border: none; background: none; font: inherit; color: inherit; }
 
-:root {
-  --bg:        #F5EDD8;
-  --bg-alt:    #EDE2C4;
-  --bg-deep:   #E7D9B8;
-  --bg-card:   #FAF6EC;
-  --text:      #353B2C;
-  --text-mid:  #4A5038;
-  --soft:      #626B50;
-  --sage:      #8A9E72;
-  --sage-dk:   #5E7246;
-  --sage-pale: #D4DFC4;
-  --terra:     #9A5A3C;
-  --terra-dk:  #7E4830;
-  --terra-warm:#C4804E;
-  --gold:      #B89A5A;
-  --gold-pale: #EAD9A8;
-  --white:     #FFFDF5;
-  --line:      rgba(53,59,44,0.11);
-  --disp:      'Cormorant Garamond', Georgia, serif;
-  --body:      'Karla', -apple-system, sans-serif;
-  --acc:       'Lora', Georgia, serif;
-  --ease:      cubic-bezier(0.22, 1, 0.36, 1);
-  --mw:        1100px;
-}
 
-body {
-  background: var(--bg);
-  color: var(--text);
-  font-family: var(--body);
-  -webkit-font-smoothing: antialiased;
-}
-:focus-visible { outline: 2px solid var(--terra); outline-offset: 3px; border-radius: 2px; }
 
-/* ── Nav simple ── */
-.page-nav {
-  position: fixed; top: 0; left: 0; right: 0;
-  z-index: 100;
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 0 2.5rem; height: 60px;
-  background: rgba(245,237,216,0.92);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--line);
-}
-.page-nav__logo {
-  font-family: var(--disp); font-weight: 400;
-  font-size: 1.35rem; color: var(--text);
-}
-.page-nav__back {
-  display: inline-flex; align-items: center; gap: 0.5rem;
-  font-family: var(--body); font-size: 0.7rem; font-weight: 700;
-  letter-spacing: 0.16em; text-transform: uppercase;
-  color: var(--soft);
-  transition: color 0.2s var(--ease), gap 0.2s var(--ease);
-}
-.page-nav__back:hover { color: var(--text); gap: 0.75rem; }
-
-/* ── Hero ── */
-.retiro-hero {
-  padding: 9rem 1.5rem 6rem;
-  background: var(--bg-deep);
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-}
 .retiro-hero::before {
   content: '';
   position: absolute; inset: 0;
@@ -265,27 +198,136 @@ body {
 }
 .retiro-footer__back:hover { color: rgba(255,253,245,0.8); }
 </style>
-<link rel="stylesheet" href="../css/page.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Soul Personal Retreat",
+  "description": "An immersive private experience for deep emotional, energetic and inner transformation through Soul Therapy modalities.",
+  "provider": { "@type": "Person", "name": "Mónica Schekaibán Assad", "jobTitle": "Soul Therapist", "url": "https://innerpath.com" },
+  "url": "https://innerpath.com/pages/retiro.html",
+  "offers": [
+    { "@type": "Offer", "name": "20 Hours — 1 Person", "price": "4000", "priceCurrency": "USD" },
+    { "@type": "Offer", "name": "20 Hours — Couples", "price": "7000", "priceCurrency": "USD" },
+    { "@type": "Offer", "name": "25 Hours — 1 Person", "price": "4500", "priceCurrency": "USD" },
+    { "@type": "Offer", "name": "25 Hours — Couples", "price": "8000", "priceCurrency": "USD" }
+  ]
+}
+</script>
 </head>
 <body>
 
-<!-- Nav -->
-<nav class="page-nav" aria-label="Page navigation">
-  <a href="../index.html" class="page-nav__logo">Inner Path</a>
-  <a href="../index.html" class="page-nav__back" aria-label="Back to home">
-    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>
-    Back
-  </a>
-</nav>
+<a class="skip-link" href="#main-content" data-i18n="a11y.skip">Skip to content</a>
+
+<header role="banner">
+  <div class="nav-bar" id="nav-bar">
+    <button class="nav-hamburger" id="nav-hamburger"
+            aria-label="Open menu" aria-expanded="false" aria-controls="nav-overlay">
+      <span></span><span></span><span></span>
+    </button>
+    <a href="../index.html" class="nav-logo" aria-label="Inner Path — Home">Inner Path</a>
+    <nav class="nav-items" aria-label="Main navigation">
+      <div class="nav-items__wrap" id="dd-therapies">
+        <button class="nav-items__trigger" aria-haspopup="true" aria-expanded="false">
+          <span data-i18n="nav.therapies">Therapies</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="nav-dropdown" role="menu">
+          <a href="soul-channeling.html"       role="menuitem">Soul Channeling</a>
+          <a href="soul-mapping.html"          role="menuitem">Soul Mapping</a>
+          <a href="soul-tantra-activation.html" role="menuitem">Soul Tantra Activation</a>
+          <a href="soul-guidance.html"         role="menuitem">Soul Guidance</a>
+          <a href="soul-oracle-reading.html"   role="menuitem">Soul Oracle Reading</a>
+        </div>
+      </div>
+      <div class="nav-items__wrap" id="dd-breathwork">
+        <button class="nav-items__trigger" aria-haspopup="true" aria-expanded="false">
+          <span data-i18n="nav.breathwork">Breathwork</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="nav-dropdown" role="menu">
+          <a href="soul-breathwork.html"  role="menuitem">Soul Breathwork</a>
+          <a href="earth-breathwork.html" role="menuitem">Earth Breathwork</a>
+          <a href="mirror-breathwork.html" role="menuitem">Mirror Breathwork</a>
+          <a href="water-breathwork.html" role="menuitem">Water Breathwork</a>
+        </div>
+      </div>
+      <a class="nav-items__trigger nav-items__link" href="retiro.html" data-i18n="nav.retreat">Retreat</a>
+      <a class="nav-items__trigger nav-items__link" href="../index.html#about" data-i18n="nav.about">About</a>
+    </nav>
+    <div class="nav-bar__lang" role="group" aria-label="Language selector">
+      <button class="is-active" data-lang="en" aria-pressed="true">EN</button>
+      <span class="nav-lang__sep" aria-hidden="true">·</span>
+      <button data-lang="es" aria-pressed="false">ES</button>
+    </div>
+  </div>
+
+  <div class="nav-overlay" id="nav-overlay" role="dialog" aria-modal="true" aria-label="Navigation menu">
+    <div class="nav-overlay__scroll">
+      <nav class="nav-primary" aria-label="Main navigation">
+        <div class="nav-primary__item">
+          <button class="nav-primary__trigger" aria-expanded="false" aria-controls="sub-therapies">
+            <span data-i18n="nav.therapies">Therapies</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="nav-submenu" id="sub-therapies">
+            <div class="nav-submenu__inner">
+              <ul class="nav-submenu__list">
+                <li><a class="nav-submenu__link" href="soul-channeling.html">Soul Channeling</a></li>
+                <li><a class="nav-submenu__link" href="soul-mapping.html">Soul Mapping</a></li>
+                <li><a class="nav-submenu__link" href="soul-tantra-activation.html">Soul Tantra Activation</a></li>
+                <li><a class="nav-submenu__link" href="soul-guidance.html">Soul Guidance</a></li>
+                <li><a class="nav-submenu__link" href="soul-oracle-reading.html">Soul Oracle Reading</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="nav-primary__item">
+          <button class="nav-primary__trigger" aria-expanded="false" aria-controls="sub-breathwork">
+            <span data-i18n="nav.breathwork">Breathwork</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="nav-submenu" id="sub-breathwork">
+            <div class="nav-submenu__inner">
+              <ul class="nav-submenu__list">
+                <li><a class="nav-submenu__link" href="soul-breathwork.html">Soul Breathwork</a></li>
+                <li><a class="nav-submenu__link" href="earth-breathwork.html">Earth Breathwork</a></li>
+                <li><a class="nav-submenu__link" href="mirror-breathwork.html">Mirror Breathwork</a></li>
+                <li><a class="nav-submenu__link" href="water-breathwork.html">Water Breathwork</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="nav-primary__item">
+          <a class="nav-primary__link" href="retiro.html" data-i18n="nav.retreat">Retreat</a>
+        </div>
+        <div class="nav-primary__item">
+          <a class="nav-primary__link" href="../index.html#about" data-i18n="nav.about">About</a>
+        </div>
+      </nav>
+      <div class="nav-overlay__footer">
+        <div class="nav-lang" role="group" aria-label="Language selector">
+          <button class="is-active" data-lang="en" aria-pressed="true">EN</button>
+          <span class="nav-lang__sep" aria-hidden="true">·</span>
+          <button data-lang="es" aria-pressed="false">ES</button>
+        </div>
+        <div class="nav-overlay__contact">
+          <a href="https://wa.me/525551063488">+52 55 5106 3488</a>
+          <a href="mailto:hola@innerpath.com">hola@innerpath.com</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
 
 <main id="main-content">
 
   <!-- Hero -->
   <section class="retiro-hero" aria-labelledby="retiro-title">
     <div class="retiro-hero__inner">
-      <p class="retiro-hero__eyebrow">Private immersive experience</p>
+      <p class="retiro-hero__eyebrow" data-i18n="retiro.eyebrow">Private immersive experience</p>
       <h1 id="retiro-title">Soul Personal Retreat</h1>
-      <p class="retiro-hero__subtitle">An immersive encounter with yourself</p>
+      <p class="retiro-hero__subtitle" data-i18n="retiro.subtitle">An immersive encounter with yourself</p>
       <div class="retiro-hero__rule" aria-hidden="true"></div>
     </div>
   </section>
@@ -293,9 +335,9 @@ body {
   <!-- Intro -->
   <section class="retiro-intro" aria-label="About the retreat">
     <div class="retiro-intro__inner">
-      <p>The Soul Personal Retreat is an immersive private experience designed to support deep emotional, energetic, and inner transformation through the different Soul Therapy modalities.</p>
-      <p>The retreat can unfold as a consecutive immersion, weekly sessions over time, or an intensive weekend experience — adapting entirely to each person's rhythm and process.</p>
-      <p>It is a space held in complete confidentiality and care, where the only intention is to create the conditions for something real to emerge.</p>
+      <p data-i18n="retiro.p1">The Soul Personal Retreat is an immersive private experience designed to support deep emotional, energetic, and inner transformation through the different Soul Therapy modalities.</p>
+      <p data-i18n="retiro.p2">The retreat can unfold as a consecutive immersion, weekly sessions over time, or an intensive weekend experience — adapting entirely to each person's rhythm and process.</p>
+      <p data-i18n="retiro.p3">It is a space held in complete confidentiality and care, where the only intention is to create the conditions for something real to emerge.</p>
     </div>
   </section>
 
@@ -309,19 +351,19 @@ body {
         <div class="retiro-format">
           <div class="retiro-format__letter">A</div>
           <div class="retiro-format__name"><span data-i18n="retiro.weekly">Weekly</span></div>
-          <p class="retiro-format__desc">One session per week, 4 to 5 hours each — a gradual deepening at your own pace over several weeks.</p>
+          <p class="retiro-format__desc" data-i18n="retiro.fa">One session per week, 4 to 5 hours each — a gradual deepening at your own pace over several weeks.</p>
         </div>
 
         <div class="retiro-format">
           <div class="retiro-format__letter">B</div>
           <div class="retiro-format__name"><span data-i18n="retiro.immersion">Immersion</span></div>
-          <p class="retiro-format__desc">20 or 25 hours concentrated within one week — five continuous days of full immersion and transformation.</p>
+          <p class="retiro-format__desc" data-i18n="retiro.fb">20 or 25 hours concentrated within one week — five continuous days of full immersion and transformation.</p>
         </div>
 
         <div class="retiro-format">
           <div class="retiro-format__letter">C</div>
           <div class="retiro-format__name"><span data-i18n="retiro.weekend">Weekend</span></div>
-          <p class="retiro-format__desc">20 or 25 hours from Friday to Sunday — an intensive weekend container for deep and focused inner work.</p>
+          <p class="retiro-format__desc" data-i18n="retiro.fc">20 or 25 hours from Friday to Sunday — an intensive weekend container for deep and focused inner work.</p>
         </div>
 
       </div>
@@ -373,7 +415,7 @@ body {
   <section class="retiro-cta" aria-label="Contact and booking">
     <div class="retiro-cta__inner">
       <h2><span data-i18n="retiro.ready">Ready to begin?</span></h2>
-      <p>Each retreat is tailored personally. Reach out to explore which format aligns with your process.</p>
+      <p data-i18n="retiro.ctabody">Each retreat is tailored personally. Reach out to explore which format aligns with your process.</p>
       <a href="https://wa.me/525551063488" class="retiro-cta__btn" target="_blank" rel="noopener" aria-label="Contact via WhatsApp to book a Soul Personal Retreat">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
           <path d="M12 2a10 10 0 00-8.6 15L2 22l5.2-1.4A10 10 0 1012 2zm5.7 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-1.7-.1-.4-.1-1-.3-1.6-.6-2.9-1.2-4.7-4.2-4.9-4.4-.1-.2-1.2-1.6-1.2-3 0-1.4.7-2.1 1-2.4.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5.2.6.7 1.9.8 2 .1.2.1.4 0 .6-.1.2-.2.3-.4.5-.2.2-.4.4-.5.6-.2.2-.4.4-.2.7.2.3.9 1.5 2 2.4 1.3 1.2 2.4 1.6 2.8 1.7.3.1.5.1.7-.1.2-.2.8-.9 1-1.2.2-.3.5-.3.8-.2.3.1 1.8.9 2.1 1 .3.2.5.2.6.3.1.2.1.8-.1 1.4z"/>
@@ -388,7 +430,7 @@ body {
 <!-- Footer mini -->
 <footer class="retiro-footer" aria-label="Page footer">
   <p class="retiro-footer__copy">&copy; <span id="yr"></span> Inner Path. All rights reserved.</p>
-  <a href="../index.html" class="retiro-footer__back">
+  <a href="../index.html" class="retiro-footer__back" data-i18n="cta.backHome" aria-label="Back to Inner Path home">
     <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>
     Back to Inner Path
   </a>
