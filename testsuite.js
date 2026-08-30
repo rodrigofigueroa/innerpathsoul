@@ -447,6 +447,26 @@ sub('R11 — Cobertura i18n completa (sin texto sin traducir)');
   });
 }
 
+
+sub('R12 — Nav dejó de ser transparente sobre el hero');
+{
+  const base = fs.readFileSync('css/base.css', 'utf8');
+  const barra = (base.match(/\.nav-bar \{[^}]*\}/) || [''])[0];
+  t('regr', 'base.css: .nav-bar arranca transparente', /background:\s*transparent/.test(barra), barra.slice(0,90));
+  t('regr', 'base.css: existe variante sólida (.scrolled / --solid)', /\.nav-bar\.scrolled[\s\S]{0,60}\.nav-bar--solid|\.nav-bar--solid/.test(base));
+  t('regr', 'base.css: logo blanco por defecto', /\.nav-logo \{[^}]*color:\s*var\(--white\)/.test(base));
+  t('regr', 'base.css: hamburguesa blanca por defecto', /\.nav-hamburger span \{[^}]*background:\s*var\(--white\)/.test(base));
+
+  // Páginas con hero claro deben pedir el estado sólido
+  PAGES.forEach(p => {
+    const h = fs.readFileSync(p, 'utf8');
+    const heroClaro = /rgba\(231,217,184/.test(h);          // scrim crema = hero claro
+    const pideSolido = /nav-bar nav-bar--solid|nav-bar--solid/.test(h);
+    if (heroClaro) t('regr', `${p} hero claro → nav sólido`, pideSolido, 'texto blanco sería ilegible');
+    else t('regr', `${p} hero oscuro → nav transparente`, !pideSolido);
+  });
+}
+
 /* ═══════════════ RESUMEN ═══════════════ */
 head('RESUMEN');
 console.log(`  ✅ Pasadas : ${PASS}`);

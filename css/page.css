@@ -17,7 +17,7 @@
   display: flex; align-items: flex-end;
   overflow: hidden;
   background: var(--text);
-  padding-top: 56px; /* nav height */
+  padding-top: 64px; /* alto del nav transparente */
 }
 @media (min-width: 980px) { .page-hero { min-height: min(70vh, 640px); } }
 
