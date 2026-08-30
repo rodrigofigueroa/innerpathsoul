@@ -14,535 +14,20 @@
 <meta property="og:image"       content="https://innerpath.com/images/og-cover.jpg">
 <meta property="og:url"         content="https://innerpath.com/">
 <link rel="canonical"           href="https://innerpath.com/">
+<link rel="alternate" hreflang="en"        href="https://innerpath.com/">
+<link rel="alternate" hreflang="es"        href="https://innerpath.com/">
+<link rel="alternate" hreflang="x-default" href="https://innerpath.com/">
 <!-- Fonts: all weights + Lora (was missing) in one request -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Lora:ital,wght@0,400;0,500;1,400&family=Karla:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-<style>
-/* ═══════════════════════════════════════════════════════════
-   INNER PATH — Unified design system
-   Single <style> block. All tokens canonical here.
+<link rel="stylesheet" href="css/base.css">
+<style>/* ═══════════════════════════════════════════════════════════
+   INNER PATH — estilos exclusivos de la portada.
+   Reset, tokens, nav, footer y componentes compartidos
+   viven en css/base.css (cargado antes que este bloque).
    ═══════════════════════════════════════════════════════════ */
-
-/* ── Reset (one instance only) ── */
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-img { display: block; max-width: 100%; }
-a   { text-decoration: none; color: inherit; }
-ul  { list-style: none; }
-button { cursor: pointer; border: none; background: none; font: inherit; color: inherit; }
-
-/* ── Design tokens (canonical, single source of truth) ── */
-:root {
-  /* ── Color palette — anchored on #E7D9B8 (warm wheat) and #353B2C (forest carbon) ── */
-
-  /* Backgrounds: warm wheat spectrum */
-  --bg:        #F5EDD8;   /* light warm sand       */
-  --bg-alt:    #EDE2C4;   /* mid warm crema         */
-  --bg-deep:   #E7D9B8;   /* anchor: deep wheat     */
-  --bg-moss:   #D6CCAA;   /* earthier, for accents  */
-  --bg-card:   #FAF6EC;   /* near-white warm card   */
-
-  /* Text: forest carbon spectrum */
-  --text:      #353B2C;   /* anchor: forest carbon  */
-  --text-mid:  #4A5038;   /* medium forest          */
-  --soft:      #626B50;   /* muted green-grey body  */
-
-  /* Sage green accent */
-  --sage:      #8A9E72;
-  --sage-dk:   #5E7246;
-  --sage-pale: #D4DFC4;
-
-  /* Terracotta accent */
-  --terra:     #9A5A3C;
-  --terra-dk:  #7E4830;
-  --terra-warm:#C4804E;   /* warmer terracotta highlight */
-
-  /* Gold — extracted from the wheat base */
-  --gold:      #B89A5A;
-  --gold-pale: #EAD9A8;
-
-  /* Surface */
-  --white:     #FFFDF5;   /* warm white, no cold blue */
-  --line:      rgba(53,59,44,0.11);
-
-  /* Typography */
-  --disp:      'Cormorant Garamond', Georgia, serif;
-  --body:      'Karla', -apple-system, sans-serif;
-  --acc:       'Lora', Georgia, serif;
-
-  /* Motion */
-  --ease:      cubic-bezier(0.22, 1, 0.36, 1);
-
-  /* Layout */
-  --mw:        1180px;
-}
-
-/* ── Utility: hidden icon state (replaces inline style=display:none) ── */
-.ctrl__icon--hidden { display: none; }
-
-/* ── Base ── */
-body {
-  background: var(--bg);
-  color: var(--text);
-  font-family: var(--body);
-  -webkit-font-smoothing: antialiased;
-  overflow-x: hidden;
-}
-
-/* ── Skip link (a11y) ── */
-.skip-link {
-  position: absolute;
-  left: -999px;
-  top: 0;
-  padding: 0.7rem 1.2rem;
-  background: var(--sage-dk);
-  color: var(--white);
-  font-size: 0.8rem;
-  font-weight: 700;
-  z-index: 9999;
-  border-radius: 0 0 6px 0;
-}
-.skip-link:focus { left: 0; }
-
-/* ── Focus visible ── */
-:focus-visible {
-  outline: 2px solid var(--terra);
-  outline-offset: 3px;
-  border-radius: 2px;
-}
-
-/* ═══════════════════════════════════════════════════════════
-   NAV — Six Senses style
-   Transparent over hero, hamburger left, logo center (mobile)
-   Logo left + items center + CTA right (desktop)
-   Full-screen overlay menu with submenu panels
-   ═══════════════════════════════════════════════════════════ */
-
-/* Header bar */
-.nav-bar {
-  position: fixed;
-  top: 0; left: 0; right: 0;
-  z-index: 1000;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 1.5rem;
-  height: 64px;
-  transition: background 0.35s var(--ease), height 0.3s var(--ease);
-}
-.nav-bar.scrolled {
-  background: rgba(247,240,225,0.96);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  box-shadow: 0 1px 0 var(--line);
-  height: 56px;
-}
-
-/* Hamburger — always visible */
-.nav-hamburger {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-  padding: 8px;
-  margin: -8px;
-  z-index: 1010;
-  flex-shrink: 0;
-}
-.nav-hamburger span {
-  display: block;
-  width: 24px; height: 1.5px;
-  background: var(--white);
-  border-radius: 2px;
-  transition: transform 0.3s var(--ease), opacity 0.3s, background 0.3s;
-  transform-origin: center;
-}
-.nav-bar.scrolled .nav-hamburger span,
-.nav-hamburger.is-open span { background: var(--text); }
-.nav-hamburger.is-open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
-.nav-hamburger.is-open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
-.nav-hamburger.is-open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
-
-/* Logo — center on mobile, left on desktop */
-.nav-logo {
-  font-family: var(--disp);
-  font-weight: 400;
-  font-size: 1.45rem;
-  letter-spacing: 0.01em;
-  color: var(--white);
-  transition: color 0.3s;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  white-space: nowrap;
-}
-.nav-bar.scrolled .nav-logo { color: var(--text); }
-
-/* Desktop nav items — hidden on mobile */
-.nav-items {
-  display: none;
-}
-
-  /* CTA button (right side) — removed, lang switch takes this slot */
-
-/* ── Full-screen overlay menu ── */
-.nav-overlay {
-  position: fixed;
-  inset: 0;
-  z-index: 900;
-  background: var(--bg);
-  display: flex;
-  flex-direction: column;
-  /* Hidden state */
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.4s var(--ease), visibility 0.4s;
-  overflow: hidden;
-}
-.nav-overlay.is-open {
-  opacity: 1;
-  visibility: visible;
-}
-
-/* Overlay inner scroll container */
-.nav-overlay__scroll {
-  flex: 1;
-  overflow-y: auto;
-  -webkit-overflow-scrolling: touch;
-  padding: 88px 1.8rem 3rem;
-  display: flex;
-  flex-direction: column;
-}
-
-/* Primary nav items */
-.nav-primary {
-  display: flex;
-  flex-direction: column;
-}
-.nav-primary__item {
-  border-bottom: 1px solid var(--line);
-}
-
-/* Item trigger: text + chevron */
-.nav-primary__trigger {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 1.15rem 0;
-  font-family: var(--disp);
-  font-weight: 400;
-  font-size: clamp(1.6rem, 5vw, 2.2rem);
-  color: var(--text);
-  background: none;
-  border: none;
-  text-align: left;
-  cursor: pointer;
-  transition: color 0.2s var(--ease);
-  -webkit-tap-highlight-color: transparent;
-}
-.nav-primary__trigger:hover { color: var(--sage-dk); }
-.nav-primary__trigger svg {
-  width: 18px; height: 18px;
-  flex-shrink: 0;
-  transition: transform 0.3s var(--ease);
-  opacity: 0.45;
-}
-.nav-primary__trigger[aria-expanded="true"] svg { transform: rotate(180deg); opacity: 0.9; }
-
-/* Simple link (no submenu) */
-.nav-primary__link {
-  display: block;
-  padding: 1.15rem 0;
-  font-family: var(--disp);
-  font-weight: 400;
-  font-size: clamp(1.6rem, 5vw, 2.2rem);
-  color: var(--text);
-  transition: color 0.2s var(--ease);
-}
-.nav-primary__link:hover { color: var(--sage-dk); }
-
-/* Submenu panel (accordion) */
-.nav-submenu {
-  display: grid;
-  grid-template-rows: 0fr;
-  transition: grid-template-rows 0.35s var(--ease);
-}
-.nav-submenu.is-open { grid-template-rows: 1fr; }
-.nav-submenu__inner { overflow: hidden; }
-
-.nav-submenu__list {
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-  padding: 0.4rem 0 1.4rem 0;
-}
-.nav-submenu__link {
-  display: flex;
-  align-items: center;
-  gap: 0.8rem;
-  padding: 0.65rem 0;
-  font-family: var(--body);
-  font-size: 0.92rem;
-  font-weight: 500;
-  color: var(--soft);
-  border-bottom: 1px solid var(--line);
-  transition: color 0.18s var(--ease), padding-left 0.18s var(--ease);
-}
-.nav-submenu__link:last-child { border-bottom: none; }
-.nav-submenu__link::before {
-  content: '';
-  width: 4px; height: 4px;
-  border-radius: 50%;
-  background: var(--sage);
-  flex-shrink: 0;
-  opacity: 0.6;
-  transition: opacity 0.18s, transform 0.18s;
-}
-.nav-submenu__link:hover {
-  color: var(--sage-dk);
-  padding-left: 0.4rem;
-}
-.nav-submenu__link:hover::before { opacity: 1; transform: scale(1.3); }
-
-/* Overlay footer: lang switch + contact */
-.nav-overlay__footer {
-  margin-top: auto;
-  padding-top: 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 1rem;
-  border-top: 1px solid var(--line);
-}
-/* Language switch — in nav-bar (hero + scrolled) */
-.nav-bar__lang {
-  flex-shrink: 0;
-}
-.nav-bar__lang button {
-  color: rgba(255,254,251,0.7);
-  border: 1px solid transparent;
-  padding: 0.28rem 0.55rem;
-  border-radius: 3px;
-  transition: color 0.2s, background 0.2s, border-color 0.2s;
-}
-.nav-bar__lang .nav-lang__sep {
-  color: rgba(255,254,251,0.3);
-}
-.nav-bar__lang button.is-active {
-  background: transparent;
-  color: var(--white);
-  border-color: rgba(255,254,251,0.4);
-}
-.nav-bar__lang button:not(.is-active):hover {
-  color: rgba(255,254,251,0.95);
-}
-/* When header is scrolled — swap to dark colors */
-.nav-bar.scrolled .nav-bar__lang button {
-  color: var(--soft);
-}
-.nav-bar.scrolled .nav-bar__lang .nav-lang__sep {
-  color: var(--line);
-}
-.nav-bar.scrolled .nav-bar__lang button.is-active {
-  color: var(--text);
-  border-color: var(--line);
-  background: transparent;
-}
-.nav-bar.scrolled .nav-bar__lang button:not(.is-active):hover {
-  color: var(--text);
-}
-
-/* Language switch — in overlay footer (already dark bg) */
-.nav-lang {
-  display: flex;
-  gap: 0.5rem;
-  align-items: center;
-}
-.nav-lang button {
-  font-family: var(--body);
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--soft);
-  padding: 0.3rem 0.5rem;
-  border-radius: 3px;
-  transition: background 0.2s, color 0.2s;
-}
-.nav-lang button.is-active {
-  background: var(--text);
-  color: var(--white);
-}
-.nav-lang__sep { color: var(--line); font-size: 0.7rem; }
-.nav-overlay__contact {
-  font-family: var(--body);
-  font-size: 0.78rem;
-  color: var(--soft);
-  display: flex;
-  flex-direction: column;
-  gap: 0.2rem;
-  text-align: right;
-}
-.nav-overlay__contact a:hover { color: var(--text); }
-
-/* ── Desktop nav (≥980px) ── */
-@media (min-width: 980px) {
-  .nav-bar { padding: 0 3rem; height: 72px; }
-  .nav-bar.scrolled { height: 60px; }
-
-  /* Logo: left */
-  .nav-logo {
-    position: static;
-    transform: none;
-    font-size: 1.6rem;
-  }
-
-  /* Desktop items: center */
-  .nav-items {
-    display: flex;
-    align-items: center;
-    gap: 2.2rem;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-
-  /* Desktop item = trigger button for dropdown */
-  .nav-items__trigger {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.3rem;
-    font-family: var(--body);
-    font-size: 0.8rem;
-    font-weight: 600;
-    letter-spacing: 0.06em;
-    color: rgba(255,254,251,0.88);
-    transition: color 0.2s;
-    position: relative;
-    padding: 0.3rem 0;
-    white-space: nowrap;
-  }
-  .nav-bar.scrolled .nav-items__trigger { color: var(--text); }
-  .nav-items__trigger:hover { color: var(--white); }
-  .nav-bar.scrolled .nav-items__trigger:hover { color: var(--sage-dk); }
-  .nav-items__trigger svg {
-    width: 10px; height: 10px;
-    transition: transform 0.2s var(--ease);
-    opacity: 0.6;
-  }
-  .nav-items__wrap:hover .nav-items__trigger svg,
-  .nav-items__wrap.is-open .nav-items__trigger svg { transform: rotate(180deg); }
-
-  /* Underline indicator */
-  .nav-items__trigger::after {
-    content: '';
-    position: absolute;
-    bottom: -2px; left: 0; right: 100%;
-    height: 1px;
-    background: currentColor;
-    transition: right 0.22s var(--ease);
-  }
-  .nav-items__wrap:hover .nav-items__trigger::after,
-  .nav-items__wrap.is-open .nav-items__trigger::after { right: 0; }
-
-  /* Desktop dropdown */
-  .nav-items__wrap { position: relative; }
-  .nav-dropdown {
-    position: absolute;
-    top: calc(100% + 14px);
-    left: 50%;
-    transform: translateX(-50%);
-    min-width: 220px;
-    background: var(--bg-card);
-    border: 1px solid var(--line);
-    border-radius: 8px;
-    box-shadow: 0 20px 48px -16px rgba(53,59,44,0.3);
-    padding: 0.6rem;
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-    transition: opacity 0.22s var(--ease), transform 0.22s var(--ease), visibility 0.22s;
-    transform: translateX(-50%) translateY(6px);
-  }
-  .nav-items__wrap:hover .nav-dropdown,
-  .nav-items__wrap.is-open .nav-dropdown {
-    opacity: 1;
-    visibility: visible;
-    pointer-events: auto;
-    transform: translateX(-50%) translateY(0);
-  }
-  /* Grace area so dropdown doesn't close when moving cursor diagonally */
-  .nav-items__wrap::after {
-    content: '';
-    position: absolute;
-    top: 100%;
-    left: -20px; right: -20px;
-    height: 18px;
-  }
-  .nav-dropdown a {
-    display: block;
-    padding: 0.5rem 0.75rem;
-    font-family: var(--body);
-    font-size: 0.84rem;
-    font-weight: 500;
-    color: var(--text);
-    border-radius: 5px;
-    transition: background 0.15s, color 0.15s;
-    white-space: nowrap;
-  }
-  .nav-dropdown a:hover {
-    background: var(--sage-pale);
-    color: var(--sage-dk);
-  }
-
-  /* Plain nav links (no submenu trigger) */
-  .nav-items__link { gap: 0; }
-  .nav-items__link::after { display: none; }
-
-  /* Hamburger: hidden on desktop */
-  .nav-hamburger { display: none; }
-
-  /* Overlay: still works but rarely used — hidden on desktop */
-  .nav-overlay { display: none; }
-}
-
-/* ═══════════════════════════════════════════════════════════
-   SHARED COMPONENTS
-   ═══════════════════════════════════════════════════════════ */
-
-/* Read-more animated dash */
-.read-more {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.75rem;
-  font-family: var(--body);
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  transition: color 0.2s var(--ease), gap 0.2s var(--ease);
-}
-.read-more::before {
-  content: '';
-  display: block;
-  width: 32px; height: 1px;
-  background: currentColor;
-  flex-shrink: 0;
-  transition: width 0.25s var(--ease);
-}
-.read-more:hover { gap: 1.1rem; }
-.read-more:hover::before { width: 48px; }
-
-/* Eyebrow */
-.eyebrow {
-  font-family: var(--body);
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-}
 
 /* ═══════════════════════════════════════════════════════════
    HERO
@@ -758,7 +243,6 @@ body {
   color: var(--sage-dk);
   margin-bottom: 1.6rem;
 }
-.therapist__lede mark { background: none; color: var(--terra); font-style: italic; }
 .therapist__body {
   font-family: var(--body);
   font-size: 1rem;
@@ -775,7 +259,6 @@ body {
   color: var(--sage-dk);
   margin-bottom: 2.6rem;
 }
-.therapist__close mark { background: none; color: var(--terra); font-style: italic; }
 .therapist__signature {
   display: flex;
   flex-direction: column;
@@ -1089,53 +572,7 @@ body {
 .retreat__readmore:hover { color: var(--text); gap: 1.1rem; }
 .retreat__readmore:hover::before { width: 48px; }
 
-/* ═══════════════════════════════════════════════════════════
-   FOOTER
-   ═══════════════════════════════════════════════════════════ */
-.ft { background: var(--text); padding: 5.5rem 1.5rem 0; color: var(--soft); }
-.ft__inner { max-width: 1140px; margin: 0 auto; }
-.ft__top {
-  display: grid; grid-template-columns: 1.6fr 1fr 1fr 1fr;
-  gap: 3rem; padding-bottom: 4rem;
-  border-bottom: 1px solid rgba(255,254,251,0.08);
-}
-.ft__brand-name { font-family: var(--disp); font-weight: 400; font-size: 2rem; color: var(--white); display: block; margin-bottom: 0.9rem; opacity: 0.92; }
-.ft__brand-tag { font-family: var(--acc); font-style: italic; font-size: 0.88rem; color: rgba(255,254,251,0.45); display: block; margin-bottom: 1.6rem; }
-.ft__brand-cta {
-  display: inline-flex; align-items: center; gap: 0.65rem;
-  font-size: 0.7rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase;
-  color: rgba(255,254,251,0.55); transition: color 0.2s var(--ease), gap 0.2s var(--ease);
-}
-.ft__brand-cta::before { content: ''; width: 26px; height: 1px; background: currentColor; flex-shrink: 0; transition: width 0.22s var(--ease); }
-.ft__brand-cta:hover { color: rgba(255,254,251,0.88); gap: 0.9rem; }
-.ft__brand-cta:hover::before { width: 38px; }
-.ft__col h4 { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,254,251,0.35); margin-bottom: 1.3rem; }
-.ft__col ul { display: flex; flex-direction: column; gap: 0.65rem; }
-.ft__col a { font-size: 0.88rem; font-weight: 500; color: rgba(255,254,251,0.55); transition: color 0.18s var(--ease); }
-.ft__col a:hover { color: rgba(255,254,251,0.9); }
-.ft__contact-list { display: flex; flex-direction: column; gap: 1rem; }
-.ft__contact-item { display: flex; flex-direction: column; gap: 0.2rem; margin-bottom: 0.3rem; }
-.ft__contact-label { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,254,251,0.25); }
-.ft__contact-value { font-size: 0.88rem; font-weight: 500; color: rgba(255,254,251,0.55); transition: color 0.18s var(--ease); }
-.ft__contact-value:hover { color: rgba(255,254,251,0.9); }
-.ft__social { display: flex; gap: 0.65rem; margin-top: 1.8rem; }
-.ft__social a {
-  width: 36px; height: 36px; border-radius: 50%;
-  border: 1px solid rgba(255,254,251,0.15);
-  display: flex; align-items: center; justify-content: center;
-  color: rgba(255,254,251,0.45);
-  transition: border-color 0.2s var(--ease), color 0.2s var(--ease), background 0.2s var(--ease);
-}
-.ft__social a:hover { border-color: rgba(255,254,251,0.45); color: rgba(255,254,251,0.88); background: rgba(255,254,251,0.05); }
-.ft__bottom {
-  display: flex; align-items: center; justify-content: space-between;
-  flex-wrap: wrap; gap: 0.8rem; padding: 1.6rem 0 1.8rem;
-}
-.ft__copy { font-size: 0.72rem; color: rgba(255,254,251,0.25); letter-spacing: 0.04em; }
-.ft__tagline { font-family: var(--acc); font-style: italic; font-size: 0.78rem; color: rgba(255,254,251,0.2); }
-@media (max-width: 900px) { .ft__top { grid-template-columns: 1fr 1fr; gap: 2.5rem 2rem; } }
-@media (max-width: 520px) { .ft__top { grid-template-columns: 1fr; } }
-
+.ctrl__icon--hidden { display: none; }
 .rm-bw {
   width: 100%;
   display: flex;
@@ -1740,7 +1177,7 @@ body {
     <div class="hero__rule" aria-hidden="true"></div>
     <h1 class="hero__title">Inner Path</h1>
     <div class="hero__dots" aria-hidden="true"><span></span><span></span><span></span></div>
-    <p class="hero__subtitle" data-i18n="hero.tagline">The Soul Knows The Way Home</p>
+    <p class="hero__subtitle" data-i18n="footer.tagline">The Soul Knows The Way Home</p>
   </div>
   <div class="hero__controls" role="group" aria-label="Video controls">
     <button class="ctrl" id="mute-btn" aria-label="Unmute video">
@@ -1836,7 +1273,7 @@ body {
 
     <!-- Section header -->
     <div class="bwc__header">
-      <p class="bwc__eyebrow" data-i18n="bwFull.subtitle">Circular breathwork system</p>
+      <p class="bwc__eyebrow" data-i18n="breathwork.tag">Circular breathwork system</p>
       <h2 class="bwc__title" id="bwc-title">Soul Breathwork</h2>
     </div>
 
@@ -1941,7 +1378,7 @@ body {
       <!-- Soul Channeling -->
       <a href="pages/soul-channeling.html" class="sm__card">
         <span class="sm__card__icon" aria-hidden="true">🤲</span>
-        <span class="sm__card__kicker" data-i18n="sm.channeling.kicker">Opening through presence</span>
+        <span class="sm__card__kicker" data-i18n="channeling.tag">Opening through presence</span>
         <h3 class="sm__card__title">Soul Channeling</h3>
         <p class="sm__card__desc" data-i18n="sm.channeling.desc">Hands over the heart — a direct point of contact that sustains and opens the inner space.</p>
         <span class="sm__card__link">
@@ -1953,7 +1390,7 @@ body {
       <!-- Soul Mapping -->
       <a href="pages/soul-mapping.html" class="sm__card">
         <span class="sm__card__icon" aria-hidden="true">📖</span>
-        <span class="sm__card__kicker" data-i18n="sm.mapping.kicker">Language as a portal</span>
+        <span class="sm__card__kicker" data-i18n="mapping.tag">Language as a portal</span>
         <h3 class="sm__card__title">Soul Mapping</h3>
         <p class="sm__card__desc" data-i18n="sm.mapping.desc">The word becomes a doorway — exploring the inner world through language and its hidden patterns.</p>
         <span class="sm__card__link">
@@ -2008,16 +1445,16 @@ body {
 <!-- BREATHWORK -->
 <section class="bw" aria-labelledby="bw-title">
   <div class="bw__bg-layer is-active" data-bg="default" aria-hidden="true">
-    <img src="https://picsum.photos/id/1062/1920/1080" alt="" role="presentation">
+    <img src="https://picsum.photos/id/1062/1920/1080" alt="" role="presentation" width="1920" height="1080" loading="lazy" decoding="async">
   </div>
   <div class="bw__bg-layer" data-bg="earth" aria-hidden="true">
-    <img src="https://picsum.photos/id/1059/1920/1080" alt="" role="presentation">
+    <img src="https://picsum.photos/id/1059/1920/1080" alt="" role="presentation" width="1920" height="1080" loading="lazy" decoding="async">
   </div>
   <div class="bw__bg-layer" data-bg="mirror" aria-hidden="true">
-    <img src="https://picsum.photos/id/1025/1920/1080" alt="" role="presentation">
+    <img src="https://picsum.photos/id/1025/1920/1080" alt="" role="presentation" width="1920" height="1080" loading="lazy" decoding="async">
   </div>
   <div class="bw__bg-layer" data-bg="water" aria-hidden="true">
-    <img src="https://picsum.photos/id/1053/1920/1080" alt="" role="presentation">
+    <img src="https://picsum.photos/id/1053/1920/1080" alt="" role="presentation" width="1920" height="1080" loading="lazy" decoding="async">
   </div>
   <div class="bw__scrim" aria-hidden="true"></div>
   <div class="bw__center">
@@ -2025,7 +1462,7 @@ body {
     <div class="bw__text-slot">
       <h2 class="bw__title" id="bw-title">Soul Breathwork</h2>
       <div class="bw__dots" aria-hidden="true"><span></span><span></span><span></span></div>
-      <p class="bw__subtitle" data-i18n="bwFull.subtitle">Circular breathwork system</p>
+      <p class="bw__subtitle" data-i18n="breathwork.tag">Circular breathwork system</p>
       <p class="bw__intro" data-i18n="bwFull.intro">Breath as a deep portal of transformation. Soul Breathwork is a practice based on circular breathing, a continuous and conscious breathing that allows access to expanded states of perception.</p>
     </div>
     <a href="pages/soul-breathwork.html" class="bw__readmore" id="bw-readmore">
@@ -2083,9 +1520,9 @@ body {
   <div class="sessions__overflow" id="s-overflow">
     <div class="sessions__track" id="s-track">
       <article class="s-slide">
-        <div class="s-img"><img src="https://picsum.photos/id/1027/960/780" alt="Soul Channeling" loading="eager"><span class="s-counter">01 / 05</span></div>
+        <div class="s-img"><img src="https://picsum.photos/id/1027/960/780" alt="Soul Channeling" width="960" height="780" loading="eager" decoding="async"><span class="s-counter">01 / 05</span></div>
         <div class="s-body">
-          <p class="eyebrow" data-i18n="sm.channeling.kicker">Opening through presence</p>
+          <p class="eyebrow" data-i18n="channeling.tag">Opening through presence</p>
           <h3>Soul Channeling</h3>
           <p class="s-subtitle" data-i18n="car.channeling.sub">A space of deep opening</p>
           <p data-i18n="car.channeling.body">In this practice, the therapist places their hands over the patient's heart, generating a direct point of contact that sustains, contains, and opens the inner space.</p>
@@ -2094,9 +1531,9 @@ body {
         </div>
       </article>
       <article class="s-slide">
-        <div class="s-img"><img src="https://picsum.photos/id/24/960/780" alt="Soul Mapping" loading="lazy"><span class="s-counter">02 / 05</span></div>
+        <div class="s-img"><img src="https://picsum.photos/id/24/960/780" alt="Soul Mapping" width="960" height="780" loading="lazy" decoding="async"><span class="s-counter">02 / 05</span></div>
         <div class="s-body">
-          <p class="eyebrow" data-i18n="sm.mapping.kicker">Language as a portal</p>
+          <p class="eyebrow" data-i18n="mapping.tag">Language as a portal</p>
           <h3>Soul Mapping</h3>
           <p class="s-subtitle" data-i18n="car.mapping.sub">A space where the word becomes a doorway</p>
           <p data-i18n="car.mapping.body">Soul Mapping is a therapy that allows the inner world to be explored through language, revealing emotional, subconscious, and family patterns.</p>
@@ -2104,7 +1541,7 @@ body {
         </div>
       </article>
       <article class="s-slide">
-        <div class="s-img"><img src="https://picsum.photos/id/338/960/780" alt="Soul Tantra Activation" loading="lazy"><span class="s-counter">03 / 05</span></div>
+        <div class="s-img"><img src="https://picsum.photos/id/338/960/780" alt="Soul Tantra Activation" width="960" height="780" loading="lazy" decoding="async"><span class="s-counter">03 / 05</span></div>
         <div class="s-body">
           <p class="eyebrow" data-i18n="tantra.tag">Energetic activation &amp; consciousness expansion</p>
           <h3>Soul Tantra Activation</h3>
@@ -2114,7 +1551,7 @@ body {
         </div>
       </article>
       <article class="s-slide">
-        <div class="s-img"><img src="https://picsum.photos/id/177/960/780" alt="Soul Guidance" loading="lazy"><span class="s-counter">04 / 05</span></div>
+        <div class="s-img"><img src="https://picsum.photos/id/177/960/780" alt="Soul Guidance" width="960" height="780" loading="lazy" decoding="async"><span class="s-counter">04 / 05</span></div>
         <div class="s-body">
           <p class="eyebrow" data-i18n="guidance.tag">Integration &amp; emotional clarity</p>
           <h3>Soul Guidance</h3>
@@ -2124,7 +1561,7 @@ body {
         </div>
       </article>
       <article class="s-slide">
-        <div class="s-img"><img src="https://picsum.photos/id/1040/960/780" alt="Soul Oracle Reading" loading="lazy"><span class="s-counter">05 / 05</span></div>
+        <div class="s-img"><img src="https://picsum.photos/id/1040/960/780" alt="Soul Oracle Reading" width="960" height="780" loading="lazy" decoding="async"><span class="s-counter">05 / 05</span></div>
         <div class="s-body">
           <p class="eyebrow" data-i18n="oracle.tag">Multidimensional oracle reading</p>
           <h3>Soul Oracle Reading</h3>
@@ -2166,7 +1603,7 @@ body {
         <a href="https://wa.me/525551063488" class="ft__brand-cta" target="_blank" rel="noopener" data-i18n="cta.book">Book a session</a>
       </div>
       <div class="ft__col">
-        <h4 data-i18n="footer.therapies">Soul Therapies</h4>
+        <h3 data-i18n="footer.therapies">Soul Therapies</h3>
         <ul>
           <li><a href="pages/soul-channeling.html">Soul Channeling</a></li>
           <li><a href="pages/soul-mapping.html">Soul Mapping</a></li>
@@ -2176,7 +1613,7 @@ body {
         </ul>
       </div>
       <div class="ft__col">
-        <h4 data-i18n="footer.breathwork">Soul Breathwork</h4>
+        <h3 data-i18n="footer.breathwork">Soul Breathwork</h3>
         <ul>
           <li><a href="pages/soul-breathwork.html">Soul Breathwork</a></li>
           <li><a href="pages/earth-breathwork.html">Earth Breathwork</a></li>
@@ -2186,7 +1623,7 @@ body {
         </ul>
       </div>
       <div class="ft__col">
-        <h4 data-i18n="footer.contact">Contact</h4>
+        <h3 data-i18n="footer.contact">Contact</h3>
         <div class="ft__contact-list">
           <a href="https://wa.me/525551063488" class="ft__contact-item" target="_blank" rel="noopener">
             <span class="ft__contact-label">WhatsApp</span>
@@ -2225,6 +1662,7 @@ body {
   'use strict';
 
   var toggle   = document.getElementById('bwc-toggle');
+  var subrow   = document.getElementById('bwc-subrow');
   var subCards = Array.from(document.querySelectorAll('.bwc__card'));
   var isOpen   = false;
   var timers   = [];
@@ -2238,6 +1676,8 @@ body {
     isOpen = true;
     toggle.classList.add('is-open');
     toggle.setAttribute('aria-expanded', 'true');
+    /* abre el espacio superior sólo cuando las cards van a aparecer */
+    if (subrow) subrow.classList.add('has-visible');
     clearTimers();
     subCards.forEach(function (card) {
       var delay = parseInt(card.getAttribute('data-delay'), 10) || 0;
@@ -2261,6 +1701,12 @@ body {
       }, i * 80);
       timers.push(t);
     });
+    /* retirar el espacio cuando la última card termina de cerrarse */
+    if (subrow) {
+      timers.push(setTimeout(function () {
+        subrow.classList.remove('has-visible');
+      }, (subCards.length - 1) * 80 + 500));
+    }
   }
 
   toggle.addEventListener('click', function () {
@@ -2268,7 +1714,7 @@ body {
   });
 
   /* Respect prefers-reduced-motion */
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
     subCards.forEach(function (card) { card.style.transition = 'none'; });
   }
 })();
@@ -2282,100 +1728,10 @@ body {
   var yr = document.getElementById('yr');
   if (yr) yr.textContent = new Date().getFullYear();
 
-  /* ── Scrolled header ── */
-  var navBar = document.getElementById('nav-bar');
-  window.addEventListener('scroll', function () {
-    navBar.classList.toggle('scrolled', window.scrollY > 40);
-  }, { passive: true });
-
-  /* ── Mobile overlay: open/close ── */
-  var hamburger = document.getElementById('nav-hamburger');
-  var overlay   = document.getElementById('nav-overlay');
-  var body      = document.body;
-
-  function openMenu() {
-    overlay.classList.add('is-open');
-    hamburger.classList.add('is-open');
-    hamburger.setAttribute('aria-expanded', 'true');
-    hamburger.setAttribute('aria-label', 'Close menu');
-    body.style.overflow = 'hidden';
-  }
-  function closeMenu() {
-    overlay.classList.remove('is-open');
-    hamburger.classList.remove('is-open');
-    hamburger.setAttribute('aria-expanded', 'false');
-    hamburger.setAttribute('aria-label', 'Open menu');
-    body.style.overflow = '';
-  }
-  hamburger.addEventListener('click', function () {
-    overlay.classList.contains('is-open') ? closeMenu() : openMenu();
-  });
-
-  /* Close on Escape */
-  document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape') closeMenu();
-  });
-
-  /* Close when a nav link is clicked */
-  overlay.querySelectorAll('a').forEach(function (link) {
-    link.addEventListener('click', closeMenu);
-  });
-
-  /* ── Mobile accordion ── */
-  overlay.querySelectorAll('.nav-primary__trigger').forEach(function (btn) {
-    btn.addEventListener('click', function () {
-      var panelId = btn.getAttribute('aria-controls');
-      var panel   = document.getElementById(panelId);
-      var isOpen  = btn.getAttribute('aria-expanded') === 'true';
-
-      /* Close all other open panels */
-      overlay.querySelectorAll('.nav-primary__trigger[aria-expanded="true"]').forEach(function (other) {
-        if (other !== btn) {
-          other.setAttribute('aria-expanded', 'false');
-          var op = document.getElementById(other.getAttribute('aria-controls'));
-          if (op) op.classList.remove('is-open');
-        }
-      });
-
-      btn.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
-      if (panel) panel.classList.toggle('is-open', !isOpen);
-    });
-  });
-
-  /* ── Desktop dropdown (hover + click, with 300ms grace on leave) ── */
-  var CLOSE_DELAY = 300;
-  document.querySelectorAll('.nav-items__wrap').forEach(function (wrap) {
-    var trigger = wrap.querySelector('.nav-items__trigger');
-    var timer;
-    wrap.addEventListener('mouseenter', function () {
-      clearTimeout(timer);
-      wrap.classList.add('is-open');
-      if (trigger) trigger.setAttribute('aria-expanded', 'true');
-    });
-    wrap.addEventListener('mouseleave', function () {
-      timer = setTimeout(function () {
-        wrap.classList.remove('is-open');
-        if (trigger) trigger.setAttribute('aria-expanded', 'false');
-      }, CLOSE_DELAY);
-    });
-    if (trigger && trigger.tagName === 'BUTTON') {
-      trigger.addEventListener('click', function (e) {
-        e.preventDefault();
-        var open = wrap.classList.toggle('is-open');
-        trigger.setAttribute('aria-expanded', open ? 'true' : 'false');
-      });
-    }
-  });
-  /* Click outside closes all desktop dropdowns */
-  document.addEventListener('click', function (e) {
-    if (!e.target.closest('.nav-items__wrap')) {
-      document.querySelectorAll('.nav-items__wrap.is-open').forEach(function (w) {
-        w.classList.remove('is-open');
-        var t = w.querySelector('.nav-items__trigger');
-        if (t) t.setAttribute('aria-expanded', 'false');
-      });
-    }
-  });
+  /* ── Nav (hamburger, overlay, accordion, dropdown, scroll header)
+       y el switch de idioma los maneja js/site.js.
+       No duplicar aquí: dos listeners en el mismo botón se cancelan
+       entre sí y el menú móvil deja de abrir. ── */
 
   /* ── Video controls ── */
   var video     = document.getElementById('hero-video');
@@ -2458,7 +1814,8 @@ body {
     });
   });
   /* Touch: first tap = preview, second = navigate */
-  if (!window.matchMedia('(hover: hover)').matches) {
+  var canHover = window.matchMedia ? window.matchMedia('(hover: hover)').matches : true;
+  if (!canHover) {
     bwCards.forEach(function (card) {
       card.addEventListener('click', function (e) {
         var already = card.classList.contains('is-active');
@@ -2520,6 +1877,6 @@ body {
 })();
 </script>
 
-<script src="js/site.js"></script>
+<script src="js/site.js" defer></script>
 </body>
 </html>

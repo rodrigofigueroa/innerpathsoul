@@ -16,14 +16,9 @@
     /* ── A11Y / GLOBAL ── */
     'a11y.skip':      { en: 'Skip to content', es: 'Saltar al contenido' },
     'a11y.exploreMore': { en: 'Explore more', es: 'Explora más' },
-    'hero.tagline':   { en: 'The Soul Knows The Way Home', es: 'El Alma Conoce el Camino a Casa' },
     'therapist.roles':{ en: 'Soul Therapist · Body, Heart and Soul', es: 'Soul Therapist · Body, Heart and Soul' },
 
     /* ── RELATED CARD DESCRIPTIONS (shared across pages) ── */
-    'card.channeling.desc': { en: 'Hands placed over the heart — a direct point of contact that sustains and opens the inner space.',
-                              es: 'Manos sobre el corazón — un punto de contacto directo que sostiene y abre el espacio interior.' },
-    'card.mapping.desc':    { en: 'The word becomes a doorway — exploring the inner world through language and its hidden patterns.',
-                              es: 'La palabra se vuelve una puerta — explorando el mundo interior a través del lenguaje y sus patrones ocultos.' },
     'card.tantra.desc':     { en: 'Vital energy awakens through breath and body — moving, opening, and finding its own path.',
                               es: 'La energía vital despierta a través de la respiración y el cuerpo — moviéndose, abriendo y encontrando su propio camino.' },
     'card.breathwork.desc': { en: 'Breath as a portal of transformation — circular breathing that opens access to expanded states.',
@@ -34,10 +29,6 @@
                               es: 'Comienza frente a un espejo. Continúa recostada, integrando lo que el espejo reveló.' },
     'card.water.desc':      { en: 'Floating inside a pool, held by the therapist while breath guides a profound release.',
                               es: 'Flotando dentro de una alberca, sostenida por la terapeuta mientras la respiración guía una liberación profunda.' },
-    'card.guidance.desc':   { en: 'Conscious dialogue that gives form to lived experience — organizing what emerged into meaning.',
-                              es: 'Diálogo consciente que da forma a la experiencia vivida — organizando lo que emergió en significado.' },
-    'card.oracle.desc':     { en: 'Oracle decks as a mirror — accessing emotional, energetic, and soul realms with clarity.',
-                              es: 'Barajas de oráculo como espejo — accediendo a los reinos emocional, energético y del alma con claridad.' },
 
     /* ── INDEX: bwc main + sub cards ── */
     'bwc.main.desc': { en: 'Breath as a deep portal of transformation. A practice based on circular breathing — continuous and conscious — that opens access to expanded states of perception, releasing what is held in the body and connecting with the intelligence of the soul.',
@@ -53,8 +44,6 @@
                          es: 'Dentro de una alberca, flotando con un antifaz. La terapeuta te sostiene mientras la respiración guía una liberación profunda.' },
 
     /* ── INDEX: sessions-menu compact cards ── */
-    'sm.channeling.kicker': { en: 'Opening through presence', es: 'Apertura a través de la presencia' },
-    'sm.mapping.kicker':    { en: 'Language as a portal',     es: 'El lenguaje como portal' },
     'sm.tantra.kicker':     { en: 'Energetic activation',     es: 'Activación energética' },
     'sm.guidance.kicker':   { en: 'Integration & clarity',    es: 'Integración y claridad' },
     'sm.oracle.kicker':     { en: 'Multidimensional reading', es: 'Lectura multidimensional' },
@@ -70,7 +59,6 @@
                             es: 'Barajas de oráculo como espejo — accediendo a los reinos emocional, energético y del alma con claridad.' },
 
     /* ── INDEX: full-screen breathwork block ── */
-    'bwFull.subtitle': { en: 'Circular breathwork system', es: 'Sistema de respiración circular' },
     'bwFull.intro':    { en: 'Breath as a deep portal of transformation. Soul Breathwork is a practice based on circular breathing, a continuous and conscious breathing that allows access to expanded states of perception.',
                          es: 'La respiración como portal profundo de transformación. Soul Breathwork es una práctica basada en la respiración circular, una respiración continua y consciente que permite acceder a estados expandidos de percepción.' },
     'bwFull.earth.desc':  { en: 'Grounded breathwork — a deep breathing session in a lying-down position.',
@@ -149,7 +137,6 @@
     /* ── SHARED CTAs ── */
     'cta.readmore':    { en: 'Read more',    es: 'Leer más' },
     'cta.book':        { en: 'Book a session', es: 'Reservar sesión' },
-    'cta.contact':     { en: 'Contact',      es: 'Contacto' },
     'cta.back':        { en: 'Back',         es: 'Regresar' },
     'cta.discover':    { en: 'Discover',     es: 'Descubrir' },
     'cta.backHome':    { en: 'Back to Inner Path', es: 'Regresar a Inner Path' },
